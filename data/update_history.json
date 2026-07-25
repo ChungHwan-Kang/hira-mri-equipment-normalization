@@ -3,13 +3,13 @@
   "releases": [
     {
       "version": "1.0.0",
-      "status": "planned",
+      "status": "published",
       "data_reference_date": "2025-12-31",
-      "published_at": null,
+      "published_at": "2026-07-25T14:28:29Z",
       "source_name": "건강보험심사평가원",
       "source_reference": "건강보험심사평가원 의료장비 상세현황 공공데이터",
-      "total_equipment": null,
-      "change_summary": "초기 데이터 릴리즈 및 MRI 장비현황 구축",
+      "total_equipment": 2097,
+      "change_summary": "2025년 12월 31일 기준 MRI 장비현황 대시보드 최초 공개",
       "corrections": [],
       "data_quality_notes": []
     }
