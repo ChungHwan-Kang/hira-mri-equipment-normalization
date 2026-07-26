@@ -526,6 +526,12 @@ h2 {
   vertical-align: top;
 }
 
+.equipment-table th:nth-child(2),
+.equipment-table td:nth-child(2) {
+  min-width: 96px;
+  white-space: nowrap;
+}
+
 .equipment-table th {
   background: #f8fafc;
   color: var(--muted);
