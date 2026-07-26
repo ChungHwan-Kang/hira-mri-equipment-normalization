@@ -918,10 +918,8 @@ h2 {
 }
 
 .sido-summary-name-text {
-  overflow: hidden;
   min-width: 0;
   white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .sido-summary-selected-tag {
@@ -1009,10 +1007,8 @@ h2 {
 }
 
 .sigungu-summary-name-text {
-  overflow: hidden;
   min-width: 0;
   white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .sigungu-summary-selected-tag {
