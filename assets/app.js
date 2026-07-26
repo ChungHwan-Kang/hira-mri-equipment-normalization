@@ -985,7 +985,11 @@ function createSidoSummaryButton(entry, selectedSido) {
 
   const nameRow = document.createElement("span");
   nameRow.className = "sido-summary-name";
-  nameRow.textContent = entry.sido;
+
+  const nameText = document.createElement("span");
+  nameText.className = "sido-summary-name-text";
+  nameText.textContent = entry.sido;
+  nameRow.append(nameText);
 
   if (isSelected) {
     const selectedTag = document.createElement("span");
@@ -1076,7 +1080,11 @@ function createSigunguSummaryButton(entry, sido, selectedSigungu) {
 
   const nameRow = document.createElement("span");
   nameRow.className = "sigungu-summary-name";
-  nameRow.textContent = entry.sigungu;
+
+  const nameText = document.createElement("span");
+  nameText.className = "sigungu-summary-name-text";
+  nameText.textContent = entry.sigungu;
+  nameRow.append(nameText);
 
   if (isSelected) {
     const selectedTag = document.createElement("span");

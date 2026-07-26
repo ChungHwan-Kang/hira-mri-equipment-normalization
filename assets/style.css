@@ -872,7 +872,7 @@ h2 {
 
 .sido-summary-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 10px;
   max-height: 420px;
   overflow-y: auto;
@@ -882,6 +882,7 @@ h2 {
 .sido-summary-item {
   display: grid;
   gap: 6px;
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 10px 12px;
@@ -912,7 +913,15 @@ h2 {
   display: flex;
   align-items: center;
   gap: 8px;
+  min-width: 0;
   font-weight: 800;
+}
+
+.sido-summary-name-text {
+  overflow: hidden;
+  min-width: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .sido-summary-selected-tag {
@@ -954,7 +963,7 @@ h2 {
 
 .sigungu-summary-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 10px;
   max-height: 360px;
   overflow-y: auto;
@@ -964,6 +973,7 @@ h2 {
 .sigungu-summary-item {
   display: grid;
   gap: 6px;
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 10px 12px;
@@ -994,7 +1004,15 @@ h2 {
   display: flex;
   align-items: center;
   gap: 8px;
+  min-width: 0;
   font-weight: 800;
+}
+
+.sigungu-summary-name-text {
+  overflow: hidden;
+  min-width: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .sigungu-summary-selected-tag {
