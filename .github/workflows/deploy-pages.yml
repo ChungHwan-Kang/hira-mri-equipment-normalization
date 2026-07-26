@@ -22,6 +22,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -37,3 +39,151 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Sprint 85: post-deployment smoke test. Runs only after `deploy` succeeds.
+  # It never checks out the private source-of-truth repository, never uses
+  # secrets/tokens, and never re-deploys or auto-fixes anything on failure —
+  # it only reads the already-live production URL and fails the workflow if
+  # what is live does not match the expected public release. Deep Playwright
+  # verification (37 checks) remains the private repository's responsibility
+  # (scripts/verify_public_pages.py); this is a fast, dependency-free
+  # confirmation that the deploy actually landed correctly.
+  smoke-test:
+    name: Post-deployment smoke test
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write smoke test script
+        run: |
+          cat > smoke-test.mjs <<'SMOKE_TEST_SCRIPT_EOF'
+          // Plain Node, no npm deps, runs against the already-deployed production URL only.
+
+          const BASE = (process.env.PAGE_URL || "").replace(/\/+$/, "");
+          const TOKEN = process.env.SMOKE_TOKEN || String(Date.now());
+          if (!BASE) { console.error("FAIL: PAGE_URL is empty."); process.exit(1); }
+          if (!BASE.startsWith("https://")) { console.error(`FAIL: PAGE_URL is not HTTPS: ${BASE}`); process.exit(1); }
+
+          const MAX_ATTEMPTS = 5;
+          const RETRY_DELAY_MS = 10_000;
+          const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+          async function getWithRetry(path) {
+            const url = `${BASE}${path}${path.includes("?") ? "&" : "?"}smoke=${TOKEN}`;
+            let status, text;
+            for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
+              const res = await fetch(url, { redirect: "follow", headers: { "Cache-Control": "no-cache" } });
+              status = res.status;
+              text = await res.text();
+              if (status === 200) return { status, text, headers: res.headers };
+              if (attempt < MAX_ATTEMPTS) await sleep(RETRY_DELAY_MS);
+            }
+            throw new Error(`expected 200 after ${MAX_ATTEMPTS} attempts, got ${status} (${url})`);
+          }
+
+          const failures = [];
+          async function check(label, fn) {
+            try {
+              await fn();
+              console.log(`[PASS] ${label}`);
+            } catch (err) {
+              console.log(`[FAIL] ${label}: ${err.message}`);
+              failures.push(label);
+            }
+          }
+
+          const responses = {};
+          const HTTP_PATHS = [
+            "/", "/index.html", "/assets/app.js", "/assets/style.css",
+            "/data/mri_equipment_2025.json", "/data/summary.json", "/data/update_history.json",
+            "/LICENSE", "/NOTICE.md", "/DATA_SOURCE.md",
+          ];
+          const CONTENT_TYPE_EXPECTATIONS = {
+            "/data/mri_equipment_2025.json": "application/json",
+            "/data/summary.json": "application/json",
+            "/data/update_history.json": "application/json",
+            "/assets/app.js": "javascript",
+            "/assets/style.css": "css",
+          };
+          const FORBIDDEN_PATHS = [
+            "/data/raw/", "/data/processed/", "/data/mapping/model_canonical_mapping.csv",
+            "/src/", "/tests/", "/scripts/", "/config/public_release.yaml", "/config/web_release.yaml",
+          ];
+
+          async function main() {
+            for (const path of HTTP_PATHS) {
+              await check(`http availability ${path}`, async () => { responses[path] = await getWithRetry(path); });
+            }
+
+            for (const [path, expected] of Object.entries(CONTENT_TYPE_EXPECTATIONS)) {
+              await check(`content-type ${path} includes ${expected}`, () => {
+                const ct = (responses[path]?.headers.get("content-type") || "").toLowerCase();
+                if (!ct.includes(expected)) throw new Error(`content-type='${ct}'`);
+              });
+            }
+
+            const rootHtml = responses["/"]?.text || "";
+            const equipment = JSON.parse(responses["/data/mri_equipment_2025.json"].text);
+            const summary = JSON.parse(responses["/data/summary.json"].text);
+            const history = JSON.parse(responses["/data/update_history.json"].text);
+            const firstRelease = history.releases?.[0] || {};
+            const sumOf = (obj) => Object.values(obj || {}).reduce((a, b) => a + b, 0);
+
+            const valueChecks = [
+              ["equipment record count == 1943", () => equipment.length === 1943, () => `count=${equipment.length}`],
+              ["equipment_count sum == 2097", () => equipment.reduce((a, r) => a + (Number(r["장비수"]) || 0), 0) === 2097, () => "sum mismatch"],
+              ["summary.record_count == 1943", () => summary.record_count === 1943, () => `value=${summary.record_count}`],
+              ["summary.total_equipment == 2097", () => summary.total_equipment === 2097, () => `value=${summary.total_equipment}`],
+              ["summary.data_reference_date == 2025-12-31", () => summary.data_reference_date === "2025-12-31", () => `value=${summary.data_reference_date}`],
+              ["summary.source_name == 건강보험심사평가원", () => summary.source_name === "건강보험심사평가원", () => `value=${summary.source_name}`],
+              ["manufacturer_counts sum == 2097", () => sumOf(summary.manufacturer_counts) === 2097, () => "sum mismatch"],
+              ["tesla_counts sum == 2097", () => sumOf(summary.tesla_counts) === 2097, () => "sum mismatch"],
+              ["unique sido count == 17", () => new Set(equipment.map((r) => r["시도명"])).size === 17, () => "count mismatch"],
+              ["unique sido/sigungu pair count == 207", () => new Set(equipment.map((r) => `${r["시도명"]}|${r["시군구명"]}`)).size === 207, () => "count mismatch"],
+              ["first release status == published", () => firstRelease.status === "published", () => `status=${firstRelease.status}`],
+              ["first release published_at == 2026-07-25T14:28:29Z", () => firstRelease.published_at === "2026-07-25T14:28:29Z", () => `value=${firstRelease.published_at}`],
+              ["first release total_equipment == 2097", () => firstRelease.total_equipment === 2097, () => `value=${firstRelease.total_equipment}`],
+              ["first release status is not planned", () => firstRelease.status !== "planned", () => "still planned"],
+              ["first release change_summary is not empty", () => Boolean(String(firstRelease.change_summary || "").trim()), () => "empty"],
+              ["root HTML contains MRI", () => rootHtml.includes("MRI"), () => "not found"],
+              ["no private repository URL string in root HTML", () => !rootHtml.includes("hospital-automation"), () => "found"],
+              ["no download attribute on anchor/button in root HTML", () => !/<a\b[^>]*\bdownload(=|>|\s)/i.test(rootHtml) && !/<button\b[^>]*download/i.test(rootHtml), () => "found"],
+              ["no detailed address field name in root HTML", () => !["주소", "도로명주소", "상세주소"].some((f) => rootHtml.includes(f)), () => "found"],
+            ];
+            for (const [label, predicate, describe] of valueChecks) {
+              await check(label, () => { if (!predicate()) throw new Error(describe()); });
+            }
+
+            for (const path of FORBIDDEN_PATHS) {
+              await check(`forbidden path not exposed ${path}`, async () => {
+                const url = `${BASE}${path}?smoke=${TOKEN}`;
+                const res = await fetch(url, { redirect: "follow", headers: { "Cache-Control": "no-cache" } });
+                if (res.status === 200) {
+                  const text = await res.text();
+                  if (text.trim() !== rootHtml.trim() && !text.includes("MRI")) {
+                    throw new Error("status=200 with non-dashboard content");
+                  }
+                } else if (res.status !== 404) {
+                  throw new Error(`unexpected status=${res.status}`);
+                }
+              });
+            }
+
+            if (failures.length > 0) {
+              console.error(`\n${failures.length} smoke test check(s) failed:`);
+              failures.forEach((f) => console.error(` - ${f}`));
+              process.exit(1);
+            }
+            console.log(`\nAll smoke test checks passed for ${BASE}`);
+          }
+
+          main().catch((err) => {
+            console.error(`FAIL: unexpected error: ${err.stack || err.message}`);
+            process.exit(1);
+          });
+          SMOKE_TEST_SCRIPT_EOF
+
+      - name: Run smoke test against production
+        env:
+          PAGE_URL: ${{ needs.deploy.outputs.page_url }}
+          SMOKE_TOKEN: ${{ github.sha }}
+        run: node smoke-test.mjs
