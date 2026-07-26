@@ -11,7 +11,8 @@
       "total_equipment": 2097,
       "change_summary": "2025년 12월 31일 기준 MRI 장비현황 대시보드 최초 공개",
       "corrections": [
-        "canonical 모델명 표기 정리(Tesla/제조사/MRI 일반 표현 중복 제거, 대소문자·공백 통일)를 반영해 34개 모델명 표기를 통합. 장비수·기관수·지역별 집계는 변경되지 않음."
+        "canonical 모델명 표기 정리(Tesla/제조사/MRI 일반 표현 중복 제거, 대소문자·공백 통일)를 반영해 34개 모델명 표기를 통합. 장비수·기관수·지역별 집계는 변경되지 않음.",
+        "잔여 검토 대상 25개 모델명에 대한 확정 검토를 반영해 표기를 통합(예: Discovery MR 750, MR Infinity, Signa Excite HDxt 등). 장비수·기관수·지역별 집계는 변경되지 않음."
       ],
       "data_quality_notes": []
     }
