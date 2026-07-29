@@ -6,6 +6,9 @@ const DEFAULT_SEARCH_FIELDS = ["병원명", "제조사", "모델명", "테슬라
 const REGION_COLUMN_CANDIDATES = ["시도명", "시도", "지역", "지역명", "광역시도", "광역시도명", "province", "region"];
 
 const totalEquipmentElement = document.querySelector("#total-equipment");
+const institutionTotalElement = document.querySelector("#institution-total");
+const highTeslaTotalElement = document.querySelector("#high-tesla-total");
+const highTeslaRatioElement = document.querySelector("#high-tesla-ratio");
 const manufacturerTotalElement = document.querySelector("#manufacturer-total");
 const teslaTotalElement = document.querySelector("#tesla-total");
 const regionTotalElement = document.querySelector("#region-total");
@@ -51,8 +54,12 @@ const infoPublishedDateElement = document.querySelector("#info-published-date");
 const infoSourceElement = document.querySelector("#info-source");
 const infoTotalEquipmentElement = document.querySelector("#info-total-equipment");
 const historyListElement = document.querySelector("#history-list");
+const viewTabElements = document.querySelectorAll('[role="tab"][data-view]');
+const equipmentPanelElement = document.querySelector("#equipment-panel");
+const statisticsPanelElement = document.querySelector("#statistics-panel");
 
 let equipmentRecords = [];
+let activeView = "equipment";
 let regionColumnName = "";
 let selectedRecordIndex = null;
 let isRestoringUrlState = false;
@@ -157,6 +164,56 @@ function renderSummaryCards(records) {
   manufacturerTotalElement.textContent = `${formatNumber(countDistinctValues(records, "제조사"))}종`;
   teslaTotalElement.textContent = `${formatNumber(countDistinctValues(records, "테슬라"))}종`;
   regionTotalElement.textContent = `${formatNumber(countDistinctValues(records, regionColumnName))}개`;
+}
+
+function renderStatistics(records) {
+  const totalEquipment = getTotalEquipmentCount(records);
+  const highTeslaEquipment = getTotalEquipmentCount(
+    records.filter((record) => record["테슬라"] === "3.0T+"),
+  );
+  const highTeslaRatio = totalEquipment > 0 ? (highTeslaEquipment / totalEquipment) * 100 : 0;
+
+  totalEquipmentElement.textContent = formatNumber(totalEquipment);
+  institutionTotalElement.textContent = formatNumber(countDistinctValues(records, "병원명"));
+  highTeslaTotalElement.textContent = `${formatNumber(highTeslaEquipment)}대`;
+  highTeslaRatioElement.textContent = `전체의 ${highTeslaRatio.toFixed(1)}%`;
+  regionTotalElement.textContent = formatNumber(countDistinctValues(records, regionColumnName));
+  renderManufacturerSummary(records);
+  renderTeslaDistribution(records);
+  renderRegionSummary(records);
+  renderManufacturerTeslaMatrix(records);
+  renderSidoSummary(buildSidoSummary(records));
+}
+
+function normalizeView(value) {
+  return value === "statistics" ? "statistics" : "equipment";
+}
+
+function setActiveView(view, { updateUrl = true, focusTab = false } = {}) {
+  activeView = normalizeView(view);
+  const isEquipmentView = activeView === "equipment";
+
+  equipmentPanelElement.hidden = !isEquipmentView;
+  statisticsPanelElement.hidden = isEquipmentView;
+  document.body.dataset.view = activeView;
+
+  for (const tab of viewTabElements) {
+    const isActive = tab.dataset.view === activeView;
+    tab.setAttribute("aria-selected", String(isActive));
+    tab.tabIndex = isActive ? 0 : -1;
+    if (isActive && focusTab) {
+      tab.focus();
+    }
+  }
+
+  if (updateUrl) {
+    const params = new URLSearchParams(window.location.search);
+    params.set("view", activeView);
+    const nextUrl = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
+    if (nextUrl !== `${window.location.pathname}${window.location.search}${window.location.hash}`) {
+      window.history.pushState({}, "", nextUrl);
+    }
+  }
 }
 
 function normalizeSearchText(value) {
@@ -494,8 +551,12 @@ function updateFilterUrl(query, manufacturer, tesla, sido, sigungu) {
     return;
   }
 
-  const params = new URLSearchParams();
+  const params = new URLSearchParams(window.location.search);
   const normalizedQuery = String(query ?? "").trim();
+  for (const key of ["q", "manufacturer", "tesla", "sido", "sigungu"]) {
+    params.delete(key);
+  }
+  params.set("view", activeView);
 
   if (normalizedQuery) {
     params.set("q", normalizedQuery);
@@ -537,7 +598,7 @@ function getEquipmentCountsByField(records, fieldName) {
   return counts;
 }
 
-function renderBarSummary(container, counts, emptyMessageText, maxEntries = null) {
+function renderBarSummary(container, counts, emptyMessageText, maxEntries = null, filterKey = "") {
   const entries = sortedEntries(counts).slice(0, maxEntries ?? undefined);
   const maxCount = entries[0]?.[1] ?? 0;
   container.replaceChildren();
@@ -554,6 +615,14 @@ function renderBarSummary(container, counts, emptyMessageText, maxEntries = null
   for (const [name, count] of entries) {
     const row = document.createElement("div");
     row.className = "distribution-bar-row";
+    if (filterKey) {
+      row.classList.add("is-actionable");
+      row.dataset.filterKey = filterKey;
+      row.dataset.filterValue = name;
+      row.tabIndex = 0;
+      row.setAttribute("role", "button");
+      row.setAttribute("aria-label", `${name} ${formatNumber(count)}대 장비현황 보기`);
+    }
 
     const nameElement = document.createElement("span");
     nameElement.className = "distribution-bar-name";
@@ -583,6 +652,8 @@ function renderManufacturerSummary(records) {
     manufacturerSummaryChartElement,
     getEquipmentCountsByField(records, "제조사"),
     "표시할 제조사 데이터가 없습니다.",
+    null,
+    "manufacturer",
   );
 }
 
@@ -591,6 +662,8 @@ function renderTeslaDistribution(records) {
     teslaDistributionChartElement,
     getEquipmentCountsByField(records, "테슬라"),
     "표시할 Tesla 데이터가 없습니다.",
+    null,
+    "tesla",
   );
 }
 
@@ -600,6 +673,7 @@ function renderRegionSummary(records) {
     regionColumnName ? getEquipmentCountsByField(records, regionColumnName) : {},
     "표시할 지역 데이터가 없습니다.",
     10,
+    "sido",
   );
 }
 
@@ -715,14 +789,6 @@ function renderEquipmentSearch() {
   const hasActiveFilter = hasSearchQuery || hasFilterSelection;
   const { matches, visibleRecords } = getVisibleRecords(query, manufacturer, tesla, sido, sigungu);
 
-  renderSummaryCards(matches);
-  renderManufacturerSummary(matches);
-  renderTeslaDistribution(matches);
-  renderRegionSummary(matches);
-  renderManufacturerTeslaMatrix(matches);
-  renderRegionTeslaMatrix(matches);
-  renderSidoSummary(buildSidoSummary(equipmentRecords));
-  syncSigunguSummarySelection();
   renderEquipmentTable(visibleRecords);
   renderMatchCount(matches, visibleRecords.length, hasActiveFilter);
   showAllResultsElement.hidden = hasActiveFilter
@@ -1034,6 +1100,7 @@ function activateSidoFilter(sido) {
   sidoFilterElement.value = sido;
   populateSigunguFilter(equipmentRecords, sido);
   renderEquipmentSearch();
+  setActiveView("equipment");
   equipmentSearchElement.closest(".search-panel")?.scrollIntoView({ block: "start" });
   sidoFilterElement.focus();
 }
@@ -1172,6 +1239,21 @@ function restoreFilterStateFromUrl() {
   }
 }
 
+function activateStatisticsFilter(filterKey, filterValue) {
+  resetFilters();
+  if (filterKey === "manufacturer") {
+    manufacturerFilterElement.value = filterValue;
+  } else if (filterKey === "tesla") {
+    teslaFilterElement.value = filterValue;
+  } else if (filterKey === "sido") {
+    sidoFilterElement.value = filterValue;
+    populateSigunguFilter(equipmentRecords, filterValue);
+  }
+  setActiveView("equipment");
+  renderEquipmentSearch();
+  equipmentSearchElement.closest(".search-panel")?.scrollIntoView({ block: "start" });
+}
+
 function renderEquipment(records) {
   equipmentRecords = Array.isArray(records) ? records : [];
   selectedRecordIndex = null;
@@ -1180,8 +1262,10 @@ function renderEquipment(records) {
   buildFilters(equipmentRecords);
   isRestoringUrlState = true;
   restoreFilterStateFromUrl();
+  setActiveView(new URLSearchParams(window.location.search).get("view"), { updateUrl: false });
   renderEquipmentDetails(null);
   renderEquipmentSearch();
+  renderStatistics(equipmentRecords);
   isRestoringUrlState = false;
 }
 
@@ -1234,9 +1318,38 @@ window.addEventListener("popstate", () => {
   isRestoringUrlState = true;
   showAllResults = false;
   restoreFilterStateFromUrl();
+  setActiveView(new URLSearchParams(window.location.search).get("view"), { updateUrl: false });
   renderEquipmentSearch();
   isRestoringUrlState = false;
 });
+for (const tab of viewTabElements) {
+  tab.addEventListener("click", () => setActiveView(tab.dataset.view, { focusTab: true }));
+  tab.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setActiveView(tab.dataset.view, { focusTab: true });
+    }
+  });
+}
+for (const container of [
+  manufacturerSummaryChartElement,
+  teslaDistributionChartElement,
+  regionSummaryChartElement,
+]) {
+  const activateRow = (event) => {
+    const row = event.target.closest?.("[data-filter-key][data-filter-value]");
+    if (!row) {
+      return;
+    }
+    if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+    event.preventDefault();
+    activateStatisticsFilter(row.dataset.filterKey, row.dataset.filterValue);
+  };
+  container.addEventListener("click", activateRow);
+  container.addEventListener("keydown", activateRow);
+}
 resetFiltersElement.addEventListener("click", resetFilters);
 showAllResultsElement.addEventListener("click", showAllEquipmentResults);
 clearSearchElement.addEventListener("click", clearSearchQuery);
