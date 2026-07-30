@@ -284,7 +284,7 @@
     "모델명":"Ingenia Elition X",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"연세대학교 원주세브란스기독병원",
+    "hospital_name_display":"원주세브란스기독병원",
     "facility_key":"연세대학교 원주세브란스기독병원||강원특별자치도||원주시"
   },
   {
@@ -296,7 +296,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"연세대학교 원주세브란스기독병원",
+    "hospital_name_display":"원주세브란스기독병원",
     "facility_key":"연세대학교 원주세브란스기독병원||강원특별자치도||원주시"
   },
   {
@@ -308,7 +308,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":2,
-    "hospital_name_display":"연세대학교 원주세브란스기독병원",
+    "hospital_name_display":"원주세브란스기독병원",
     "facility_key":"연세대학교 원주세브란스기독병원||강원특별자치도||원주시"
   },
   {
@@ -416,7 +416,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 강원",
     "facility_key":"한국건강관리협회건강증진의원||강원특별자치도||춘천시"
   },
   {
@@ -428,7 +428,7 @@
     "모델명":"Achieva",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 강원",
     "facility_key":"한국건강관리협회건강증진의원||강원특별자치도||춘천시"
   },
   {
@@ -3104,7 +3104,7 @@
     "모델명":"Signa Explorer",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 경기",
     "facility_key":"(사)한국건강관리협회건강증진의원||경기도||수원시 장안구"
   },
   {
@@ -3116,7 +3116,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 경기",
     "facility_key":"(사)한국건강관리협회건강증진의원||경기도||수원시 장안구"
   },
   {
@@ -6704,7 +6704,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 경남",
     "facility_key":"(사)한국건강관리협회건강증진의원||경상남도||창원시 마산회원구"
   },
   {
@@ -6716,7 +6716,7 @@
     "모델명":"Achieva",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 경남",
     "facility_key":"(사)한국건강관리협회건강증진의원||경상남도||창원시 마산회원구"
   },
   {
@@ -8708,7 +8708,7 @@
     "모델명":"Signa Explorer",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(사단법인)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 광주전남",
     "facility_key":"(사단법인)한국건강관리협회건강증진의원||광주광역시||서구"
   },
   {
@@ -8720,7 +8720,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(사단법인)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 광주전남",
     "facility_key":"(사단법인)한국건강관리협회건강증진의원||광주광역시||서구"
   },
   {
@@ -9500,7 +9500,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회 건강증진의원",
+    "hospital_name_display":"한국건강관리협회 대구",
     "facility_key":"한국건강관리협회 건강증진의원||대구광역시||동구"
   },
   {
@@ -9512,7 +9512,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회 건강증진의원",
+    "hospital_name_display":"한국건강관리협회 대구",
     "facility_key":"한국건강관리협회 건강증진의원||대구광역시||동구"
   },
   {
@@ -9692,7 +9692,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회 건강증진의원",
+    "hospital_name_display":"한국건강관리협회 경북",
     "facility_key":"한국건강관리협회 건강증진의원||대구광역시||북구"
   },
   {
@@ -9704,7 +9704,7 @@
     "모델명":"Achieva",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회 건강증진의원",
+    "hospital_name_display":"한국건강관리협회 경북",
     "facility_key":"한국건강관리협회 건강증진의원||대구광역시||북구"
   },
   {
@@ -10760,7 +10760,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 대전충남",
     "facility_key":"사)한국건강관리협회건강증진의원||대전광역시||서구"
   },
   {
@@ -10772,7 +10772,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 대전충남",
     "facility_key":"사)한국건강관리협회건강증진의원||대전광역시||서구"
   },
   {
@@ -11684,7 +11684,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":2,
-    "hospital_name_display":"한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 부산동부",
     "facility_key":"한국건강관리협회건강증진의원||부산광역시||동래구"
   },
   {
@@ -11696,7 +11696,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 부산동부",
     "facility_key":"한국건강관리협회건강증진의원||부산광역시||동래구"
   },
   {
@@ -12164,7 +12164,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회 건강증진의원",
+    "hospital_name_display":"한국건강관리협회 부산서부",
     "facility_key":"한국건강관리협회 건강증진의원||부산광역시||사상구"
   },
   {
@@ -12176,7 +12176,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회 건강증진의원",
+    "hospital_name_display":"한국건강관리협회 부산서부",
     "facility_key":"한국건강관리협회 건강증진의원||부산광역시||사상구"
   },
   {
@@ -14432,7 +14432,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 서울서부",
     "facility_key":"한국건강관리협회건강증진의원||서울특별시||강서구"
   },
   {
@@ -14444,7 +14444,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":3,
-    "hospital_name_display":"한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 서울서부",
     "facility_key":"한국건강관리협회건강증진의원||서울특별시||강서구"
   },
   {
@@ -15548,7 +15548,7 @@
     "모델명":"Signa Explorer",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 서울동부",
     "facility_key":"한국건강관리협회건강증진의원||서울특별시||동대문구"
   },
   {
@@ -15560,7 +15560,7 @@
     "모델명":"Signa Explorer",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 서울동부",
     "facility_key":"한국건강관리협회건강증진의원||서울특별시||동대문구"
   },
   {
@@ -15572,7 +15572,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 서울동부",
     "facility_key":"한국건강관리협회건강증진의원||서울특별시||동대문구"
   },
   {
@@ -17012,7 +17012,7 @@
     "모델명":"Signa Explorer",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회 건강증진의원",
+    "hospital_name_display":"한국건강관리협회 서울강남",
     "facility_key":"한국건강관리협회 건강증진의원||서울특별시||송파구"
   },
   {
@@ -17024,7 +17024,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회 건강증진의원",
+    "hospital_name_display":"한국건강관리협회 서울강남",
     "facility_key":"한국건강관리협회 건강증진의원||서울특별시||송파구"
   },
   {
@@ -18860,7 +18860,7 @@
     "모델명":"Signa Explorer",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회 건강증진의원",
+    "hospital_name_display":"한국건강관리협회 울산",
     "facility_key":"한국건강관리협회 건강증진의원||울산광역시||중구"
   },
   {
@@ -18872,7 +18872,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회 건강증진의원",
+    "hospital_name_display":"한국건강관리협회 울산",
     "facility_key":"한국건강관리협회 건강증진의원||울산광역시||중구"
   },
   {
@@ -21356,7 +21356,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 전북",
     "facility_key":"(사)한국건강관리협회건강증진의원||전북특별자치도||전주시 덕진구"
   },
   {
@@ -21368,7 +21368,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 전북",
     "facility_key":"(사)한국건강관리협회건강증진의원||전북특별자치도||전주시 덕진구"
   },
   {
@@ -21848,7 +21848,7 @@
     "모델명":"Achieva",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 제주",
     "facility_key":"한국건강관리협회건강증진의원||제주특별자치도||제주시"
   },
   {
@@ -21860,7 +21860,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 제주",
     "facility_key":"한국건강관리협회건강증진의원||제주특별자치도||제주시"
   },
   {
@@ -23168,7 +23168,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회충북세종지부건강증진의원",
+    "hospital_name_display":"한국건강관리협회 충북세종",
     "facility_key":"한국건강관리협회충북세종지부건강증진의원||충청북도||청주시 흥덕구"
   },
   {
@@ -23180,7 +23180,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한국건강관리협회충북세종지부건강증진의원",
+    "hospital_name_display":"한국건강관리협회 충북세종",
     "facility_key":"한국건강관리협회충북세종지부건강증진의원||충청북도||청주시 흥덕구"
   },
   {
