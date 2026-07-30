@@ -80,7 +80,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의산의료재단 강릉고려병원",
+    "hospital_name_display":"강릉고려병원",
     "facility_key":"의산의료재단 강릉고려병원||강원특별자치도||강릉시"
   },
   {
@@ -476,7 +476,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한림대학교춘천성심병원",
+    "hospital_name_display":"춘천성심병원",
     "facility_key":"한림대학교춘천성심병원||강원특별자치도||춘천시"
   },
   {
@@ -488,7 +488,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한림대학교춘천성심병원",
+    "hospital_name_display":"춘천성심병원",
     "facility_key":"한림대학교춘천성심병원||강원특별자치도||춘천시"
   },
   {
@@ -980,7 +980,7 @@
     "모델명":"MAGNETOM Avanto fit",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"인제대학교일산백병원",
+    "hospital_name_display":"일산백병원",
     "facility_key":"인제대학교일산백병원||경기도||고양시 일산서구"
   },
   {
@@ -992,7 +992,7 @@
     "모델명":"MR 7700",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인제대학교일산백병원",
+    "hospital_name_display":"일산백병원",
     "facility_key":"인제대학교일산백병원||경기도||고양시 일산서구"
   },
   {
@@ -1004,7 +1004,7 @@
     "모델명":"Signa Hero",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인제대학교일산백병원",
+    "hospital_name_display":"일산백병원",
     "facility_key":"인제대학교일산백병원||경기도||고양시 일산서구"
   },
   {
@@ -1364,7 +1364,7 @@
     "모델명":"Achieva",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"효산의료재단 지샘병원",
+    "hospital_name_display":"지샘병원",
     "facility_key":"효산의료재단 지샘병원||경기도||군포시"
   },
   {
@@ -1916,7 +1916,7 @@
     "모델명":"Achieva",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"사단법인누가참빛병원",
+    "hospital_name_display":"누가참빛병원",
     "facility_key":"사단법인누가참빛병원||경기도||부천시 원미구"
   },
   {
@@ -2000,7 +2000,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"순천향대학교부속부천병원",
+    "hospital_name_display":"순천향대학교 부천병원",
     "facility_key":"순천향대학교부속부천병원||경기도||부천시 원미구"
   },
   {
@@ -2012,7 +2012,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":2,
-    "hospital_name_display":"순천향대학교부속부천병원",
+    "hospital_name_display":"순천향대학교 부천병원",
     "facility_key":"순천향대학교부속부천병원||경기도||부천시 원미구"
   },
   {
@@ -2060,7 +2060,7 @@
     "모델명":"Achieva",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"가톨릭대학교부천성모병원",
+    "hospital_name_display":"부천성모병원",
     "facility_key":"가톨릭대학교부천성모병원||경기도||부천시 원미구"
   },
   {
@@ -2072,7 +2072,7 @@
     "모델명":"Achieva",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭대학교부천성모병원",
+    "hospital_name_display":"부천성모병원",
     "facility_key":"가톨릭대학교부천성모병원||경기도||부천시 원미구"
   },
   {
@@ -2084,7 +2084,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭대학교부천성모병원",
+    "hospital_name_display":"부천성모병원",
     "facility_key":"가톨릭대학교부천성모병원||경기도||부천시 원미구"
   },
   {
@@ -2216,7 +2216,7 @@
     "모델명":"MAGNETOM Free.Star",
     "테슬라":"0.5–1.5T",
     "장비수":1,
-    "hospital_name_display":"본플러스재단 분당병원",
+    "hospital_name_display":"분당병원",
     "facility_key":"의료법인 본플러스재단 분당병원||경기도||성남시 분당구"
   },
   {
@@ -2504,7 +2504,7 @@
     "모델명":"Achieva",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"대진의료재단 분당제생병원",
+    "hospital_name_display":"분당제생병원",
     "facility_key":"대진의료재단 분당제생병원||경기도||성남시 분당구"
   },
   {
@@ -2516,7 +2516,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"대진의료재단 분당제생병원",
+    "hospital_name_display":"분당제생병원",
     "facility_key":"대진의료재단 분당제생병원||경기도||성남시 분당구"
   },
   {
@@ -2528,7 +2528,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"대진의료재단 분당제생병원",
+    "hospital_name_display":"분당제생병원",
     "facility_key":"대진의료재단 분당제생병원||경기도||성남시 분당구"
   },
   {
@@ -2540,7 +2540,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"차의과학대학교분당차병원",
+    "hospital_name_display":"분당차병원",
     "facility_key":"차의과학대학교분당차병원||경기도||성남시 분당구"
   },
   {
@@ -2552,7 +2552,7 @@
     "모델명":"Ingenia Elition X",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"차의과학대학교분당차병원",
+    "hospital_name_display":"분당차병원",
     "facility_key":"차의과학대학교분당차병원||경기도||성남시 분당구"
   },
   {
@@ -2564,7 +2564,7 @@
     "모델명":"Signa Excite HD",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"차의과학대학교분당차병원",
+    "hospital_name_display":"분당차병원",
     "facility_key":"차의과학대학교분당차병원||경기도||성남시 분당구"
   },
   {
@@ -2576,7 +2576,7 @@
     "모델명":"Signa Architect",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"차의과학대학교분당차병원",
+    "hospital_name_display":"분당차병원",
     "facility_key":"차의과학대학교분당차병원||경기도||성남시 분당구"
   },
   {
@@ -2696,7 +2696,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"순천의료재단 성남정병원",
+    "hospital_name_display":"성남정병원",
     "facility_key":"순천의료재단 성남정병원||경기도||성남시 수정구"
   },
   {
@@ -2828,7 +2828,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(재)한국의학연구소 KMI경기의원",
+    "hospital_name_display":"KMI 한국의학연구소 수원검진센터",
     "facility_key":"(재)한국의학연구소 KMI경기의원||경기도||수원시 권선구"
   },
   {
@@ -2840,7 +2840,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(재)한국의학연구소 KMI경기의원",
+    "hospital_name_display":"KMI 한국의학연구소 수원검진센터",
     "facility_key":"(재)한국의학연구소 KMI경기의원||경기도||수원시 권선구"
   },
   {
@@ -2852,7 +2852,7 @@
     "모델명":"MAGNETOM Sempra",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(재)한국의학연구소 KMI경기의원",
+    "hospital_name_display":"KMI 한국의학연구소 수원검진센터",
     "facility_key":"(재)한국의학연구소 KMI경기의원||경기도||수원시 권선구"
   },
   {
@@ -2864,7 +2864,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(재)한국의학연구소 KMI경기의원",
+    "hospital_name_display":"KMI 한국의학연구소 수원검진센터",
     "facility_key":"(재)한국의학연구소 KMI경기의원||경기도||수원시 권선구"
   },
   {
@@ -2948,7 +2948,7 @@
     "모델명":"SIGNA HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한성재단 S서울병원",
+    "hospital_name_display":"S서울병원",
     "facility_key":"의료법인 한성재단 S서울병원||경기도||수원시 영통구"
   },
   {
@@ -2960,7 +2960,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한성재단 S서울병원",
+    "hospital_name_display":"S서울병원",
     "facility_key":"의료법인 한성재단 S서울병원||경기도||수원시 영통구"
   },
   {
@@ -3236,7 +3236,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭대학교 성빈센트병원",
+    "hospital_name_display":"성빈센트병원",
     "facility_key":"가톨릭대학교 성빈센트병원||경기도||수원시 팔달구"
   },
   {
@@ -3248,7 +3248,7 @@
     "모델명":"MAGNETOM Verio",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭대학교 성빈센트병원",
+    "hospital_name_display":"성빈센트병원",
     "facility_key":"가톨릭대학교 성빈센트병원||경기도||수원시 팔달구"
   },
   {
@@ -3260,7 +3260,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":2,
-    "hospital_name_display":"가톨릭대학교 성빈센트병원",
+    "hospital_name_display":"성빈센트병원",
     "facility_key":"가톨릭대학교 성빈센트병원||경기도||수원시 팔달구"
   },
   {
@@ -3692,7 +3692,7 @@
     "모델명":"Ingenia Elition X",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"고려대학교의과대학부속안산병원",
+    "hospital_name_display":"고려대학교 안산병원",
     "facility_key":"고려대학교의과대학부속안산병원||경기도||안산시 단원구"
   },
   {
@@ -3704,7 +3704,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"고려대학교의과대학부속안산병원",
+    "hospital_name_display":"고려대학교 안산병원",
     "facility_key":"고려대학교의과대학부속안산병원||경기도||안산시 단원구"
   },
   {
@@ -3716,7 +3716,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":2,
-    "hospital_name_display":"고려대학교의과대학부속안산병원",
+    "hospital_name_display":"고려대학교 안산병원",
     "facility_key":"고려대학교의과대학부속안산병원||경기도||안산시 단원구"
   },
   {
@@ -3752,7 +3752,7 @@
     "모델명":"Signa Explorer",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"대아의료재단한도병원",
+    "hospital_name_display":"한도병원",
     "facility_key":"대아의료재단한도병원||경기도||안산시 단원구"
   },
   {
@@ -3764,7 +3764,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"대아의료재단한도병원",
+    "hospital_name_display":"한도병원",
     "facility_key":"대아의료재단한도병원||경기도||안산시 단원구"
   },
   {
@@ -4112,7 +4112,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"원천의료재단 현대영상의원",
+    "hospital_name_display":"현대영상의원",
     "facility_key":"원천의료재단 현대영상의원||경기도||안양시 만안구"
   },
   {
@@ -4124,7 +4124,7 @@
     "모델명":"MR Infinity",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"인산의료재단 메트로병원",
+    "hospital_name_display":"메트로병원",
     "facility_key":"인산의료재단 메트로병원||경기도||안양시 만안구"
   },
   {
@@ -4136,7 +4136,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"효산의료재단 안양샘병원",
+    "hospital_name_display":"안양샘병원",
     "facility_key":"효산의료재단 안양샘병원||경기도||안양시 만안구"
   },
   {
@@ -4484,7 +4484,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"연세대학교 의과대학 용인세브란스병원",
+    "hospital_name_display":"용인세브란스병원",
     "facility_key":"연세대학교 의과대학 용인세브란스병원||경기도||용인시 기흥구"
   },
   {
@@ -4496,7 +4496,7 @@
     "모델명":"Ingenia Elition X",
     "테슬라":"3.0T+",
     "장비수":2,
-    "hospital_name_display":"연세대학교 의과대학 용인세브란스병원",
+    "hospital_name_display":"용인세브란스병원",
     "facility_key":"연세대학교 의과대학 용인세브란스병원||경기도||용인시 기흥구"
   },
   {
@@ -4508,7 +4508,7 @@
     "모델명":"Signa Premier",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"연세대학교 의과대학 용인세브란스병원",
+    "hospital_name_display":"용인세브란스병원",
     "facility_key":"연세대학교 의과대학 용인세브란스병원||경기도||용인시 기흥구"
   },
   {
@@ -4568,7 +4568,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(의)효심의료재단 용인서울병원",
+    "hospital_name_display":"용인서울병원",
     "facility_key":"(의)효심의료재단 용인서울병원||경기도||용인시 처인구"
   },
   {
@@ -4628,7 +4628,7 @@
     "모델명":"Vantage Elan",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(의)영문의료재단 다보스병원",
+    "hospital_name_display":"다보스병원",
     "facility_key":"(의)영문의료재단 다보스병원||경기도||용인시 처인구"
   },
   {
@@ -4640,7 +4640,7 @@
     "모델명":"Vantage Galan",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(의)영문의료재단 다보스병원",
+    "hospital_name_display":"다보스병원",
     "facility_key":"(의)영문의료재단 다보스병원||경기도||용인시 처인구"
   },
   {
@@ -4784,7 +4784,7 @@
     "모델명":"MAGNETOM Verio",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭대학교의정부성모병원",
+    "hospital_name_display":"의정부성모병원",
     "facility_key":"가톨릭대학교의정부성모병원||경기도||의정부시"
   },
   {
@@ -4796,7 +4796,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":2,
-    "hospital_name_display":"가톨릭대학교의정부성모병원",
+    "hospital_name_display":"의정부성모병원",
     "facility_key":"가톨릭대학교의정부성모병원||경기도||의정부시"
   },
   {
@@ -5648,7 +5648,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한림대학교동탄성심병원",
+    "hospital_name_display":"동탄성심병원",
     "facility_key":"한림대학교동탄성심병원||경기도||화성시"
   },
   {
@@ -5660,7 +5660,7 @@
     "모델명":"MAGNETOM Verio",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한림대학교동탄성심병원",
+    "hospital_name_display":"동탄성심병원",
     "facility_key":"한림대학교동탄성심병원||경기도||화성시"
   },
   {
@@ -5672,7 +5672,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한림대학교동탄성심병원",
+    "hospital_name_display":"동탄성심병원",
     "facility_key":"한림대학교동탄성심병원||경기도||화성시"
   },
   {
@@ -5804,7 +5804,7 @@
     "모델명":"MRT-2003",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(의)경빈의료재단 김해센텀병원",
+    "hospital_name_display":"김해센텀병원",
     "facility_key":"(의)경빈의료재단 김해센텀병원||경상남도||김해시"
   },
   {
@@ -6512,7 +6512,7 @@
     "모델명":"Signa Excite HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"태황의료재단한성병원",
+    "hospital_name_display":"한성병원",
     "facility_key":"태황의료재단한성병원||경상남도||창녕군"
   },
   {
@@ -7304,7 +7304,7 @@
     "모델명":"Signa Explorer",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"계명대학교 경주동산병원",
+    "hospital_name_display":"경주동산병원",
     "facility_key":"계명대학교 경주동산병원||경상북도||경주시"
   },
   {
@@ -7340,7 +7340,7 @@
     "모델명":"MAGNETOM Avanto fit",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"동국대학교의과대학경주병원",
+    "hospital_name_display":"동국대학교 경주병원",
     "facility_key":"동국대학교의과대학경주병원||경상북도||경주시"
   },
   {
@@ -7352,7 +7352,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"동국대학교의과대학경주병원",
+    "hospital_name_display":"동국대학교 경주병원",
     "facility_key":"동국대학교의과대학경주병원||경상북도||경주시"
   },
   {
@@ -7436,7 +7436,7 @@
     "모델명":"MAGNETOM Sonata",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"순천향대학교 부속 구미병원",
+    "hospital_name_display":"순천향대학교 구미병원",
     "facility_key":"순천향대학교 부속 구미병원||경상북도||구미시"
   },
   {
@@ -7448,7 +7448,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"순천향대학교 부속 구미병원",
+    "hospital_name_display":"순천향대학교 구미병원",
     "facility_key":"순천향대학교 부속 구미병원||경상북도||구미시"
   },
   {
@@ -7460,7 +7460,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"순천향대학교 부속 구미병원",
+    "hospital_name_display":"순천향대학교 구미병원",
     "facility_key":"순천향대학교 부속 구미병원||경상북도||구미시"
   },
   {
@@ -7472,7 +7472,7 @@
     "모델명":"Signa Excite HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"차의과학대학교부속구미차병원",
+    "hospital_name_display":"구미차병원",
     "facility_key":"차의과학대학교부속구미차병원||경상북도||구미시"
   },
   {
@@ -7484,7 +7484,7 @@
     "모델명":"Signa Architect",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"차의과학대학교부속구미차병원",
+    "hospital_name_display":"구미차병원",
     "facility_key":"차의과학대학교부속구미차병원||경상북도||구미시"
   },
   {
@@ -7712,7 +7712,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"영남대학교의과대학부속영천병원",
+    "hospital_name_display":"영남대학교 영천병원",
     "facility_key":"영남대학교의과대학부속영천병원||경상북도||영천시"
   },
   {
@@ -8972,7 +8972,7 @@
     "모델명":"MAGNETOM Avanto fit",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(의)서봉의료재단 보강병원",
+    "hospital_name_display":"보강병원",
     "facility_key":"(의)서봉의료재단 보강병원||대구광역시||달서구"
   },
   {
@@ -8984,7 +8984,7 @@
     "모델명":"MAGNETOM Spectra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(의)서봉의료재단 보강병원",
+    "hospital_name_display":"보강병원",
     "facility_key":"(의)서봉의료재단 보강병원||대구광역시||달서구"
   },
   {
@@ -9728,7 +9728,7 @@
     "모델명":"EXCELART Vantage",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"대명의료재단서대구병원",
+    "hospital_name_display":"서대구병원",
     "facility_key":"대명의료재단서대구병원||대구광역시||서구"
   },
   {
@@ -9740,7 +9740,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"대명의료재단서대구병원",
+    "hospital_name_display":"서대구병원",
     "facility_key":"대명의료재단서대구병원||대구광역시||서구"
   },
   {
@@ -10004,7 +10004,7 @@
     "모델명":"MR Infinity",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(재)미리내천주성삼성직수도회천주성삼병원",
+    "hospital_name_display":"천주성삼병원",
     "facility_key":"(재)미리내천주성삼성직수도회천주성삼병원||대구광역시||수성구"
   },
   {
@@ -10016,7 +10016,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(재)미리내천주성삼성직수도회천주성삼병원",
+    "hospital_name_display":"천주성삼병원",
     "facility_key":"(재)미리내천주성삼성직수도회천주성삼병원||대구광역시||수성구"
   },
   {
@@ -10148,7 +10148,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":2,
-    "hospital_name_display":"(재)한국의학연구소대구분사무소부설의원",
+    "hospital_name_display":"KMI 한국의학연구소 대구검진센터",
     "facility_key":"(재)한국의학연구소대구분사무소부설의원||대구광역시||중구"
   },
   {
@@ -10160,7 +10160,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(재)한국의학연구소대구분사무소부설의원",
+    "hospital_name_display":"KMI 한국의학연구소 대구검진센터",
     "facility_key":"(재)한국의학연구소대구분사무소부설의원||대구광역시||중구"
   },
   {
@@ -10256,7 +10256,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"계명대학교대구동산병원",
+    "hospital_name_display":"대구동산병원",
     "facility_key":"계명대학교대구동산병원||대구광역시||중구"
   },
   {
@@ -11168,7 +11168,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭대학교 대전성모병원",
+    "hospital_name_display":"대전성모병원",
     "facility_key":"학교법인 가톨릭학원 가톨릭대학교 대전성모병원||대전광역시||중구"
   },
   {
@@ -11180,7 +11180,7 @@
     "모델명":"MAGNETOM Verio",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭대학교 대전성모병원",
+    "hospital_name_display":"대전성모병원",
     "facility_key":"학교법인 가톨릭학원 가톨릭대학교 대전성모병원||대전광역시||중구"
   },
   {
@@ -11276,7 +11276,7 @@
     "모델명":"EXCELART Vantage",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(의)서일의료재단기장병원",
+    "hospital_name_display":"기장병원",
     "facility_key":"(의)서일의료재단기장병원||부산광역시||기장군"
   },
   {
@@ -11288,7 +11288,7 @@
     "모델명":"Achieva",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(재)일신기독교선교회 정관일신기독병원",
+    "hospital_name_display":"정관일신기독병원",
     "facility_key":"(재)일신기독교선교회 정관일신기독병원||부산광역시||기장군"
   },
   {
@@ -11912,7 +11912,7 @@
     "모델명":"Achieva",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인제대학교부산백병원",
+    "hospital_name_display":"부산백병원",
     "facility_key":"인제대학교부산백병원||부산광역시||부산진구"
   },
   {
@@ -11924,7 +11924,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인제대학교부산백병원",
+    "hospital_name_display":"부산백병원",
     "facility_key":"인제대학교부산백병원||부산광역시||부산진구"
   },
   {
@@ -11936,7 +11936,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인제대학교부산백병원",
+    "hospital_name_display":"부산백병원",
     "facility_key":"인제대학교부산백병원||부산광역시||부산진구"
   },
   {
@@ -12884,7 +12884,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"인제대학교 해운대백병원",
+    "hospital_name_display":"해운대백병원",
     "facility_key":"인제대학교 해운대백병원||부산광역시||해운대구"
   },
   {
@@ -12896,7 +12896,7 @@
     "모델명":"Achieva",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인제대학교 해운대백병원",
+    "hospital_name_display":"해운대백병원",
     "facility_key":"인제대학교 해운대백병원||부산광역시||해운대구"
   },
   {
@@ -12908,7 +12908,7 @@
     "모델명":"Signa Architect",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인제대학교 해운대백병원",
+    "hospital_name_display":"해운대백병원",
     "facility_key":"인제대학교 해운대백병원||부산광역시||해운대구"
   },
   {
@@ -12944,7 +12944,7 @@
     "모델명":"Signa Explorer",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(의)가산의료재단 광동병원",
+    "hospital_name_display":"광동병원",
     "facility_key":"(의)가산의료재단 광동병원||서울특별시||강남구"
   },
   {
@@ -13388,7 +13388,7 @@
     "모델명":"Signa Excite HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(의)미래의료재단리드림의원",
+    "hospital_name_display":"리드림의원",
     "facility_key":"(의)미래의료재단리드림의원||서울특별시||강남구"
   },
   {
@@ -13400,7 +13400,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(의)성광의료재단 차움의원",
+    "hospital_name_display":"차움의원",
     "facility_key":"(의)성광의료재단 차움의원||서울특별시||강남구"
   },
   {
@@ -13412,7 +13412,7 @@
     "모델명":"Optima MR450w",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(의)성광의료재단 차움의원",
+    "hospital_name_display":"차움의원",
     "facility_key":"(의)성광의료재단 차움의원||서울특별시||강남구"
   },
   {
@@ -13424,7 +13424,7 @@
     "모델명":"Optima MR360",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(의)성광의료재단차움건진의원",
+    "hospital_name_display":"차움건진의원",
     "facility_key":"(의)성광의료재단차움건진의원||서울특별시||강남구"
   },
   {
@@ -13760,7 +13760,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"차의과학대학교 강남차병원",
+    "hospital_name_display":"강남차병원",
     "facility_key":"차의과학대학교 강남차병원||서울특별시||강남구"
   },
   {
@@ -13976,7 +13976,7 @@
     "모델명":"Achieva",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"성심의료재단강동성심병원",
+    "hospital_name_display":"강동성심병원",
     "facility_key":"성심의료재단강동성심병원||서울특별시||강동구"
   },
   {
@@ -13988,7 +13988,7 @@
     "모델명":"Achieva",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"성심의료재단강동성심병원",
+    "hospital_name_display":"강동성심병원",
     "facility_key":"성심의료재단강동성심병원||서울특별시||강동구"
   },
   {
@@ -14504,7 +14504,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"이화여자대학교의과대학부속서울병원",
+    "hospital_name_display":"이대서울병원",
     "facility_key":"이화여자대학교의과대학부속서울병원||서울특별시||강서구"
   },
   {
@@ -14516,7 +14516,7 @@
     "모델명":"Signa Architect",
     "테슬라":"3.0T+",
     "장비수":2,
-    "hospital_name_display":"이화여자대학교의과대학부속서울병원",
+    "hospital_name_display":"이대서울병원",
     "facility_key":"이화여자대학교의과대학부속서울병원||서울특별시||강서구"
   },
   {
@@ -14528,7 +14528,7 @@
     "모델명":"Signa Premier",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"이화여자대학교의과대학부속서울병원",
+    "hospital_name_display":"이대서울병원",
     "facility_key":"이화여자대학교의과대학부속서울병원||서울특별시||강서구"
   },
   {
@@ -14888,7 +14888,7 @@
     "모델명":"MAGNETOM Avanto fit",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"고려대학교의과대학부속구로병원",
+    "hospital_name_display":"고려대학교 구로병원",
     "facility_key":"고려대학교의과대학부속구로병원||서울특별시||구로구"
   },
   {
@@ -14900,7 +14900,7 @@
     "모델명":"Ingenia Elition X",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"고려대학교의과대학부속구로병원",
+    "hospital_name_display":"고려대학교 구로병원",
     "facility_key":"고려대학교의과대학부속구로병원||서울특별시||구로구"
   },
   {
@@ -14912,7 +14912,7 @@
     "모델명":"MAGNETOM Prisma fit",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"고려대학교의과대학부속구로병원",
+    "hospital_name_display":"고려대학교 구로병원",
     "facility_key":"고려대학교의과대학부속구로병원||서울특별시||구로구"
   },
   {
@@ -14924,7 +14924,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"고려대학교의과대학부속구로병원",
+    "hospital_name_display":"고려대학교 구로병원",
     "facility_key":"고려대학교의과대학부속구로병원||서울특별시||구로구"
   },
   {
@@ -14936,7 +14936,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":2,
-    "hospital_name_display":"고려대학교의과대학부속구로병원",
+    "hospital_name_display":"고려대학교 구로병원",
     "facility_key":"고려대학교의과대학부속구로병원||서울특별시||구로구"
   },
   {
@@ -15092,7 +15092,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(재)한국산업의학연구소 래피젠헬스케어의원",
+    "hospital_name_display":"래피젠헬스케어의원",
     "facility_key":"(재)한국산업의학연구소 래피젠헬스케어의원||서울특별시||금천구"
   },
   {
@@ -15296,7 +15296,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인제대학교 상계백병원",
+    "hospital_name_display":"상계백병원",
     "facility_key":"인제대학교 상계백병원||서울특별시||노원구"
   },
   {
@@ -15308,7 +15308,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인제대학교 상계백병원",
+    "hospital_name_display":"상계백병원",
     "facility_key":"인제대학교 상계백병원||서울특별시||노원구"
   },
   {
@@ -15872,7 +15872,7 @@
     "모델명":"SIGNA HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국산업보건연구재단 서울디엠씨건강의원",
+    "hospital_name_display":"서울디엠씨건강의원",
     "facility_key":"재단법인 한국산업보건연구재단 서울디엠씨건강의원||서울특별시||마포구"
   },
   {
@@ -16220,7 +16220,7 @@
     "모델명":"SIGNA HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"사단법인 정해복지부설 한신메디피아의원",
+    "hospital_name_display":"한신메디피아의원",
     "facility_key":"사단법인 정해복지부설 한신메디피아의원||서울특별시||서초구"
   },
   {
@@ -16232,7 +16232,7 @@
     "모델명":"MR Infinity",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"사단법인 정해복지부설 한신메디피아의원",
+    "hospital_name_display":"한신메디피아의원",
     "facility_key":"사단법인 정해복지부설 한신메디피아의원||서울특별시||서초구"
   },
   {
@@ -16244,7 +16244,7 @@
     "모델명":"Optima MR360",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"사단법인 정해복지부설 한신메디피아의원",
+    "hospital_name_display":"한신메디피아의원",
     "facility_key":"사단법인 정해복지부설 한신메디피아의원||서울특별시||서초구"
   },
   {
@@ -17108,7 +17108,7 @@
     "모델명":"MAGNETOM Cima.X",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"이화여자대학교의과대학부속목동병원",
+    "hospital_name_display":"이대목동병원",
     "facility_key":"이화여자대학교의과대학부속목동병원||서울특별시||양천구"
   },
   {
@@ -17120,7 +17120,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":3,
-    "hospital_name_display":"이화여자대학교의과대학부속목동병원",
+    "hospital_name_display":"이대목동병원",
     "facility_key":"이화여자대학교의과대학부속목동병원||서울특별시||양천구"
   },
   {
@@ -17336,7 +17336,7 @@
     "모델명":"Achieva",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국의료재단 아이에프씨의원",
+    "hospital_name_display":"아이에프씨의원",
     "facility_key":"한국의료재단 아이에프씨의원||서울특별시||영등포구"
   },
   {
@@ -17348,7 +17348,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"한국의료재단 아이에프씨의원",
+    "hospital_name_display":"아이에프씨의원",
     "facility_key":"한국의료재단 아이에프씨의원||서울특별시||영등포구"
   },
   {
@@ -17396,7 +17396,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭대학교 여의도성모병원",
+    "hospital_name_display":"여의도성모병원",
     "facility_key":"가톨릭대학교 여의도성모병원||서울특별시||영등포구"
   },
   {
@@ -17408,7 +17408,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭대학교 여의도성모병원",
+    "hospital_name_display":"여의도성모병원",
     "facility_key":"가톨릭대학교 여의도성모병원||서울특별시||영등포구"
   },
   {
@@ -17468,7 +17468,7 @@
     "모델명":"MAGNETOM Avanto fit",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"성애의료재단 성애병원",
+    "hospital_name_display":"성애병원",
     "facility_key":"성애의료재단 성애병원||서울특별시||영등포구"
   },
   {
@@ -17480,7 +17480,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"성애의료재단 성애병원",
+    "hospital_name_display":"성애병원",
     "facility_key":"성애의료재단 성애병원||서울특별시||영등포구"
   },
   {
@@ -17516,7 +17516,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한림대학교 강남성심병원",
+    "hospital_name_display":"강남성심병원",
     "facility_key":"한림대학교 강남성심병원||서울특별시||영등포구"
   },
   {
@@ -17528,7 +17528,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한림대학교 강남성심병원",
+    "hospital_name_display":"강남성심병원",
     "facility_key":"한림대학교 강남성심병원||서울특별시||영등포구"
   },
   {
@@ -17540,7 +17540,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한림대학교 강남성심병원",
+    "hospital_name_display":"강남성심병원",
     "facility_key":"한림대학교 강남성심병원||서울특별시||영등포구"
   },
   {
@@ -17552,7 +17552,7 @@
     "모델명":"Discovery MR750w",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"순천향대학교 부속 서울병원",
+    "hospital_name_display":"순천향대학교 서울병원",
     "facility_key":"순천향대학교 부속 서울병원||서울특별시||용산구"
   },
   {
@@ -17564,7 +17564,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"순천향대학교 부속 서울병원",
+    "hospital_name_display":"순천향대학교 서울병원",
     "facility_key":"순천향대학교 부속 서울병원||서울특별시||용산구"
   },
   {
@@ -17576,7 +17576,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"순천향대학교 부속 서울병원",
+    "hospital_name_display":"순천향대학교 서울병원",
     "facility_key":"순천향대학교 부속 서울병원||서울특별시||용산구"
   },
   {
@@ -17672,7 +17672,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":3,
-    "hospital_name_display":"가톨릭대학교 은평성모병원",
+    "hospital_name_display":"은평성모병원",
     "facility_key":"가톨릭대학교 은평성모병원||서울특별시||은평구"
   },
   {
@@ -17852,7 +17852,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(재)한국의학연구소한국중부의원",
+    "hospital_name_display":"KMI 한국의학연구소 광화문검진센터",
     "facility_key":"(재)한국의학연구소한국중부의원||서울특별시||종로구"
   },
   {
@@ -17864,7 +17864,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(재)한국의학연구소한국중부의원",
+    "hospital_name_display":"KMI 한국의학연구소 광화문검진센터",
     "facility_key":"(재)한국의학연구소한국중부의원||서울특별시||종로구"
   },
   {
@@ -17876,7 +17876,7 @@
     "모델명":"MAGNETOM Sempra",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(재)한국의학연구소한국중부의원",
+    "hospital_name_display":"KMI 한국의학연구소 광화문검진센터",
     "facility_key":"(재)한국의학연구소한국중부의원||서울특별시||종로구"
   },
   {
@@ -17888,7 +17888,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(재)한국의학연구소한국중부의원",
+    "hospital_name_display":"KMI 한국의학연구소 광화문검진센터",
     "facility_key":"(재)한국의학연구소한국중부의원||서울특별시||종로구"
   },
   {
@@ -18104,7 +18104,7 @@
     "모델명":"Ingenia Elition X",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"연세대학교 세브란스헬스체크업의원",
+    "hospital_name_display":"세브란스헬스체크업의원",
     "facility_key":"연세대학교 세브란스헬스체크업의원||서울특별시||중구"
   },
   {
@@ -18488,7 +18488,7 @@
     "모델명":"Signa Infinity",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(의) 내경의료재단 울산제일병원",
+    "hospital_name_display":"울산제일병원",
     "facility_key":"(의) 내경의료재단 울산제일병원||울산광역시||남구"
   },
   {
@@ -18572,7 +18572,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"의)정우의료재단 더프라우병원",
+    "hospital_name_display":"더프라우병원",
     "facility_key":"의)정우의료재단 더프라우병원||울산광역시||남구"
   },
   {
@@ -19520,7 +19520,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의)상원의료재단부평힘찬병원",
+    "hospital_name_display":"부평힘찬병원",
     "facility_key":"의)상원의료재단부평힘찬병원||인천광역시||부평구"
   },
   {
@@ -19532,7 +19532,7 @@
     "모델명":"MAGNETOM Symphony",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의)상원의료재단부평힘찬병원",
+    "hospital_name_display":"부평힘찬병원",
     "facility_key":"의)상원의료재단부평힘찬병원||인천광역시||부평구"
   },
   {
@@ -19568,7 +19568,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭대학교인천성모병원",
+    "hospital_name_display":"인천성모병원",
     "facility_key":"가톨릭대학교인천성모병원||인천광역시||부평구"
   },
   {
@@ -19580,7 +19580,7 @@
     "모델명":"MAGNETOM Vida",
     "테슬라":"3.0T+",
     "장비수":3,
-    "hospital_name_display":"가톨릭대학교인천성모병원",
+    "hospital_name_display":"인천성모병원",
     "facility_key":"가톨릭대학교인천성모병원||인천광역시||부평구"
   },
   {
@@ -19760,7 +19760,7 @@
     "모델명":"Signa EXCITE",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(의)성세의료재단 뉴성민병원",
+    "hospital_name_display":"뉴성민병원",
     "facility_key":"(의)성세의료재단 뉴성민병원||인천광역시||서구"
   },
   {
@@ -19772,7 +19772,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭관동대학교 국제성모병원",
+    "hospital_name_display":"국제성모병원",
     "facility_key":"가톨릭관동대학교 국제성모병원||인천광역시||서구"
   },
   {
@@ -19784,7 +19784,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭관동대학교 국제성모병원",
+    "hospital_name_display":"국제성모병원",
     "facility_key":"가톨릭관동대학교 국제성모병원||인천광역시||서구"
   },
   {
@@ -19796,7 +19796,7 @@
     "모델명":"MR 7700",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"가톨릭관동대학교 국제성모병원",
+    "hospital_name_display":"국제성모병원",
     "facility_key":"가톨릭관동대학교 국제성모병원||인천광역시||서구"
   },
   {
@@ -19964,7 +19964,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":2,
-    "hospital_name_display":"(의)나사렛의료재단 나사렛국제병원",
+    "hospital_name_display":"나사렛국제병원",
     "facility_key":"(의)나사렛의료재단 나사렛국제병원||인천광역시||연수구"
   },
   {
@@ -20000,7 +20000,7 @@
     "모델명":"Discovery MR750w",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인하대학교의과대학부속병원",
+    "hospital_name_display":"인하대학교병원",
     "facility_key":"인하대학교의과대학부속병원||인천광역시||중구"
   },
   {
@@ -20012,7 +20012,7 @@
     "모델명":"Ingenia Elition X",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인하대학교의과대학부속병원",
+    "hospital_name_display":"인하대학교병원",
     "facility_key":"인하대학교의과대학부속병원||인천광역시||중구"
   },
   {
@@ -20024,7 +20024,7 @@
     "모델명":"Signa Architect",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인하대학교의과대학부속병원",
+    "hospital_name_display":"인하대학교병원",
     "facility_key":"인하대학교의과대학부속병원||인천광역시||중구"
   },
   {
@@ -21800,7 +21800,7 @@
     "모델명":"MAGNETOM Essenza",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(재)한국의학연구소 제주의원",
+    "hospital_name_display":"KMI 한국의학연구소 제주검진센터",
     "facility_key":"(재)한국의학연구소 제주의원||제주특별자치도||서귀포시"
   },
   {
@@ -21812,7 +21812,7 @@
     "모델명":"MAGNETOM Lumina",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(재)한국의학연구소 제주의원",
+    "hospital_name_display":"KMI 한국의학연구소 제주검진센터",
     "facility_key":"(재)한국의학연구소 제주의원||제주특별자치도||서귀포시"
   },
   {
@@ -22052,7 +22052,7 @@
     "모델명":"MAGNETOM Avanto fit",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"부속 보령아산병원",
+    "hospital_name_display":"보령아산병원",
     "facility_key":"재단법인 아산사회복지재단 부속 보령아산병원||충청남도||보령시"
   },
   {
@@ -22292,7 +22292,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"단국대학교의과대학부속병원",
+    "hospital_name_display":"단국대학교병원",
     "facility_key":"단국대학교의과대학부속병원||충청남도||천안시 동남구"
   },
   {
@@ -22304,7 +22304,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"단국대학교의과대학부속병원",
+    "hospital_name_display":"단국대학교병원",
     "facility_key":"단국대학교의과대학부속병원||충청남도||천안시 동남구"
   },
   {
@@ -22316,7 +22316,7 @@
     "모델명":"Ingenia Elition X",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"단국대학교의과대학부속병원",
+    "hospital_name_display":"단국대학교병원",
     "facility_key":"단국대학교의과대학부속병원||충청남도||천안시 동남구"
   },
   {
@@ -22340,7 +22340,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"순천향대학교부속 천안병원",
+    "hospital_name_display":"순천향대학교 천안병원",
     "facility_key":"순천향대학교부속 천안병원||충청남도||천안시 동남구"
   },
   {
@@ -22352,7 +22352,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"순천향대학교부속 천안병원",
+    "hospital_name_display":"순천향대학교 천안병원",
     "facility_key":"순천향대학교부속 천안병원||충청남도||천안시 동남구"
   },
   {
@@ -22364,7 +22364,7 @@
     "모델명":"Signa Premier",
     "테슬라":"3.0T+",
     "장비수":2,
-    "hospital_name_display":"순천향대학교부속 천안병원",
+    "hospital_name_display":"순천향대학교 천안병원",
     "facility_key":"순천향대학교부속 천안병원||충청남도||천안시 동남구"
   },
   {
@@ -22808,7 +22808,7 @@
     "모델명":"MAGNETOM Avanto fit",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"인화재단 한국병원",
+    "hospital_name_display":"한국병원",
     "facility_key":"의료법인 인화재단 한국병원||충청북도||청주시 상당구"
   },
   {
@@ -22820,7 +22820,7 @@
     "모델명":"Ingenia Elition X",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인화재단 한국병원",
+    "hospital_name_display":"한국병원",
     "facility_key":"의료법인 인화재단 한국병원||충청북도||청주시 상당구"
   },
   {
@@ -22832,7 +22832,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"인화재단 한국병원",
+    "hospital_name_display":"한국병원",
     "facility_key":"의료법인 인화재단 한국병원||충청북도||청주시 상당구"
   },
   {
