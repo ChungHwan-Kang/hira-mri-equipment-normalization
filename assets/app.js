@@ -182,7 +182,7 @@ function renderStatistics(records) {
   renderRegionSummary(records);
   renderManufacturerTeslaMatrix(records);
   renderSidoSummary(buildSidoSummary(records));
-  renderBarSummary(modelSummaryChartElement, getEquipmentCountsByField(records, "모델명"), "표시할 모델 데이터가 없습니다.", 10, "query");
+  renderBarSummary(modelSummaryChartElement, getEquipmentCountsByModelTesla(records), "표시할 모델·테슬라 데이터가 없습니다.", 10, "modelTesla");
   renderBarSummary(institutionTypeSummaryChartElement, getEquipmentCountsByField(records, "요양종별"), "표시할 요양종별 데이터가 없습니다.", null, "institutionType");
   renderFacilitySummary(records);
 }
@@ -553,6 +553,19 @@ function getEquipmentCountsByField(records, fieldName) {
   return counts;
 }
 
+function getEquipmentCountsByModelTesla(records) {
+  const counts = {};
+
+  for (const record of records) {
+    const model = formatDetailValue(record["모델명"]);
+    const tesla = formatDetailValue(record["테슬라"]);
+    const combination = `${model} · ${tesla}`;
+    counts[combination] = (counts[combination] ?? 0) + getEquipmentCount(record);
+  }
+
+  return counts;
+}
+
 function renderBarSummary(container, counts, emptyMessageText, maxEntries = null, filterKey = "") {
   const entries = sortedEntries(counts).slice(0, maxEntries ?? undefined);
   const maxCount = entries[0]?.[1] ?? 0;
@@ -610,7 +623,6 @@ function renderFacilitySummary(records) {
       facilities.set(facilityKey, {
         key: facilityKey,
         name: getHospitalDisplayName(record),
-        region: [record["시도명"], record["시군구명"]].filter((value) => !isEmptyValue(value)).join(" "),
         count: 0,
       });
     }
@@ -639,7 +651,7 @@ function renderFacilitySummary(records) {
     row.setAttribute("aria-label", `${entry.name} ${formatNumber(entry.count)}대 정확한 기관 장비현황 보기`);
     const name = document.createElement("span");
     name.className = "distribution-bar-name";
-    name.textContent = entry.region ? `${entry.name} · ${entry.region}` : entry.name;
+    name.textContent = entry.name;
     const track = document.createElement("span");
     track.className = "distribution-bar-track";
     const fill = document.createElement("span");
@@ -1260,6 +1272,13 @@ function activateStatisticsFilter(filterKey, filterValue) {
     institutionTypeFilterElement.value = filterValue;
   } else if (filterKey === "query") {
     equipmentSearchElement.value = filterValue;
+  } else if (filterKey === "modelTesla") {
+    const separatorIndex = filterValue.lastIndexOf(" · ");
+    if (separatorIndex < 0) {
+      return;
+    }
+    equipmentSearchElement.value = filterValue.slice(0, separatorIndex);
+    teslaFilterElement.value = filterValue.slice(separatorIndex + 3);
   } else if (filterKey === "facility") {
     const facility = equipmentRecords.find((record) => record["facility_key"] === filterValue);
     if (!facility) {
