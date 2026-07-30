@@ -273,62 +273,32 @@ h2 {
 
 .search-header {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(760px, 920px);
-  align-items: end;
-  gap: 18px;
+  gap: 16px;
+  padding: 20px;
+  background: var(--surface);
 }
 
 .match-count {
-  margin: 6px 0 0;
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-.active-filter-summary {
-  margin: 8px 0 0;
-  color: var(--accent);
-  font-size: 0.88rem;
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
   font-weight: 800;
-}
-
-.applied-filter-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.filter-chip {
-  min-height: 30px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 5px 10px;
-  background: var(--accent-soft);
-  color: #15534e;
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.82rem;
-  font-weight: 800;
-}
-
-.filter-chip:hover,
-.filter-chip:focus {
-  border-color: var(--accent);
-  outline: 3px solid var(--accent-soft);
-}
-
-.data-status-summary {
-  margin: 6px 0 0;
-  color: var(--muted);
-  font-size: 0.88rem;
-  font-weight: 700;
 }
 
 .filter-controls {
   display: grid;
-  grid-template-columns: minmax(110px, 1fr) minmax(90px, 0.75fr) minmax(100px, 0.9fr) minmax(100px, 0.9fr) minmax(160px, 1.25fr) auto auto;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
   align-items: end;
   gap: 12px;
+}
+
+.search-field {
+  grid-column: 1 / -1;
+}
+
+.search-field input {
+  min-height: 48px;
+  font-size: 1rem;
 }
 
 .filter-field {
@@ -427,49 +397,18 @@ h2 {
 }
 
 .show-all-results-button {
-  margin-top: 10px;
+  min-height: 36px;
+  padding-block: 6px;
 }
 
-.share-status {
-  grid-column: 1 / -1;
-  min-height: 1.2em;
-  color: var(--accent);
-  font-size: 0.85rem;
-  font-weight: 800;
-  overflow-wrap: anywhere;
-}
-
-.share-help {
-  grid-column: 1 / -1;
-  color: var(--muted);
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.download-notice {
-  grid-column: 1 / -1;
-  color: var(--muted);
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.usage-notice {
+.results-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding: 14px 20px;
   border-bottom: 1px solid var(--line);
-  background: #fbfcfd;
-}
-
-.usage-notice p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-  font-weight: 700;
-  line-height: 1.6;
-}
-
-.metadata-generated-at {
-  margin-top: 6px;
-  font-size: 0.85rem;
+  background: #f8fafc;
 }
 
 .source-metadata {
@@ -790,8 +729,13 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .source-metadata {
-    grid-template-columns: 1fr;
+  .search-field {
+    grid-column: auto;
+  }
+
+  .results-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .distribution-bar-row {
@@ -812,8 +756,7 @@ h2 {
   }
 
   .data-info-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .history-header {
     flex-direction: column;
@@ -828,13 +771,13 @@ h2 {
 /* --- Sprint 71 Added Styles --- */
 .current-data-info {
   margin-bottom: 20px;
-  padding: 16px 20px;
+  padding: 0 2px;
 }
 
 .data-info-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  gap: 12px 32px;
 }
 
 .info-item {
@@ -853,6 +796,50 @@ h2 {
   color: var(--text);
   font-size: 1.1rem;
   font-weight: 800;
+}
+
+.equipment-footer {
+  margin-top: 20px;
+  padding: 24px 4px 8px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.footer-notice {
+  max-width: 880px;
+  margin-bottom: 18px;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.footer-metadata {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px 24px;
+  margin: 0;
+}
+
+.footer-metadata div {
+  min-width: 0;
+}
+
+.footer-metadata dt {
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.footer-metadata dd {
+  margin: 4px 0 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .footer-metadata {
+    grid-template-columns: 1fr;
+  }
 }
 
 .status-badge {

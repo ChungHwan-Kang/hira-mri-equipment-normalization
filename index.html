@@ -12,7 +12,6 @@
       <header class="page-header">
         <p class="eyebrow">HIRA MRI Equipment</p>
         <h1 id="dashboard-title">MRI 장비현황</h1>
-        <p id="generated-at" class="updated" aria-live="polite">데이터를 불러오는 중입니다.</p>
       </header>
 
       <section id="error-message" class="error" hidden></section>
@@ -46,27 +45,15 @@
         role="tabpanel"
         aria-labelledby="equipment-tab"
       >
-      <section id="current-data-info" class="panel current-data-info" aria-labelledby="current-data-title">
-        <h2 id="current-data-title" class="visually-hidden">현재 데이터 상태</h2>
+      <section id="current-data-info" class="current-data-info" aria-labelledby="current-data-title">
+        <h2 id="current-data-title" class="visually-hidden">현재 데이터 요약</h2>
         <div class="data-info-grid">
           <div class="info-item">
             <span class="info-label">데이터 기준일</span>
             <strong id="info-reference-date" class="info-value">-</strong>
           </div>
           <div class="info-item">
-            <span class="info-label">상태</span>
-            <strong id="info-status" class="info-value">-</strong>
-          </div>
-          <div class="info-item">
-            <span class="info-label">공개일</span>
-            <strong id="info-published-date" class="info-value">-</strong>
-          </div>
-          <div class="info-item">
-            <span class="info-label">데이터 출처</span>
-            <strong id="info-source" class="info-value">-</strong>
-          </div>
-          <div class="info-item">
-            <span class="info-label">전체 장비 대수</span>
+            <span class="info-label">총 MRI 장비 수</span>
             <strong id="info-total-equipment" class="info-value">-</strong>
           </div>
         </div>
@@ -74,16 +61,30 @@
 
       <section class="panel search-panel" aria-labelledby="equipment-search-title">
         <div class="panel-header search-header">
-          <div>
-            <h2 id="equipment-search-title">장비 검색</h2>
-            <p id="match-count" class="match-count">장비 데이터를 불러오는 중입니다.</p>
-            <button id="show-all-results" class="show-all-results-button" type="button" hidden>전체 결과 보기</button>
-            <p id="result-count-announcement" class="visually-hidden" aria-live="polite" role="status"></p>
-            <p id="active-filter-summary" class="active-filter-summary" aria-live="polite">전체 데이터 표시 중</p>
-            <div id="applied-filter-chips" class="applied-filter-chips" aria-live="polite"></div>
-            <p id="data-status-summary" class="data-status-summary" aria-live="polite">데이터 상태를 계산하는 중입니다.</p>
-          </div>
+          <h2 id="equipment-search-title">장비 검색</h2>
           <div class="filter-controls">
+            <label class="filter-field search-field">
+              <span>통합 검색</span>
+              <div class="search-input-row">
+                <input
+                  id="equipment-search"
+                  type="search"
+                  autocomplete="off"
+                  aria-label="병원명, 장비 모델, 제조사 검색"
+                  placeholder="기관명, 모델명, 제조사를 검색하세요"
+                  title="기관명, 모델명, 제조사로 검색할 수 있습니다"
+                  spellcheck="false"
+                  enterkeyhint="search"
+                  inputmode="search"
+                  autocapitalize="none"
+                  name="search"
+                  aria-controls="equipment-results-table"
+                  aria-describedby="equipment-search-help"
+                >
+                <button id="clear-search" class="clear-search-button" type="button" aria-label="검색어 지우기" title="검색어 지우기" disabled>×</button>
+              </div>
+              <span id="equipment-search-help" class="visually-hidden">병원명, 장비 모델명 또는 제조사명을 입력하면 결과가 자동으로 필터링됩니다.</span>
+            </label>
             <label class="filter-field">
               <span>제조사</span>
               <div class="filter-input-row">
@@ -120,54 +121,15 @@
                 <button class="clear-filter-button" type="button" data-clear-filter="sigungu" aria-label="시군구 필터 지우기" title="시군구 필터 지우기" disabled>×</button>
               </div>
             </label>
-            <label class="filter-field">
-              <span>검색</span>
-              <div class="search-input-row">
-                <input
-                  id="equipment-search"
-                  type="search"
-                  autocomplete="off"
-                  aria-label="병원명, 장비 모델, 제조사 검색"
-                  placeholder="기관명, 모델명, 제조사 검색"
-                  title="기관명, 모델명, 제조사로 검색할 수 있습니다"
-                  spellcheck="false"
-                  enterkeyhint="search"
-                  inputmode="search"
-                  autocapitalize="none"
-                  name="search"
-                  aria-controls="equipment-results-table"
-                  aria-describedby="equipment-search-help"
-                >
-                <button id="clear-search" class="clear-search-button" type="button" aria-label="검색어 지우기" title="검색어 지우기" disabled>×</button>
-              </div>
-              <span id="equipment-search-help" class="visually-hidden">병원명, 장비 모델명 또는 제조사명을 입력하면 결과가 자동으로 필터링됩니다.</span>
-            </label>
-            <button id="reset-filters" class="reset-button" type="button" title="검색어와 모든 필터를 초기화합니다.">Reset filters</button>
-            <button id="share-view" class="share-button" type="button" title="현재 검색어와 필터 상태를 URL로 복사합니다.">현재 화면 링크 복사</button>
-            <span class="share-help">현재 검색/필터 상태를 URL로 복사해 공유할 수 있습니다.</span>
-            <span id="share-status" class="share-status" aria-live="polite"></span>
-            <span id="download-status" class="download-notice" aria-live="polite">본 자료는 웹사이트 내 조회 및 필터링 용도로만 제공되며, 파일 다운로드는 지원하지 않습니다.</span>
+            <button id="reset-filters" class="reset-button" type="button" title="검색어와 모든 필터를 초기화합니다.">필터 초기화</button>
           </div>
         </div>
 
-        <section class="usage-notice" aria-label="데이터 이용 안내">
-          <p>본 자료는 HIRA 공개 자료를 기반으로 정제한 참고용 정보입니다. 웹사이트 내 조회 및 필터링 용도로만 제공되며, 원자료 또는 가공 데이터 파일의 다운로드는 지원하지 않습니다.</p>
-          <p id="metadata-generated-at" class="metadata-generated-at">데이터 기준일은 제공된 메타데이터를 기준으로 표시됩니다.</p>
-          <dl class="source-metadata">
-            <div>
-              <dt>출처</dt>
-              <dd>건강보험심사평가원 의료장비 상세현황 공개자료 기반</dd>
-            </div>
-            <div>
-              <dt>데이터 기준</dt>
-              <dd>정제된 웹 데이터 기준</dd>
-            </div>
-            <div>
-              <dt>제공 범위</dt>
-              <dd>MRI 장비 현황 조회 및 필터링</dd>
-            </div>
-          </dl>
-        </section>
+        <div class="results-toolbar">
+          <p id="match-count" class="match-count">장비 데이터를 불러오는 중입니다.</p>
+          <button id="show-all-results" class="show-all-results-button" type="button" hidden>전체 결과 보기</button>
+          <p id="result-count-announcement" class="visually-hidden" aria-live="polite" role="status"></p>
+        </div>
 
         <div class="table-wrap">
           <table id="equipment-results-table" class="equipment-table" aria-label="MRI 장비 현황 검색 결과">
@@ -229,6 +191,36 @@
           <p class="history-loading">업데이트 이력을 불러오는 중입니다...</p>
         </div>
       </section>
+
+      <footer class="equipment-footer" aria-label="데이터 출처 및 이용 안내">
+        <p class="footer-notice">본 자료는 HIRA 공개 자료를 기반으로 정제한 참고용 정보입니다. 웹사이트 내 조회 및 필터링 용도로만 제공되며, 원자료 또는 가공 데이터 파일의 다운로드는 지원하지 않습니다.</p>
+        <dl class="footer-metadata">
+          <div>
+            <dt>데이터 생성일</dt>
+            <dd id="generated-at" aria-live="polite">데이터를 불러오는 중입니다.</dd>
+          </div>
+          <div>
+            <dt>상태</dt>
+            <dd id="info-status">-</dd>
+          </div>
+          <div>
+            <dt>공개일</dt>
+            <dd id="info-published-date">-</dd>
+          </div>
+          <div>
+            <dt>출처</dt>
+            <dd id="info-source">건강보험심사평가원</dd>
+          </div>
+          <div>
+            <dt>데이터 기준</dt>
+            <dd>정제된 웹 데이터 기준</dd>
+          </div>
+          <div>
+            <dt>제공 범위</dt>
+            <dd>MRI 장비 현황 조회 및 필터링</dd>
+          </div>
+        </dl>
+      </footer>
       </div>
 
       <div

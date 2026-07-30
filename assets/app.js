@@ -16,7 +16,6 @@ const generatedAtElement = document.querySelector("#generated-at");
 const manufacturerCountsElement = document.querySelector("#manufacturer-counts");
 const teslaCountsElement = document.querySelector("#tesla-counts");
 const errorMessageElement = document.querySelector("#error-message");
-const metadataGeneratedAtElement = document.querySelector("#metadata-generated-at");
 const equipmentSearchElement = document.querySelector("#equipment-search");
 const manufacturerFilterElement = document.querySelector("#manufacturer-filter");
 const teslaFilterElement = document.querySelector("#tesla-filter");
@@ -24,8 +23,6 @@ const sidoFilterElement = document.querySelector("#sido-filter");
 const sigunguFilterElement = document.querySelector("#sigungu-filter");
 const resetFiltersElement = document.querySelector("#reset-filters");
 const clearSearchElement = document.querySelector("#clear-search");
-const shareViewElement = document.querySelector("#share-view");
-const shareStatusElement = document.querySelector("#share-status");
 const manufacturerSummaryChartElement = document.querySelector("#manufacturer-summary-chart");
 const teslaDistributionChartElement = document.querySelector("#tesla-distribution-chart");
 const regionSummaryChartElement = document.querySelector("#region-summary-chart");
@@ -35,9 +32,6 @@ const equipmentTableBodyElement = document.querySelector("#equipment-table-body"
 const matchCountElement = document.querySelector("#match-count");
 const showAllResultsElement = document.querySelector("#show-all-results");
 const resultCountAnnouncementElement = document.querySelector("#result-count-announcement");
-const activeFilterSummaryElement = document.querySelector("#active-filter-summary");
-const appliedFilterChipsElement = document.querySelector("#applied-filter-chips");
-const dataStatusSummaryElement = document.querySelector("#data-status-summary");
 const detailsStatusElement = document.querySelector("#details-status");
 const equipmentDetailsElement = document.querySelector("#equipment-details");
 const sortHeaderElements = document.querySelectorAll("[data-sort-key]");
@@ -141,7 +135,6 @@ function renderCounts(container, counts) {
 function renderSummary(summary) {
   totalEquipmentElement.textContent = `${formatNumber(summary.total_equipment ?? 0)}대`;
   generatedAtElement.textContent = formatGeneratedAt(summary.generated_at);
-  metadataGeneratedAtElement.textContent = formatMetadataGeneratedAt(summary.generated_at);
   renderCounts(manufacturerCountsElement, summary.manufacturer_counts);
   renderCounts(teslaCountsElement, summary.tesla_counts);
 }
@@ -465,87 +458,6 @@ function updateSearchInputTitle(matchTotal, hasSearchQuery, hasFilterSelection) 
   equipmentSearchElement.title = `${titlePrefix} ${formatNumber(matchTotal)}건`;
 }
 
-function renderActiveFilterSummary(query, manufacturer, tesla, sido, sigungu) {
-  const activeFilters = [];
-  const normalizedQuery = String(query ?? "").trim();
-
-  if (normalizedQuery) {
-    activeFilters.push(`검색어 "${normalizedQuery}"`);
-  }
-  if (manufacturer) {
-    activeFilters.push(`제조사 ${manufacturer}`);
-  }
-  if (tesla) {
-    activeFilters.push(`Tesla ${tesla}`);
-  }
-  if (sido) {
-    activeFilters.push(`시도 ${sido}`);
-  }
-  if (sigungu) {
-    activeFilters.push(`시군구 ${sigungu}`);
-  }
-
-  activeFilterSummaryElement.textContent = activeFilters.length > 0
-    ? `적용 중: ${activeFilters.join(" · ")}`
-    : "전체 데이터 표시 중";
-}
-
-function getAppliedFilters(query, manufacturer, tesla, sido, sigungu) {
-  const filters = [];
-  const normalizedQuery = String(query ?? "").trim();
-
-  if (normalizedQuery) {
-    filters.push({ key: "query", label: "검색", value: normalizedQuery });
-  }
-  if (manufacturer) {
-    filters.push({ key: "manufacturer", label: "제조사", value: manufacturer });
-  }
-  if (tesla) {
-    filters.push({ key: "tesla", label: "Tesla", value: tesla });
-  }
-  if (sido) {
-    filters.push({ key: "sido", label: "시도", value: sido });
-  }
-  if (sigungu) {
-    filters.push({ key: "sigungu", label: "시군구", value: sigungu });
-  }
-
-  return filters;
-}
-
-function renderAppliedFilterChips(query, manufacturer, tesla, sido, sigungu) {
-  const filters = getAppliedFilters(query, manufacturer, tesla, sido, sigungu);
-  appliedFilterChipsElement.replaceChildren();
-
-  if (filters.length === 0) {
-    return;
-  }
-
-  const fragment = document.createDocumentFragment();
-  for (const filter of filters) {
-    const chip = document.createElement("button");
-    chip.className = "filter-chip";
-    chip.type = "button";
-    chip.dataset.filterKey = filter.key;
-    chip.setAttribute("aria-label", `${filter.label}: ${filter.value} 필터 제거`);
-    chip.textContent = `${filter.label}: ${filter.value} ×`;
-    fragment.append(chip);
-  }
-
-  appliedFilterChipsElement.append(fragment);
-}
-
-function renderDataStatusSummary(filteredRecords, overallRecords, hasActiveFilter) {
-  const filteredRecordCount = getRecordCount(filteredRecords);
-  const filteredEquipmentCount = getTotalEquipmentCount(filteredRecords);
-  const overallRecordCount = getRecordCount(overallRecords);
-  const overallEquipmentCount = getTotalEquipmentCount(overallRecords);
-
-  dataStatusSummaryElement.textContent = hasActiveFilter
-    ? `현재 필터 결과 ${formatNumber(filteredRecordCount)}건 · ${formatNumber(filteredEquipmentCount)}대 / 전체 ${formatNumber(overallRecordCount)}건 · ${formatNumber(overallEquipmentCount)}대`
-    : `전체 데이터 ${formatNumber(overallRecordCount)}건 · ${formatNumber(overallEquipmentCount)}대`;
-}
-
 function updateFilterUrl(query, manufacturer, tesla, sido, sigungu) {
   if (isRestoringUrlState) {
     return;
@@ -796,33 +708,10 @@ function renderEquipmentSearch() {
     || matches.length <= INITIAL_RECORD_LIMIT;
   showAllResultsElement.textContent = `전체 ${formatNumber(matches.length)}건 보기`;
   updateSearchInputTitle(matches.length, hasSearchQuery, hasFilterSelection);
-  renderActiveFilterSummary(query, manufacturer, tesla, sido, sigungu);
-  renderAppliedFilterChips(query, manufacturer, tesla, sido, sigungu);
-  renderDataStatusSummary(matches, equipmentRecords, hasActiveFilter);
   updateFilterUrl(query, manufacturer, tesla, sido, sigungu);
-  clearShareStatus();
   clearSearchElement.disabled = normalizeSearchText(query).length === 0;
   updateClearFilterButtons();
   updateSortIndicators();
-}
-
-function clearShareStatus() {
-  shareStatusElement.textContent = "";
-}
-
-async function shareCurrentView() {
-  const currentUrl = window.location.href;
-
-  try {
-    if (!navigator.clipboard || !window.isSecureContext) {
-      throw new Error("Clipboard API is unavailable.");
-    }
-
-    await navigator.clipboard.writeText(currentUrl);
-    shareStatusElement.textContent = "현재 화면 링크를 복사했습니다.";
-  } catch {
-    shareStatusElement.textContent = `복사할 수 없습니다. 주소창의 URL을 직접 복사해 주세요: ${currentUrl}`;
-  }
 }
 
 function clearSearchQuery() {
@@ -1353,22 +1242,9 @@ for (const container of [
 resetFiltersElement.addEventListener("click", resetFilters);
 showAllResultsElement.addEventListener("click", showAllEquipmentResults);
 clearSearchElement.addEventListener("click", clearSearchQuery);
-shareViewElement.addEventListener("click", shareCurrentView);
 for (const button of clearFilterButtonElements) {
   button.addEventListener("click", () => clearFilter(button.dataset.clearFilter));
 }
-appliedFilterChipsElement.addEventListener("click", (event) => {
-  if (!(event.target instanceof Element)) {
-    return;
-  }
-
-  const chip = event.target.closest("[data-filter-key]");
-  if (!chip) {
-    return;
-  }
-
-  clearFilter(chip.dataset.filterKey);
-});
 sidoSummaryListElement.addEventListener("click", (event) => {
   if (!(event.target instanceof Element)) {
     return;
