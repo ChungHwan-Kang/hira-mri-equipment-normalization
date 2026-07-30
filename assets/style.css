@@ -112,6 +112,39 @@ body {
   margin-bottom: 20px;
 }
 
+.statistics-menu {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.statistics-menu-tab {
+  min-height: 42px;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 9px 16px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+
+.statistics-menu-tab[aria-selected="true"] {
+  border-color: var(--statistics-accent);
+  background: var(--statistics-accent-soft);
+  color: var(--statistics-accent);
+  box-shadow: inset 0 -3px 0 var(--statistics-accent);
+}
+
+.statistics-menu-tab:focus-visible {
+  outline: 3px solid var(--statistics-accent-soft);
+  outline-offset: 2px;
+}
+
 .metric-note {
   color: var(--muted);
   font-size: 0.88rem;
@@ -287,7 +320,7 @@ h2 {
 
 .filter-controls {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) auto;
   align-items: end;
   gap: 12px;
 }
@@ -550,7 +583,7 @@ h2 {
 
 .equipment-table {
   width: 100%;
-  min-width: 940px;
+  min-width: 1040px;
   border-collapse: collapse;
   font-size: 0.92rem;
 }
@@ -615,8 +648,18 @@ h2 {
   text-align: right;
 }
 
-.equipment-table tbody tr:hover {
+.equipment-table tbody tr[data-record-index] {
+  cursor: pointer;
+}
+
+.equipment-table tbody tr[data-record-index]:hover {
   background: #f6fbfa;
+}
+
+.equipment-table tbody tr[data-record-index]:focus-visible {
+  position: relative;
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
 }
 
 .equipment-table .selected-row {
@@ -670,9 +713,19 @@ h2 {
 
 .details-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px 18px;
   margin: 0;
+}
+
+.equipment-details-row td {
+  padding: 18px 20px;
+  background: #f8fcfb;
+  text-align: left !important;
+}
+
+.equipment-details-row:hover {
+  background: transparent;
 }
 
 .details-grid dt {
@@ -752,7 +805,7 @@ h2 {
   }
 
   .details-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .data-info-grid {
@@ -772,6 +825,22 @@ h2 {
 .current-data-info {
   margin-bottom: 20px;
   padding: 0 2px;
+}
+
+@media (max-width: 480px) {
+  .statistics-menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .statistics-menu-tab {
+    width: 100%;
+    padding-inline: 8px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .data-info-grid {

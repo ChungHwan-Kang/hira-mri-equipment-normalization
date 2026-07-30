@@ -104,6 +104,15 @@
               </div>
             </label>
             <label class="filter-field">
+              <span>요양종별</span>
+              <div class="filter-input-row">
+                <select id="institution-type-filter">
+                  <option value="">전체 요양종별</option>
+                </select>
+                <button class="clear-filter-button" type="button" data-clear-filter="institutionType" aria-label="요양종별 필터 지우기" title="요양종별 필터 지우기" disabled>×</button>
+              </div>
+            </label>
+            <label class="filter-field">
               <span>시도</span>
               <div class="filter-input-row">
                 <select id="sido-filter">
@@ -148,6 +157,12 @@
                     <span class="sort-indicator" aria-hidden="true"></span>
                   </button>
                 </th>
+                <th scope="col" data-sort-key="institutionType" aria-sort="none">
+                  <button class="sort-button" type="button">
+                    <span>요양종별</span>
+                    <span class="sort-indicator" aria-hidden="true"></span>
+                  </button>
+                </th>
                 <th scope="col" data-sort-key="manufacturer" aria-sort="none">
                   <button class="sort-button" type="button">
                     <span>제조사</span>
@@ -167,20 +182,12 @@
                   </button>
                 </th>
                 <th scope="col">장비수</th>
-                <th scope="col">상세</th>
               </tr>
             </thead>
             <tbody id="equipment-table-body"></tbody>
           </table>
         </div>
 
-        <section class="details-panel" aria-live="polite" aria-atomic="true" aria-labelledby="equipment-details-title">
-          <div class="details-header">
-            <h2 id="equipment-details-title">장비 상세</h2>
-            <p id="details-status" class="details-status">상세 정보를 보려면 장비를 선택하세요.</p>
-          </div>
-          <dl id="equipment-details" class="details-grid"></dl>
-        </section>
       </section>
 
       <section class="panel history-panel" aria-labelledby="history-title">
@@ -230,6 +237,14 @@
         aria-labelledby="statistics-tab"
         hidden
       >
+        <nav class="statistics-menu" role="tablist" aria-label="통계분석 카테고리">
+          <button id="statistics-overview-tab" class="statistics-menu-tab" type="button" role="tab" aria-selected="true" aria-controls="statistics-overview-panel" data-statistics-view="overview">전체 현황</button>
+          <button id="statistics-region-tab" class="statistics-menu-tab" type="button" role="tab" aria-selected="false" aria-controls="statistics-region-panel" data-statistics-view="region" tabindex="-1">지역 분석</button>
+          <button id="statistics-manufacturer-tab" class="statistics-menu-tab" type="button" role="tab" aria-selected="false" aria-controls="statistics-manufacturer-panel" data-statistics-view="manufacturer" tabindex="-1">제조사·모델</button>
+          <button id="statistics-institution-tab" class="statistics-menu-tab" type="button" role="tab" aria-selected="false" aria-controls="statistics-institution-panel" data-statistics-view="institution" tabindex="-1">의료기관</button>
+        </nav>
+
+        <div id="statistics-overview-panel" class="statistics-category-panel" role="tabpanel" aria-labelledby="statistics-overview-tab">
         <section class="summary-grid statistics-kpis" aria-label="전체 MRI 통계">
           <article class="metric-card">
             <span class="metric-label">전체 MRI 장비 수</span>
@@ -264,19 +279,14 @@
             <div id="tesla-distribution-chart" class="distribution-summary-chart" aria-live="polite"></div>
           </article>
         </section>
+        </div>
 
+        <div id="statistics-region-panel" class="statistics-category-panel" role="tabpanel" aria-labelledby="statistics-region-tab" hidden>
         <section class="panel statistics-section" aria-labelledby="region-summary-title">
           <div class="panel-header">
             <h2 id="region-summary-title">시도별 장비 수 상위 지역</h2>
           </div>
           <div id="region-summary-chart" class="distribution-summary-chart" aria-live="polite"></div>
-        </section>
-
-        <section class="panel statistics-section" aria-labelledby="manufacturer-tesla-matrix-title">
-          <div class="panel-header">
-            <h2 id="manufacturer-tesla-matrix-title">제조사 × Tesla 표</h2>
-          </div>
-          <div id="manufacturer-tesla-matrix" class="matrix-wrap" aria-live="polite"></div>
         </section>
 
         <section class="panel sido-summary-panel statistics-section" aria-labelledby="sido-summary-title">
@@ -286,6 +296,39 @@
           </div>
           <div id="sido-summary-list" class="sido-summary-list" aria-live="polite"></div>
         </section>
+        </div>
+
+        <div id="statistics-manufacturer-panel" class="statistics-category-panel" role="tabpanel" aria-labelledby="statistics-manufacturer-tab" hidden>
+          <section class="panel statistics-section" aria-labelledby="manufacturer-tesla-matrix-title">
+            <div class="panel-header">
+              <h2 id="manufacturer-tesla-matrix-title">제조사 × Tesla 표</h2>
+            </div>
+            <div id="manufacturer-tesla-matrix" class="matrix-wrap" aria-live="polite"></div>
+          </section>
+          <section class="panel statistics-section" aria-labelledby="model-summary-title">
+            <div class="panel-header">
+              <h2 id="model-summary-title">모델별 장비 수 상위 모델</h2>
+            </div>
+            <div id="model-summary-chart" class="distribution-summary-chart" aria-live="polite"></div>
+          </section>
+        </div>
+
+        <div id="statistics-institution-panel" class="statistics-category-panel" role="tabpanel" aria-labelledby="statistics-institution-tab" hidden>
+          <section class="statistics-grid">
+            <article class="panel" aria-labelledby="institution-type-summary-title">
+              <div class="panel-header">
+                <h2 id="institution-type-summary-title">요양종별 장비 분포</h2>
+              </div>
+              <div id="institution-type-summary-chart" class="distribution-summary-chart" aria-live="polite"></div>
+            </article>
+            <article class="panel" aria-labelledby="institution-summary-title">
+              <div class="panel-header">
+                <h2 id="institution-summary-title">의료기관별 장비 수 상위 기관</h2>
+              </div>
+              <div id="institution-summary-chart" class="distribution-summary-chart" aria-live="polite"></div>
+            </article>
+          </section>
+        </div>
 
         <div class="legacy-statistics-data" hidden>
           <span id="manufacturer-total"></span>
