@@ -2,7 +2,7 @@ const SUMMARY_URL = "./data/summary.json";
 const EQUIPMENT_URL = "./data/mri_equipment_2025.json";
 const UPDATE_HISTORY_URL = "./data/update_history.json";
 const INITIAL_RECORD_LIMIT = 50;
-const DEFAULT_SEARCH_FIELDS = ["병원명", "제조사", "모델명", "테슬라"];
+const DEFAULT_SEARCH_FIELDS = ["hospital_name_display", "병원명", "제조사", "모델명", "테슬라"];
 const REGION_COLUMN_CANDIDATES = ["시도명", "시도", "지역", "지역명", "광역시도", "광역시도명", "province", "region"];
 
 const totalEquipmentElement = document.querySelector("#total-equipment");
@@ -24,6 +24,7 @@ const sidoFilterElement = document.querySelector("#sido-filter");
 const sigunguFilterElement = document.querySelector("#sigungu-filter");
 const resetFiltersElement = document.querySelector("#reset-filters");
 const clearSearchElement = document.querySelector("#clear-search");
+const selectedFacilityStatusElement = document.querySelector("#selected-facility-status");
 const manufacturerSummaryChartElement = document.querySelector("#manufacturer-summary-chart");
 const teslaDistributionChartElement = document.querySelector("#tesla-distribution-chart");
 const regionSummaryChartElement = document.querySelector("#region-summary-chart");
@@ -60,6 +61,7 @@ let equipmentRecords = [];
 let activeView = "equipment";
 let regionColumnName = "";
 let selectedRecordIndex = null;
+let selectedFacilityKey = "";
 let isRestoringUrlState = false;
 let showAllResults = false;
 let sortState = {
@@ -171,7 +173,7 @@ function renderStatistics(records) {
   const highTeslaRatio = totalEquipment > 0 ? (highTeslaEquipment / totalEquipment) * 100 : 0;
 
   totalEquipmentElement.textContent = formatNumber(totalEquipment);
-  institutionTotalElement.textContent = formatNumber(countDistinctValues(records, "병원명"));
+  institutionTotalElement.textContent = formatNumber(countDistinctValues(records, "facility_key"));
   highTeslaTotalElement.textContent = `${formatNumber(highTeslaEquipment)}대`;
   highTeslaRatioElement.textContent = `전체의 ${highTeslaRatio.toFixed(1)}%`;
   regionTotalElement.textContent = formatNumber(countDistinctValues(records, regionColumnName));
@@ -182,7 +184,7 @@ function renderStatistics(records) {
   renderSidoSummary(buildSidoSummary(records));
   renderBarSummary(modelSummaryChartElement, getEquipmentCountsByField(records, "모델명"), "표시할 모델 데이터가 없습니다.", 10, "query");
   renderBarSummary(institutionTypeSummaryChartElement, getEquipmentCountsByField(records, "요양종별"), "표시할 요양종별 데이터가 없습니다.", null, "institutionType");
-  renderBarSummary(institutionSummaryChartElement, getEquipmentCountsByField(records, "병원명"), "표시할 의료기관 데이터가 없습니다.", 10, "query");
+  renderFacilitySummary(records);
 }
 
 function setStatisticsCategory(category, { focusTab = false } = {}) {
@@ -263,6 +265,10 @@ function recordMatchesTesla(record, tesla) {
   return record["테슬라"] === tesla;
 }
 
+function recordMatchesFacility(record, facilityKey) {
+  return !facilityKey || record["facility_key"] === facilityKey;
+}
+
 function recordMatchesSido(record, sido) {
   if (!sido) {
     return true;
@@ -279,7 +285,7 @@ function recordMatchesSigungu(record, sigungu) {
 
 function getSortFieldName(sortKey) {
   const sortFields = {
-    hospital: "병원명",
+    hospital: "hospital_name_display",
     manufacturer: "제조사",
     model: "모델명",
     tesla: "테슬라",
@@ -312,7 +318,7 @@ function sortRecords(records) {
   ));
 }
 
-function getVisibleRecords(query, manufacturer, tesla, institutionType, sido, sigungu) {
+function getVisibleRecords(query, manufacturer, tesla, institutionType, sido, sigungu, facilityKey) {
   const normalizedQuery = normalizeSearchText(query);
   const matches = equipmentRecords.filter(
     (record) => (
@@ -322,10 +328,11 @@ function getVisibleRecords(query, manufacturer, tesla, institutionType, sido, si
       && recordMatchesInstitutionType(record, institutionType)
       && recordMatchesSido(record, sido)
       && recordMatchesSigungu(record, sigungu)
+      && recordMatchesFacility(record, facilityKey)
     ),
   );
   const sortedMatches = sortRecords(matches);
-  const hasActiveFilter = normalizedQuery || manufacturer || tesla || institutionType || sido || sigungu;
+  const hasActiveFilter = normalizedQuery || manufacturer || tesla || institutionType || sido || sigungu || facilityKey;
   const visibleRecords = hasActiveFilter || showAllResults
     ? sortedMatches
     : sortedMatches.slice(0, INITIAL_RECORD_LIMIT);
@@ -366,7 +373,17 @@ function formatDetailValue(value) {
 }
 
 function formatFieldName(fieldName) {
+  if (fieldName === "병원명") {
+    return "HIRA 등록명";
+  }
+  if (fieldName === "hospital_name_display") {
+    return "병원 표시명";
+  }
   return String(fieldName ?? "").replaceAll("_", " ");
+}
+
+function getHospitalDisplayName(record) {
+  return formatDetailValue(record["hospital_name_display"] ?? record["병원명"]);
 }
 
 function createCell(value) {
@@ -384,6 +401,9 @@ function createDetailsRow(record, recordIndex) {
   const details = document.createElement("dl");
   details.className = "details-grid";
   for (const [fieldName, value] of Object.entries(record)) {
+    if (fieldName === "facility_key") {
+      continue;
+    }
     const item = document.createElement("div");
     const term = document.createElement("dt");
     term.textContent = formatFieldName(fieldName);
@@ -420,13 +440,13 @@ function renderEquipmentTable(records) {
     row.setAttribute("role", "button");
     row.setAttribute("aria-expanded", String(recordIndex === selectedRecordIndex));
     row.setAttribute("aria-controls", `equipment-details-${recordIndex}`);
-    row.setAttribute("aria-label", `${formatDetailValue(record["병원명"])} 상세정보`);
+    row.setAttribute("aria-label", `${getHospitalDisplayName(record)} 상세정보`);
     if (recordIndex === selectedRecordIndex) {
       row.classList.add("selected-row");
     }
 
     row.append(
-      createCell(record["병원명"]),
+      createCell(getHospitalDisplayName(record)),
       createCell(regionColumnName ? record[regionColumnName] : ""),
       createCell(record["요양종별"]),
       createCell(record["제조사"]),
@@ -475,19 +495,19 @@ function updateSearchInputTitle(matchTotal, hasSearchQuery, hasFilterSelection) 
   equipmentSearchElement.title = `${titlePrefix} ${formatNumber(matchTotal)}건`;
 }
 
-function updateFilterUrl(query, manufacturer, tesla, institutionType, sido, sigungu) {
+function updateFilterUrl(query, manufacturer, tesla, institutionType, sido, sigungu, facilityKey) {
   if (isRestoringUrlState) {
     return;
   }
 
   const params = new URLSearchParams(window.location.search);
   const normalizedQuery = String(query ?? "").trim();
-  for (const key of ["q", "manufacturer", "tesla", "institutionType", "sido", "sigungu"]) {
+  for (const key of ["q", "manufacturer", "tesla", "institutionType", "sido", "sigungu", "facility"]) {
     params.delete(key);
   }
   params.set("view", activeView);
 
-  if (normalizedQuery) {
+  if (normalizedQuery && !facilityKey) {
     params.set("q", normalizedQuery);
   }
   if (manufacturer) {
@@ -504,6 +524,9 @@ function updateFilterUrl(query, manufacturer, tesla, institutionType, sido, sigu
   }
   if (sigungu) {
     params.set("sigungu", sigungu);
+  }
+  if (facilityKey) {
+    params.set("facility", facilityKey);
   }
 
   const queryString = params.toString();
@@ -577,6 +600,59 @@ function renderBarSummary(container, counts, emptyMessageText, maxEntries = null
   }
 
   container.append(fragment);
+}
+
+function renderFacilitySummary(records) {
+  const facilities = new Map();
+  for (const record of records) {
+    const facilityKey = formatDetailValue(record["facility_key"]);
+    if (!facilities.has(facilityKey)) {
+      facilities.set(facilityKey, {
+        key: facilityKey,
+        name: getHospitalDisplayName(record),
+        region: [record["시도명"], record["시군구명"]].filter((value) => !isEmptyValue(value)).join(" "),
+        count: 0,
+      });
+    }
+    facilities.get(facilityKey).count += getEquipmentCount(record);
+  }
+  const entries = [...facilities.values()]
+    .sort((left, right) => right.count - left.count || left.name.localeCompare(right.name, "ko-KR"))
+    .slice(0, 10);
+  const maxCount = entries[0]?.count ?? 0;
+  institutionSummaryChartElement.replaceChildren();
+  if (entries.length === 0) {
+    const emptyMessage = document.createElement("p");
+    emptyMessage.className = "distribution-summary-empty";
+    emptyMessage.textContent = "표시할 의료기관 데이터가 없습니다.";
+    institutionSummaryChartElement.append(emptyMessage);
+    return;
+  }
+  const fragment = document.createDocumentFragment();
+  for (const entry of entries) {
+    const row = document.createElement("div");
+    row.className = "distribution-bar-row is-actionable";
+    row.dataset.filterKey = "facility";
+    row.dataset.filterValue = entry.key;
+    row.tabIndex = 0;
+    row.setAttribute("role", "button");
+    row.setAttribute("aria-label", `${entry.name} ${formatNumber(entry.count)}대 정확한 기관 장비현황 보기`);
+    const name = document.createElement("span");
+    name.className = "distribution-bar-name";
+    name.textContent = entry.region ? `${entry.name} · ${entry.region}` : entry.name;
+    const track = document.createElement("span");
+    track.className = "distribution-bar-track";
+    const fill = document.createElement("span");
+    fill.className = "distribution-bar-fill";
+    fill.style.width = `${maxCount > 0 ? (entry.count / maxCount) * 100 : 0}%`;
+    track.append(fill);
+    const value = document.createElement("span");
+    value.className = "distribution-bar-value";
+    value.textContent = formatNumber(entry.count);
+    row.append(name, track, value);
+    fragment.append(row);
+  }
+  institutionSummaryChartElement.append(fragment);
 }
 
 function renderManufacturerSummary(records) {
@@ -719,8 +795,10 @@ function renderEquipmentSearch() {
   const sigungu = sigunguFilterElement.value;
   const hasSearchQuery = normalizeSearchText(query).length > 0;
   const hasFilterSelection = manufacturer.length > 0 || tesla.length > 0 || institutionType.length > 0 || sido.length > 0 || sigungu.length > 0;
-  const hasActiveFilter = hasSearchQuery || hasFilterSelection;
-  const { matches, visibleRecords } = getVisibleRecords(query, manufacturer, tesla, institutionType, sido, sigungu);
+  const hasActiveFilter = hasSearchQuery || hasFilterSelection || selectedFacilityKey;
+  const { matches, visibleRecords } = getVisibleRecords(
+    query, manufacturer, tesla, institutionType, sido, sigungu, selectedFacilityKey,
+  );
 
   renderEquipmentTable(visibleRecords);
   renderMatchCount(matches, visibleRecords.length, hasActiveFilter);
@@ -729,7 +807,7 @@ function renderEquipmentSearch() {
     || matches.length <= INITIAL_RECORD_LIMIT;
   showAllResultsElement.textContent = `전체 ${formatNumber(matches.length)}건 보기`;
   updateSearchInputTitle(matches.length, hasSearchQuery, hasFilterSelection);
-  updateFilterUrl(query, manufacturer, tesla, institutionType, sido, sigungu);
+  updateFilterUrl(query, manufacturer, tesla, institutionType, sido, sigungu, selectedFacilityKey);
   clearSearchElement.disabled = normalizeSearchText(query).length === 0;
   updateClearFilterButtons();
   updateSortIndicators();
@@ -737,6 +815,8 @@ function renderEquipmentSearch() {
 
 function clearSearchQuery() {
   equipmentSearchElement.value = "";
+  selectedFacilityKey = "";
+  selectedFacilityStatusElement.hidden = true;
   equipmentSearchElement.focus();
   renderEquipmentSearch();
 }
@@ -746,6 +826,8 @@ function resetFilters() {
   manufacturerFilterElement.value = "";
   teslaFilterElement.value = "";
   institutionTypeFilterElement.value = "";
+  selectedFacilityKey = "";
+  selectedFacilityStatusElement.hidden = true;
   sidoFilterElement.value = "";
   populateSigunguFilter(equipmentRecords, "");
   showAllResults = false;
@@ -1135,8 +1217,17 @@ function restoreFilterStateFromUrl() {
   const institutionType = params.get("institutionType") ?? "";
   const sido = params.get("sido") ?? "";
   const sigungu = params.get("sigungu") ?? "";
+  const facilityKey = params.get("facility") ?? "";
 
-  equipmentSearchElement.value = params.get("q") ?? "";
+  const selectedFacility = equipmentRecords.find((record) => record["facility_key"] === facilityKey);
+  selectedFacilityKey = selectedFacility ? facilityKey : "";
+  equipmentSearchElement.value = selectedFacility
+    ? getHospitalDisplayName(selectedFacility)
+    : params.get("q") ?? "";
+  selectedFacilityStatusElement.hidden = !selectedFacility;
+  selectedFacilityStatusElement.textContent = selectedFacility
+    ? `선택 기관: ${getHospitalDisplayName(selectedFacility)}`
+    : "";
   manufacturerFilterElement.value = manufacturer;
   teslaFilterElement.value = tesla;
   institutionTypeFilterElement.value = institutionType;
@@ -1169,6 +1260,15 @@ function activateStatisticsFilter(filterKey, filterValue) {
     institutionTypeFilterElement.value = filterValue;
   } else if (filterKey === "query") {
     equipmentSearchElement.value = filterValue;
+  } else if (filterKey === "facility") {
+    const facility = equipmentRecords.find((record) => record["facility_key"] === filterValue);
+    if (!facility) {
+      return;
+    }
+    selectedFacilityKey = filterValue;
+    equipmentSearchElement.value = getHospitalDisplayName(facility);
+    selectedFacilityStatusElement.textContent = `선택 기관: ${getHospitalDisplayName(facility)}`;
+    selectedFacilityStatusElement.hidden = false;
   } else if (filterKey === "sido") {
     sidoFilterElement.value = filterValue;
     populateSigunguFilter(equipmentRecords, filterValue);
@@ -1230,7 +1330,11 @@ async function loadDashboard() {
   }
 }
 
-equipmentSearchElement.addEventListener("input", renderEquipmentSearch);
+equipmentSearchElement.addEventListener("input", () => {
+  selectedFacilityKey = "";
+  selectedFacilityStatusElement.hidden = true;
+  renderEquipmentSearch();
+});
 manufacturerFilterElement.addEventListener("change", renderEquipmentSearch);
 teslaFilterElement.addEventListener("change", renderEquipmentSearch);
 institutionTypeFilterElement.addEventListener("change", renderEquipmentSearch);

@@ -334,6 +334,16 @@ h2 {
   font-size: 1rem;
 }
 
+.selected-facility-status {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
 .filter-field {
   display: grid;
   gap: 7px;
