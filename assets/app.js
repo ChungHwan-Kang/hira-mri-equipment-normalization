@@ -1300,7 +1300,7 @@ function showError(message) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url);
+  const response = await fetch(url, { cache: "no-store" });
   if (!response.ok) {
     throw new Error(`Failed to load JSON: ${url}`);
   }
