@@ -73,6 +73,11 @@ function formatNumber(value) {
   return new Intl.NumberFormat("ko-KR").format(value);
 }
 
+function formatPercentage(count, total) {
+  const percentage = total > 0 ? (count / total) * 100 : 0;
+  return `${percentage.toFixed(1)}%`;
+}
+
 function formatGeneratedAt(value) {
   if (!value) {
     return "생성 시각 정보 없음";
@@ -182,8 +187,8 @@ function renderStatistics(records) {
   renderRegionSummary(records);
   renderManufacturerTeslaMatrix(records);
   renderSidoSummary(buildSidoSummary(records));
-  renderBarSummary(modelSummaryChartElement, getEquipmentCountsByModelTesla(records), "표시할 모델·테슬라 데이터가 없습니다.", 10, "modelTesla");
-  renderBarSummary(institutionTypeSummaryChartElement, getEquipmentCountsByField(records, "요양종별"), "표시할 요양종별 데이터가 없습니다.", null, "institutionType");
+  renderBarSummary(modelSummaryChartElement, getEquipmentCountsByModelTesla(records), "표시할 모델·테슬라 데이터가 없습니다.", 10, "modelTesla", totalEquipment);
+  renderBarSummary(institutionTypeSummaryChartElement, getEquipmentCountsByField(records, "요양종별"), "표시할 요양종별 데이터가 없습니다.", null, "institutionType", totalEquipment);
   renderFacilitySummary(records);
 }
 
@@ -566,7 +571,7 @@ function getEquipmentCountsByModelTesla(records) {
   return counts;
 }
 
-function renderBarSummary(container, counts, emptyMessageText, maxEntries = null, filterKey = "") {
+function renderBarSummary(container, counts, emptyMessageText, maxEntries = null, filterKey = "", percentageTotal = null) {
   const entries = sortedEntries(counts).slice(0, maxEntries ?? undefined);
   const maxCount = entries[0]?.[1] ?? 0;
   container.replaceChildren();
@@ -581,6 +586,7 @@ function renderBarSummary(container, counts, emptyMessageText, maxEntries = null
 
   const fragment = document.createDocumentFragment();
   for (const [name, count] of entries) {
+    const percentageText = percentageTotal === null ? "" : formatPercentage(count, percentageTotal);
     const row = document.createElement("div");
     row.className = "distribution-bar-row";
     if (filterKey) {
@@ -589,7 +595,7 @@ function renderBarSummary(container, counts, emptyMessageText, maxEntries = null
       row.dataset.filterValue = name;
       row.tabIndex = 0;
       row.setAttribute("role", "button");
-      row.setAttribute("aria-label", `${name} ${formatNumber(count)}대 장비현황 보기`);
+      row.setAttribute("aria-label", `${name} ${formatNumber(count)}대${percentageText ? `, 전체의 ${percentageText}` : ""} 장비현황 보기`);
     }
 
     const nameElement = document.createElement("span");
@@ -606,7 +612,20 @@ function renderBarSummary(container, counts, emptyMessageText, maxEntries = null
 
     const valueElement = document.createElement("span");
     valueElement.className = "distribution-bar-value";
-    valueElement.textContent = formatNumber(count);
+    const countElement = document.createElement("span");
+    countElement.className = "distribution-bar-count";
+    countElement.textContent = `${formatNumber(count)}대`;
+    valueElement.append(countElement);
+    if (percentageText) {
+      const separatorElement = document.createElement("span");
+      separatorElement.className = "distribution-bar-separator";
+      separatorElement.textContent = " · ";
+      separatorElement.setAttribute("aria-hidden", "true");
+      const percentageElement = document.createElement("span");
+      percentageElement.className = "distribution-bar-percentage";
+      percentageElement.textContent = percentageText;
+      valueElement.append(separatorElement, percentageElement);
+    }
 
     row.append(nameElement, barTrack, valueElement);
     fragment.append(row);
@@ -674,6 +693,7 @@ function renderManufacturerSummary(records) {
     "표시할 제조사 데이터가 없습니다.",
     null,
     "manufacturer",
+    getTotalEquipmentCount(records),
   );
 }
 
@@ -684,6 +704,7 @@ function renderTeslaDistribution(records) {
     "표시할 Tesla 데이터가 없습니다.",
     null,
     "tesla",
+    getTotalEquipmentCount(records),
   );
 }
 
@@ -694,6 +715,7 @@ function renderRegionSummary(records) {
     "표시할 지역 데이터가 없습니다.",
     10,
     "sido",
+    getTotalEquipmentCount(records),
   );
 }
 
@@ -1046,7 +1068,7 @@ function buildSidoSummary(records) {
     ));
 }
 
-function createSidoSummaryButton(entry, selectedSido) {
+function createSidoSummaryButton(entry, selectedSido, totalEquipment) {
   const isSelected = entry.sido === selectedSido;
   const button = document.createElement("button");
   button.type = "button";
@@ -1074,12 +1096,13 @@ function createSidoSummaryButton(entry, selectedSido) {
 
   const statsRow = document.createElement("span");
   statsRow.className = "sido-summary-stats";
-  statsRow.textContent = `MRI 장비 ${formatNumber(entry.equipmentCount)}대 · ${formatNumber(entry.recordCount)}건 · ${formatNumber(entry.sigunguCount)}개 시군구`;
+  const percentageText = formatPercentage(entry.equipmentCount, totalEquipment);
+  statsRow.textContent = `MRI 장비 ${formatNumber(entry.equipmentCount)}대 · ${percentageText} · ${formatNumber(entry.recordCount)}건 · ${formatNumber(entry.sigunguCount)}개 시군구`;
 
   button.append(nameRow, statsRow);
   button.setAttribute(
     "aria-label",
-    `${entry.sido}, MRI 장비 ${formatNumber(entry.equipmentCount)}대, ${formatNumber(entry.recordCount)}건, ${formatNumber(entry.sigunguCount)}개 시군구${isSelected ? ", 현재 선택됨" : ""}`,
+    `${entry.sido}, MRI 장비 ${formatNumber(entry.equipmentCount)}대, 전체의 ${percentageText}, ${formatNumber(entry.recordCount)}건, ${formatNumber(entry.sigunguCount)}개 시군구${isSelected ? ", 현재 선택됨" : ""}`,
   );
 
   return button;
@@ -1087,6 +1110,7 @@ function createSidoSummaryButton(entry, selectedSido) {
 
 function renderSidoSummary(summary) {
   const selectedSido = sidoFilterElement.value;
+  const totalEquipment = summary.reduce((total, entry) => total + entry.equipmentCount, 0);
   sidoSummaryListElement.replaceChildren();
 
   if (summary.length === 0) {
@@ -1099,7 +1123,7 @@ function renderSidoSummary(summary) {
 
   const fragment = document.createDocumentFragment();
   for (const entry of summary) {
-    fragment.append(createSidoSummaryButton(entry, selectedSido));
+    fragment.append(createSidoSummaryButton(entry, selectedSido, totalEquipment));
   }
   sidoSummaryListElement.append(fragment);
 }

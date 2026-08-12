@@ -45,34 +45,42 @@ body {
 
 .view-tabs {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 20px;
-  border-bottom: 1px solid var(--line);
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-strong);
 }
 
 .view-tab {
   position: relative;
-  min-height: 46px;
-  border: 0;
-  border-radius: 10px 10px 0 0;
-  padding: 10px 18px;
-  background: transparent;
-  color: var(--muted);
+  min-height: 54px;
+  flex: 0 1 220px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 13px 24px;
+  background: var(--surface);
+  color: var(--text);
   cursor: pointer;
   font: inherit;
-  font-weight: 800;
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 
 .view-tab[aria-selected="true"] {
-  background: var(--surface);
+  border-color: var(--accent);
+  background: var(--accent-soft);
   color: var(--accent);
+  font-weight: 900;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 10%);
 }
 
 .view-tab[aria-selected="true"]::after {
   position: absolute;
-  right: 12px;
-  bottom: -1px;
-  left: 12px;
+  right: 14px;
+  bottom: 3px;
+  left: 14px;
   height: 3px;
   border-radius: 3px 3px 0 0;
   background: currentColor;
@@ -80,6 +88,8 @@ body {
 }
 
 .statistics-tab[aria-selected="true"] {
+  border-color: var(--statistics-accent);
+  background: var(--statistics-accent-soft);
   color: var(--statistics-accent);
 }
 
@@ -531,11 +541,19 @@ h2 {
 }
 
 .distribution-bar-value {
-  min-width: 64px;
+  min-width: 122px;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
   font-weight: 800;
   text-align: right;
+  white-space: nowrap;
+}
+
+.distribution-bar-percentage,
+.distribution-bar-separator {
+  color: var(--muted);
+  font-size: 0.86em;
+  font-weight: 700;
 }
 
 .distribution-summary-empty {
@@ -784,7 +802,8 @@ h2 {
 
   .view-tab {
     flex: 1;
-    padding-inline: 10px;
+    min-width: 0;
+    padding-inline: 12px;
   }
 
   .search-header {
@@ -807,6 +826,10 @@ h2 {
 
   .distribution-bar-row {
     grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .distribution-bar-value {
+    min-width: 0;
   }
 
   .distribution-bar-track {
