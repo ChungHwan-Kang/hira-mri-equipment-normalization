@@ -511,7 +511,7 @@ h2 {
 
 .distribution-bar-row {
   display: grid;
-  grid-template-columns: minmax(120px, 0.9fr) minmax(160px, 2fr) auto;
+  grid-template-columns: minmax(120px, 0.9fr) minmax(160px, 2fr) minmax(64px, auto);
   align-items: center;
   gap: 14px;
 }
@@ -524,6 +524,14 @@ h2 {
 
 .model-tesla-summary-chart .distribution-bar-name {
   line-height: 1.45;
+}
+
+.manufacturer-summary-chart .distribution-bar-row {
+  grid-template-columns: minmax(142px, 0.9fr) minmax(160px, 2fr) minmax(126px, auto);
+}
+
+.manufacturer-summary-chart .distribution-bar-name {
+  white-space: nowrap;
 }
 
 .distribution-bar-track {
@@ -541,7 +549,7 @@ h2 {
 }
 
 .distribution-bar-value {
-  min-width: 122px;
+  min-width: 64px;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
   font-weight: 800;
@@ -549,8 +557,20 @@ h2 {
   white-space: nowrap;
 }
 
-.distribution-bar-percentage,
-.distribution-bar-separator {
+.distribution-bar-value.has-percentage {
+  display: grid;
+  min-width: 126px;
+  grid-template-columns: minmax(68px, 1fr) minmax(48px, auto);
+  column-gap: 10px;
+  align-items: baseline;
+}
+
+.distribution-bar-count,
+.distribution-bar-percentage {
+  text-align: right;
+}
+
+.distribution-bar-percentage {
   color: var(--muted);
   font-size: 0.86em;
   font-weight: 700;
@@ -828,8 +848,16 @@ h2 {
     grid-template-columns: minmax(0, 1fr) auto;
   }
 
+  .manufacturer-summary-chart .distribution-bar-row {
+    grid-template-columns: minmax(142px, 1fr) minmax(126px, auto);
+  }
+
   .distribution-bar-value {
     min-width: 0;
+  }
+
+  .distribution-bar-value.has-percentage {
+    min-width: 126px;
   }
 
   .distribution-bar-track {

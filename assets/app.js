@@ -617,14 +617,11 @@ function renderBarSummary(container, counts, emptyMessageText, maxEntries = null
     countElement.textContent = `${formatNumber(count)}대`;
     valueElement.append(countElement);
     if (percentageText) {
-      const separatorElement = document.createElement("span");
-      separatorElement.className = "distribution-bar-separator";
-      separatorElement.textContent = " · ";
-      separatorElement.setAttribute("aria-hidden", "true");
+      valueElement.classList.add("has-percentage");
       const percentageElement = document.createElement("span");
       percentageElement.className = "distribution-bar-percentage";
       percentageElement.textContent = percentageText;
-      valueElement.append(separatorElement, percentageElement);
+      valueElement.append(percentageElement);
     }
 
     row.append(nameElement, barTrack, valueElement);
