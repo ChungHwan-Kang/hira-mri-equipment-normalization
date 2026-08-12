@@ -464,7 +464,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한림대학교부속 춘천성심병원",
+    "hospital_name_display":"춘천성심병원",
     "facility_key":"한림대학교부속 춘천성심병원||강원특별자치도||춘천시"
   },
   {
@@ -476,7 +476,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"한림대학교부속 춘천성심병원",
+    "hospital_name_display":"춘천성심병원",
     "facility_key":"한림대학교부속 춘천성심병원||강원특별자치도||춘천시"
   },
   {
@@ -5192,7 +5192,7 @@
     "모델명":"MRT-2003",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인일심의료재단우리병원",
+    "hospital_name_display":"포천우리병원",
     "facility_key":"의료법인일심의료재단우리병원||경기도||포천시"
   },
   {
@@ -5204,7 +5204,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"의료법인일심의료재단우리병원",
+    "hospital_name_display":"포천우리병원",
     "facility_key":"의료법인일심의료재단우리병원||경기도||포천시"
   },
   {
@@ -5648,7 +5648,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인아림의료재단서경병원",
+    "hospital_name_display":"에스지서경병원",
     "facility_key":"의료법인아림의료재단서경병원||경상남도||거창군"
   },
   {
@@ -7136,7 +7136,7 @@
     "모델명":"Signa Explorer",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인 서명의료재단 세명병원",
+    "hospital_name_display":"세명종합병원",
     "facility_key":"의료법인 서명의료재단 세명병원||경상북도||경산시"
   },
   {
@@ -11024,7 +11024,7 @@
     "모델명":"Achieva",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(재)한·호기독교선교회 정관일신기독병원",
+    "hospital_name_display":"정관일신기독병원",
     "facility_key":"(재)한·호기독교선교회 정관일신기독병원||부산광역시||기장군"
   },
   {
@@ -11240,7 +11240,7 @@
     "모델명":"Signa Creator",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"재단법인한호기독교선교회 일신기독병원",
+    "hospital_name_display":"일신기독병원",
     "facility_key":"재단법인한호기독교선교회 일신기독병원||부산광역시||동구"
   },
   {
@@ -11720,7 +11720,7 @@
     "모델명":"MAGNETOM Avanto fit",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인 온그룹의료재단 온종합병원",
+    "hospital_name_display":"온병원",
     "facility_key":"의료법인 온그룹의료재단 온종합병원||부산광역시||부산진구"
   },
   {
@@ -11732,7 +11732,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"의료법인 온그룹의료재단 온종합병원",
+    "hospital_name_display":"온병원",
     "facility_key":"의료법인 온그룹의료재단 온종합병원||부산광역시||부산진구"
   },
   {
@@ -11924,7 +11924,7 @@
     "모델명":"Signa Excite HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인은성의료재단좋은삼선병원",
+    "hospital_name_display":"좋은삼선병원",
     "facility_key":"의료법인은성의료재단좋은삼선병원||부산광역시||사상구"
   },
   {
@@ -11936,7 +11936,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"의료법인은성의료재단좋은삼선병원",
+    "hospital_name_display":"좋은삼선병원",
     "facility_key":"의료법인은성의료재단좋은삼선병원||부산광역시||사상구"
   },
   {

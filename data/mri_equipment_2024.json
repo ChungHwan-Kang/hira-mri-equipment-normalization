@@ -11780,7 +11780,7 @@
     "모델명":"MAGNETOM Avanto fit",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인 온그룹의료재단 온종합병원",
+    "hospital_name_display":"온병원",
     "facility_key":"의료법인 온그룹의료재단 온종합병원||부산광역시||부산진구"
   },
   {
@@ -11792,7 +11792,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"의료법인 온그룹의료재단 온종합병원",
+    "hospital_name_display":"온병원",
     "facility_key":"의료법인 온그룹의료재단 온종합병원||부산광역시||부산진구"
   },
   {
@@ -11984,7 +11984,7 @@
     "모델명":"Signa Excite HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인은성의료재단좋은삼선병원",
+    "hospital_name_display":"좋은삼선병원",
     "facility_key":"의료법인은성의료재단좋은삼선병원||부산광역시||사상구"
   },
   {
@@ -11996,7 +11996,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"의료법인은성의료재단좋은삼선병원",
+    "hospital_name_display":"좋은삼선병원",
     "facility_key":"의료법인은성의료재단좋은삼선병원||부산광역시||사상구"
   },
   {
