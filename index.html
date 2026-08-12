@@ -254,6 +254,7 @@
       >
         <nav class="statistics-menu" role="tablist" aria-label="통계분석 카테고리">
           <button id="statistics-overview-tab" class="statistics-menu-tab" type="button" role="tab" aria-selected="true" aria-controls="statistics-overview-panel" data-statistics-view="overview">전체 현황</button>
+          <button id="statistics-trend-tab" class="statistics-menu-tab" type="button" role="tab" aria-selected="false" aria-controls="statistics-trend-panel" data-statistics-view="trend" tabindex="-1">연도별 변화</button>
           <button id="statistics-region-tab" class="statistics-menu-tab" type="button" role="tab" aria-selected="false" aria-controls="statistics-region-panel" data-statistics-view="region" tabindex="-1">지역 분석</button>
           <button id="statistics-manufacturer-tab" class="statistics-menu-tab" type="button" role="tab" aria-selected="false" aria-controls="statistics-manufacturer-panel" data-statistics-view="manufacturer" tabindex="-1">제조사·모델</button>
           <button id="statistics-institution-tab" class="statistics-menu-tab" type="button" role="tab" aria-selected="false" aria-controls="statistics-institution-panel" data-statistics-view="institution" tabindex="-1">의료기관</button>
@@ -294,6 +295,20 @@
             <div id="tesla-distribution-chart" class="distribution-summary-chart" aria-live="polite"></div>
           </article>
         </section>
+        </div>
+
+        <div id="statistics-trend-panel" class="statistics-category-panel trend-panel" role="tabpanel" aria-labelledby="statistics-trend-tab" hidden>
+          <header class="trend-header"><h2>연도별 변화</h2><p>연구 기간: <strong id="trend-study-period">2021–2025</strong></p></header>
+          <div id="trend-status" class="trend-status" role="status" aria-live="polite">연도별 통계를 불러오려면 이 탭을 선택하세요.</div>
+          <div id="trend-content" hidden>
+            <section aria-labelledby="trend-summary-title"><h3 id="trend-summary-title">핵심 지표</h3><div id="trend-summary-cards" class="summary-grid trend-summary-grid"></div></section>
+            <section class="panel trend-section" aria-labelledby="trend-equipment-title"><div class="panel-header"><h3 id="trend-equipment-title">전체 MRI 장비 추세</h3></div><div id="trend-equipment-table" class="trend-table-wrap"></div></section>
+            <section class="panel trend-section" aria-labelledby="trend-tesla-title"><div class="panel-header"><h3 id="trend-tesla-title">Tesla 구성 변화</h3></div><div id="trend-tesla-table" class="trend-table-wrap"></div></section>
+            <section class="panel trend-section" aria-labelledby="trend-manufacturer-title"><div class="panel-header"><h3 id="trend-manufacturer-title">제조사 점유율 변화</h3></div><div id="trend-manufacturer-table" class="trend-table-wrap"></div></section>
+            <section class="panel trend-section" aria-labelledby="trend-region-title"><div class="panel-header"><h3 id="trend-region-title">시도별 장비 변화</h3></div><div id="trend-region-table" class="trend-table-wrap"></div></section>
+            <section class="panel trend-section" aria-labelledby="trend-institution-title"><div class="panel-header"><h3 id="trend-institution-title">요양종별 장비 변화</h3></div><div id="trend-institution-table" class="trend-table-wrap"></div></section>
+            <p class="trend-interpretation-note">의료기관 수는 각 연도 자료의 기관 식별값을 기준으로 집계하며, 개별 의료기관의 신설·폐업 또는 동일 기관의 장비 증감을 추적한 결과가 아닙니다.</p>
+          </div>
         </div>
 
         <div id="statistics-region-panel" class="statistics-category-panel" role="tabpanel" aria-labelledby="statistics-region-tab" hidden>

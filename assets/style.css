@@ -122,6 +122,18 @@ body {
   margin-bottom: 20px;
 }
 
+.trend-header, .trend-section, .trend-summary-grid { margin-bottom: 20px; }
+.trend-header h2, .trend-header p, .trend-section h3 { margin: 0; }
+.trend-header p { margin-top: 6px; color: var(--muted); }
+.trend-status, .trend-interpretation-note { border-radius: 10px; padding: 14px 16px; background: #f8fafc; color: var(--muted); font-weight: 700; }
+.trend-range { font-size: 1.05rem; line-height: 1.5; }
+.trend-table-wrap { max-width: 100%; overflow-x: auto; padding: 0 20px 20px; }
+.trend-table { width: 100%; min-width: 720px; border-collapse: collapse; font-size: 0.88rem; }
+.trend-table caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.trend-table th, .trend-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.trend-table th:first-child, .trend-table td:first-child { position: sticky; left: 0; background: var(--surface); text-align: left; }
+.trend-table thead th { background: #f8fafc; color: var(--muted); }
+
 .statistics-menu {
   display: flex;
   gap: 8px;

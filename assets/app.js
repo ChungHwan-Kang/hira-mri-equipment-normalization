@@ -1,6 +1,7 @@
 const SUPPORTED_YEARS = ["2021", "2022", "2023", "2024", "2025"];
 const DEFAULT_YEAR = "2025";
 const UPDATE_HISTORY_URL = "./data/update_history.json";
+const TREND_URL = "./data/trend_2021_2025.json";
 const INITIAL_RECORD_LIMIT = 50;
 const PUBLIC_UPDATE_HIGHLIGHTS = [
   {
@@ -75,6 +76,9 @@ const equipmentPanelElement = document.querySelector("#equipment-panel");
 const statisticsPanelElement = document.querySelector("#statistics-panel");
 const statisticsMenuTabElements = document.querySelectorAll("[data-statistics-view]");
 const statisticsCategoryPanelElements = document.querySelectorAll(".statistics-category-panel");
+const trendStatusElement = document.querySelector("#trend-status");
+const trendContentElement = document.querySelector("#trend-content");
+const trendStudyPeriodElement = document.querySelector("#trend-study-period");
 
 let equipmentRecords = [];
 let currentYear = DEFAULT_YEAR;
@@ -84,6 +88,7 @@ let selectedRecordIndex = null;
 let selectedFacilityKey = "";
 let isRestoringUrlState = false;
 let showAllResults = false;
+let trendLoadPromise = null;
 let sortState = {
   key: "",
   direction: "asc",
@@ -96,6 +101,135 @@ function formatNumber(value) {
 function formatPercentage(count, total) {
   const percentage = total > 0 ? (count / total) * 100 : 0;
   return `${percentage.toFixed(1)}%`;
+}
+
+function formatSigned(value, digits = 0) {
+  const number = Number(value);
+  return `${number > 0 ? "+" : ""}${number.toLocaleString("ko-KR", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
+}
+
+function validateTrendPayload(payload) {
+  if (payload?.schema_version !== 1 || !payload.study_period || !Array.isArray(payload.study_period.years)
+      || payload.study_period.years.length === 0 || !payload.years || typeof payload.years !== "object") {
+    throw new Error("Incompatible trend schema");
+  }
+  for (const year of payload.study_period.years) {
+    if (!payload.years[String(year)] || typeof payload.years[String(year)] !== "object") {
+      throw new Error(`Missing annual trend data: ${year}`);
+    }
+  }
+  return payload.study_period.years.map(String);
+}
+
+function createTrendTable(captionText, headers, rows) {
+  const table = document.createElement("table");
+  table.className = "trend-table";
+  const caption = document.createElement("caption");
+  caption.textContent = captionText;
+  const head = document.createElement("thead");
+  const headRow = document.createElement("tr");
+  headers.forEach((label) => {
+    const cell = document.createElement("th");
+    cell.scope = "col";
+    cell.textContent = label;
+    headRow.append(cell);
+  });
+  head.append(headRow);
+  const body = document.createElement("tbody");
+  rows.forEach((values) => {
+    const row = document.createElement("tr");
+    values.forEach((value, index) => {
+      const cell = document.createElement(index === 0 ? "th" : "td");
+      if (index === 0) cell.scope = "row";
+      cell.textContent = value;
+      row.append(cell);
+    });
+    body.append(row);
+  });
+  table.append(caption, head, body);
+  return table;
+}
+
+function renderTrendMatrix(containerId, title, years, annual, metric, includeChange = false) {
+  const categories = [...new Set(years.flatMap((year) => Object.keys(annual[year][metric] ?? {})))].sort((a, b) => a.localeCompare(b, "ko-KR"));
+  const headers = [metric === "region" ? "시도" : metric === "institution_type" ? "요양종별" : "구분", ...years];
+  if (includeChange) headers.push(`${years[0]}–${years.at(-1)} 증감`);
+  const rows = categories.map((category) => {
+    const values = years.map((year) => {
+      const value = annual[year][metric]?.[category];
+      return value ? `${formatNumber(value.count)}대 (${Number(value.share).toFixed(1)}%)` : "-";
+    });
+    if (includeChange) {
+      const first = annual[years[0]][metric]?.[category]?.count ?? 0;
+      const last = annual[years.at(-1)][metric]?.[category]?.count ?? 0;
+      values.push(`${formatSigned(last - first)}대`);
+    }
+    return [category, ...values];
+  });
+  document.querySelector(`#${containerId}`).replaceChildren(createTrendTable(title, headers, rows));
+}
+
+function renderTrendSummary(years, annual) {
+  const first = annual[years[0]];
+  const last = annual[years.at(-1)];
+  const summaries = [
+    ["MRI 장비", `${formatNumber(first.total_equipment)}대 → ${formatNumber(last.total_equipment)}대`, `${formatSigned(last.total_equipment - first.total_equipment)}대 (${formatSigned((last.total_equipment - first.total_equipment) / first.total_equipment * 100, 1)}%)`],
+    ["의료기관 수", `${formatNumber(first.facility_count)}개 → ${formatNumber(last.facility_count)}개`, `${formatSigned(last.facility_count - first.facility_count)}개 (${formatSigned((last.facility_count - first.facility_count) / first.facility_count * 100, 1)}%)`],
+    ["기관당 MRI 장비", `${first.equipment_per_facility.toFixed(2)}대 → ${last.equipment_per_facility.toFixed(2)}대`, `${formatSigned(last.equipment_per_facility - first.equipment_per_facility, 2)}대`],
+    ["3.0T+ 장비", `${formatNumber(first.high_tesla_equipment)}대 (${first.high_tesla_share.toFixed(1)}%) → ${formatNumber(last.high_tesla_equipment)}대 (${last.high_tesla_share.toFixed(1)}%)`, `비율 변화 ${formatSigned(last.high_tesla_share - first.high_tesla_share, 1)}%p`],
+  ];
+  const fragment = document.createDocumentFragment();
+  summaries.forEach(([label, range, change]) => {
+    const card = document.createElement("article");
+    card.className = "metric-card trend-metric-card";
+    const labelElement = document.createElement("span");
+    labelElement.className = "metric-label";
+    labelElement.textContent = label;
+    const rangeElement = document.createElement("strong");
+    rangeElement.className = "trend-range";
+    rangeElement.textContent = range;
+    const changeElement = document.createElement("span");
+    changeElement.className = "metric-note";
+    changeElement.textContent = `${years[0]}–${years.at(-1)} ${change}`;
+    card.append(labelElement, rangeElement, changeElement);
+    fragment.append(card);
+  });
+  document.querySelector("#trend-summary-cards").replaceChildren(fragment);
+}
+
+function renderTrend(payload) {
+  const years = validateTrendPayload(payload);
+  const annual = payload.years;
+  trendStudyPeriodElement.textContent = `${years[0]}–${years.at(-1)}`;
+  renderTrendSummary(years, annual);
+  const rows = years.map((year) => {
+    const yoy = annual[year].yoy?.total_equipment;
+    return [year, `${formatNumber(annual[year].total_equipment)}대`, yoy ? `${formatSigned(yoy.absolute_change)}대` : "-", yoy ? `${formatSigned(yoy.percent_change, 1)}%` : "-"];
+  });
+  document.querySelector("#trend-equipment-table").replaceChildren(createTrendTable("2021–2025 전체 MRI 장비 추세", ["연도", "장비 수", "전년 대비", "전년 대비율"], rows));
+  renderTrendMatrix("trend-tesla-table", "Tesla 구성 변화", years, annual, "tesla");
+  renderTrendMatrix("trend-manufacturer-table", "제조사 점유율 변화", years, annual, "manufacturer");
+  renderTrendMatrix("trend-region-table", "시도별 장비 변화", years, annual, "region", true);
+  renderTrendMatrix("trend-institution-table", "요양종별 장비 변화", years, annual, "institution_type", true);
+  trendStatusElement.hidden = true;
+  trendContentElement.hidden = false;
+}
+
+async function loadTrend() {
+  if (!trendLoadPromise) {
+    trendStatusElement.hidden = false;
+    trendStatusElement.textContent = "2021–2025 연도별 통계를 불러오는 중입니다.";
+    trendLoadPromise = fetchJson(TREND_URL).then((payload) => {
+      renderTrend(payload);
+      return payload;
+    }).catch(() => {
+      trendContentElement.hidden = true;
+      trendStatusElement.hidden = false;
+      trendStatusElement.textContent = "연도별 통계를 불러오지 못했습니다. Trend 데이터 파일과 스키마를 확인해 주세요.";
+      return null;
+    });
+  }
+  return trendLoadPromise;
 }
 
 function formatGeneratedAt(value) {
@@ -216,7 +350,7 @@ function renderStatistics(records) {
 }
 
 function setStatisticsCategory(category, { focusTab = false } = {}) {
-  const selectedCategory = ["overview", "region", "manufacturer", "institution"].includes(category)
+  const selectedCategory = ["overview", "trend", "region", "manufacturer", "institution"].includes(category)
     ? category
     : "overview";
   for (const tab of statisticsMenuTabElements) {
@@ -229,6 +363,9 @@ function setStatisticsCategory(category, { focusTab = false } = {}) {
   }
   for (const panel of statisticsCategoryPanelElements) {
     panel.hidden = panel.id !== `statistics-${selectedCategory}-panel`;
+  }
+  if (selectedCategory === "trend") {
+    void loadTrend();
   }
 }
 
