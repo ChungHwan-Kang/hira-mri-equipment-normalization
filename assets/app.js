@@ -2,6 +2,23 @@ const SUMMARY_URL = "./data/summary.json";
 const EQUIPMENT_URL = "./data/mri_equipment_2025.json";
 const UPDATE_HISTORY_URL = "./data/update_history.json";
 const INITIAL_RECORD_LIMIT = 50;
+const PUBLIC_UPDATE_HIGHLIGHTS = [
+  {
+    date: "2026.08",
+    title: "통계분석 화면 개선",
+    description: "주요 분포에 전체 대비 비율을 추가하고 통계 행의 가독성을 개선했습니다.",
+  },
+  {
+    date: "2026.08",
+    title: "의료기관 표시명 표준화",
+    description: "법인·재단 등 행정적 표현을 정리하고 의료기관 검색 및 정확한 기관 이동 기능을 개선했습니다.",
+  },
+  {
+    date: "2026.08",
+    title: "MRI 모델명 표준화",
+    description: "MRI 모델명 표준화를 통해 Tesla·제조사·일반 표현의 중복을 제거하고 대소문자와 공백을 통일하여 34개 모델명 표기를 정리했습니다. 장비 수·의료기관 수·지역별 집계에는 변화가 없습니다.",
+  },
+];
 const DEFAULT_SEARCH_FIELDS = ["hospital_name_display", "병원명", "제조사", "모델명", "테슬라"];
 const REGION_COLUMN_CANDIDATES = ["시도명", "시도", "지역", "지역명", "광역시도", "광역시도명", "province", "region"];
 
@@ -1512,6 +1529,14 @@ function formatHistoryDateTime(value) {
   return date.toLocaleString("ko-KR", { timeZone: "Asia/Seoul" });
 }
 
+function formatHistoryMonth(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return "-";
+  }
+  return `${date.getUTCFullYear()}.${String(date.getUTCMonth() + 1).padStart(2, "0")}`;
+}
+
 function renderCurrentDataInfo(latestRelease) {
   if (!latestRelease) {
     return;
@@ -1559,109 +1584,39 @@ function renderUpdateHistory(history) {
 
   renderCurrentDataInfo(releases[0]);
 
+  const initialRelease = releases[releases.length - 1];
+  const publicHistoryItems = [
+    ...PUBLIC_UPDATE_HIGHLIGHTS,
+    {
+      date: formatHistoryMonth(initialRelease.published_at),
+      title: "MRI 장비현황 데이터 최초 공개",
+      description: `${initialRelease.data_reference_date} 기준 건강보험심사평가원 MRI 장비현황 데이터를 처음 반영했습니다.`,
+    },
+  ].slice(0, 5);
   const fragment = document.createDocumentFragment();
 
-  for (const release of releases) {
+  for (const historyItem of publicHistoryItems) {
     const item = document.createElement("article");
     item.className = "history-item";
 
     const header = document.createElement("div");
     header.className = "history-header";
 
-    const titleWrap = document.createElement("h3");
-    titleWrap.className = "history-version-title";
+    const date = document.createElement("time");
+    date.className = "history-date";
+    date.textContent = historyItem.date;
 
-    const versionSpan = document.createElement("span");
-    versionSpan.textContent = `v${release.version}`;
-    titleWrap.append(versionSpan);
+    const title = document.createElement("h3");
+    title.className = "history-title";
+    title.textContent = historyItem.title;
 
-    const statusBadge = document.createElement("span");
-    statusBadge.className = `status-badge status-${release.status}`;
-    statusBadge.textContent = getStatusLabel(release.status);
-    titleWrap.append(statusBadge);
-
-    const meta = document.createElement("div");
-    meta.className = "history-meta";
-
-    const refDateSpan = document.createElement("span");
-    refDateSpan.textContent = `기준일: ${release.data_reference_date}`;
-    meta.append(refDateSpan);
-
-    const pubDateSpan = document.createElement("span");
-    if (release.status === "planned" && release.published_at === null) {
-      pubDateSpan.textContent = "공개일: 공개 준비 중";
-    } else {
-      pubDateSpan.textContent = `공개일: ${release.published_at ? formatHistoryDateTime(release.published_at) : "-"}`;
-    }
-    meta.append(pubDateSpan);
-
-    const countSpan = document.createElement("span");
-    if (release.status === "planned" && release.total_equipment === null) {
-      countSpan.textContent = "장비 수: -";
-    } else {
-      countSpan.textContent = `장비 수: ${release.total_equipment !== null && release.total_equipment !== undefined ? formatNumber(release.total_equipment) : "-"}대`;
-    }
-    meta.append(countSpan);
-
-    header.append(titleWrap, meta);
+    header.append(date, title);
 
     const summary = document.createElement("p");
     summary.className = "history-summary";
-    summary.textContent = release.change_summary;
+    summary.textContent = historyItem.description;
 
-    const details = document.createElement("div");
-    details.className = "history-details";
-
-    const hasCorrections = Array.isArray(release.corrections) && release.corrections.length > 0;
-    const correctionsSection = document.createElement("div");
-    correctionsSection.className = "history-detail-section";
-
-    const corrTitle = document.createElement("h4");
-    corrTitle.className = "history-detail-title";
-    corrTitle.textContent = "정정 사항";
-    correctionsSection.append(corrTitle);
-
-    if (hasCorrections) {
-      const corrList = document.createElement("ul");
-      corrList.className = "history-detail-list";
-      for (const corr of release.corrections) {
-        const li = document.createElement("li");
-        li.textContent = corr;
-        corrList.append(li);
-      }
-      correctionsSection.append(corrList);
-    } else {
-      const noCorr = document.createElement("p");
-      noCorr.className = "history-detail-list";
-      noCorr.textContent = "정정 사항 없음";
-      correctionsSection.append(noCorr);
-    }
-
-    const hasNotes = Array.isArray(release.data_quality_notes) && release.data_quality_notes.length > 0;
-    if (hasNotes) {
-      const notesSection = document.createElement("div");
-      notesSection.className = "history-detail-section";
-
-      const notesTitle = document.createElement("h4");
-      notesTitle.className = "history-detail-title";
-      notesTitle.textContent = "데이터 품질 주의사항";
-      notesSection.append(notesTitle);
-
-      const notesList = document.createElement("ul");
-      notesList.className = "history-detail-list";
-      for (const note of release.data_quality_notes) {
-        const li = document.createElement("li");
-        li.textContent = note;
-        notesList.append(li);
-      }
-      notesSection.append(notesList);
-
-      details.append(correctionsSection, notesSection);
-    } else {
-      details.append(correctionsSection);
-    }
-
-    item.append(header, summary, details);
+    item.append(header, summary);
     fragment.append(item);
   }
 
