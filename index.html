@@ -39,15 +39,19 @@
         >통계분석</button>
       </nav>
 
-      <div
-        id="equipment-panel"
-        class="view-panel equipment-view"
-        role="tabpanel"
-        aria-labelledby="equipment-tab"
-      >
       <section id="current-data-info" class="current-data-info" aria-labelledby="current-data-title">
         <h2 id="current-data-title" class="visually-hidden">현재 데이터 요약</h2>
         <div class="data-info-grid">
+          <label class="info-item year-selector-field" for="data-year-selector">
+            <span class="info-label">데이터 기준연도</span>
+            <select id="data-year-selector" class="year-selector" aria-label="데이터 기준연도">
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+            </select>
+          </label>
           <div class="info-item">
             <span class="info-label">데이터 기준일</span>
             <strong id="info-reference-date" class="info-value">-</strong>
@@ -56,9 +60,19 @@
             <span class="info-label">총 MRI 장비 수</span>
             <strong id="info-total-equipment" class="info-value">-</strong>
           </div>
+          <div class="info-item">
+            <span class="info-label">의료기관 수</span>
+            <strong id="info-facility-total" class="info-value">-</strong>
+          </div>
         </div>
       </section>
 
+      <div
+        id="equipment-panel"
+        class="view-panel equipment-view"
+        role="tabpanel"
+        aria-labelledby="equipment-tab"
+      >
       <section class="panel search-panel" aria-labelledby="equipment-search-title">
         <div class="panel-header search-header">
           <h2 id="equipment-search-title">장비 검색</h2>
@@ -344,6 +358,6 @@
       </div>
     </main>
 
-    <script src="./assets/app.js?v=sprint-108" defer></script>
+    <script src="./assets/app.js?v=sprint-112" defer></script>
   </body>
 </html>

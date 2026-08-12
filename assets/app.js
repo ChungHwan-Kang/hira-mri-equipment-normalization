@@ -1,5 +1,5 @@
-const SUMMARY_URL = "./data/summary.json";
-const EQUIPMENT_URL = "./data/mri_equipment_2025.json";
+const SUPPORTED_YEARS = ["2021", "2022", "2023", "2024", "2025"];
+const DEFAULT_YEAR = "2025";
 const UPDATE_HISTORY_URL = "./data/update_history.json";
 const INITIAL_RECORD_LIMIT = 50;
 const PUBLIC_UPDATE_HIGHLIGHTS = [
@@ -67,6 +67,8 @@ const infoStatusElement = document.querySelector("#info-status");
 const infoPublishedDateElement = document.querySelector("#info-published-date");
 const infoSourceElement = document.querySelector("#info-source");
 const infoTotalEquipmentElement = document.querySelector("#info-total-equipment");
+const infoFacilityTotalElement = document.querySelector("#info-facility-total");
+const dataYearSelectorElement = document.querySelector("#data-year-selector");
 const historyListElement = document.querySelector("#history-list");
 const viewTabElements = document.querySelectorAll('[role="tab"][data-view]');
 const equipmentPanelElement = document.querySelector("#equipment-panel");
@@ -75,6 +77,7 @@ const statisticsMenuTabElements = document.querySelectorAll("[data-statistics-vi
 const statisticsCategoryPanelElements = document.querySelectorAll(".statistics-category-panel");
 
 let equipmentRecords = [];
+let currentYear = DEFAULT_YEAR;
 let activeView = "equipment";
 let regionColumnName = "";
 let selectedRecordIndex = null;
@@ -162,6 +165,8 @@ function renderCounts(container, counts) {
 
 function renderSummary(summary) {
   totalEquipmentElement.textContent = `${formatNumber(summary.total_equipment ?? 0)}대`;
+  infoReferenceDateElement.textContent = summary.data_reference_date || "-";
+  infoTotalEquipmentElement.textContent = `${formatNumber(summary.total_equipment ?? 0)}대`;
   generatedAtElement.textContent = formatGeneratedAt(summary.generated_at);
   renderCounts(manufacturerCountsElement, summary.manufacturer_counts);
   renderCounts(teslaCountsElement, summary.tesla_counts);
@@ -196,6 +201,7 @@ function renderStatistics(records) {
 
   totalEquipmentElement.textContent = formatNumber(totalEquipment);
   institutionTotalElement.textContent = formatNumber(countDistinctValues(records, "facility_key"));
+  infoFacilityTotalElement.textContent = `${formatNumber(countDistinctValues(records, "facility_key"))}개`;
   highTeslaTotalElement.textContent = `${formatNumber(highTeslaEquipment)}대`;
   highTeslaRatioElement.textContent = `전체의 ${highTeslaRatio.toFixed(1)}%`;
   regionTotalElement.textContent = formatNumber(countDistinctValues(records, regionColumnName));
@@ -517,7 +523,7 @@ function updateSearchInputTitle(matchTotal, hasSearchQuery, hasFilterSelection) 
   equipmentSearchElement.title = `${titlePrefix} ${formatNumber(matchTotal)}건`;
 }
 
-function updateFilterUrl(query, manufacturer, tesla, institutionType, sido, sigungu, facilityKey) {
+function updateFilterUrl(query, manufacturer, tesla, institutionType, sido, sigungu, facilityKey, { replace = false } = {}) {
   if (isRestoringUrlState) {
     return;
   }
@@ -556,7 +562,7 @@ function updateFilterUrl(query, manufacturer, tesla, institutionType, sido, sigu
     ? `${window.location.pathname}?${queryString}${window.location.hash}`
     : `${window.location.pathname}${window.location.hash}`;
   if (nextUrl !== `${window.location.pathname}${window.location.search}${window.location.hash}`) {
-    window.history.pushState({}, "", nextUrl);
+    window.history[replace ? "replaceState" : "pushState"]({}, "", nextUrl);
   }
 }
 
@@ -1348,12 +1354,50 @@ function renderEquipment(records) {
   renderEquipmentSearch();
   renderStatistics(equipmentRecords);
   isRestoringUrlState = false;
+  updateFilterUrl(
+    equipmentSearchElement.value,
+    manufacturerFilterElement.value,
+    teslaFilterElement.value,
+    institutionTypeFilterElement.value,
+    sidoFilterElement.value,
+    sigunguFilterElement.value,
+    selectedFacilityKey,
+    { replace: true },
+  );
 }
 
 function showError(message) {
   errorMessageElement.hidden = false;
   errorMessageElement.textContent = message;
   generatedAtElement.textContent = "데이터 로딩 실패";
+}
+
+function normalizeYear(value) {
+  const year = String(value ?? "");
+  return SUPPORTED_YEARS.includes(year) ? year : DEFAULT_YEAR;
+}
+
+function getYearFromUrl() {
+  return normalizeYear(new URLSearchParams(window.location.search).get("year"));
+}
+
+function getSummaryUrl(year) {
+  return `./data/summary_${normalizeYear(year)}.json`;
+}
+
+function getEquipmentUrl(year) {
+  return `./data/mri_equipment_${normalizeYear(year)}.json`;
+}
+
+function setYearUrl(year, { replace = false } = {}) {
+  const params = new URLSearchParams(window.location.search);
+  params.set("year", normalizeYear(year));
+  if (!params.has("view")) {
+    params.set("view", activeView);
+  }
+  const nextUrl = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
+  const method = replace ? "replaceState" : "pushState";
+  window.history[method]({}, "", nextUrl);
 }
 
 async function fetchJson(url) {
@@ -1365,18 +1409,31 @@ async function fetchJson(url) {
   return response.json();
 }
 
-async function loadDashboard() {
+async function loadYear(year) {
+  const normalizedYear = normalizeYear(year);
+  dataYearSelectorElement.disabled = true;
   try {
     const [summary, equipment] = await Promise.all([
-      fetchJson(SUMMARY_URL),
-      fetchJson(EQUIPMENT_URL),
+      fetchJson(getSummaryUrl(normalizedYear)),
+      fetchJson(getEquipmentUrl(normalizedYear)),
     ]);
+    currentYear = normalizedYear;
+    dataYearSelectorElement.value = normalizedYear;
+    errorMessageElement.hidden = true;
     renderSummary(summary);
     renderEquipment(equipment);
   } catch (error) {
     showError("대시보드 데이터를 불러오지 못했습니다. web/data 파일을 확인해 주세요.");
     console.error("Dashboard core loading failed:", error);
+  } finally {
+    dataYearSelectorElement.disabled = false;
   }
+}
+
+async function loadDashboard() {
+  const initialYear = getYearFromUrl();
+  setYearUrl(initialYear, { replace: true });
+  await loadYear(initialYear);
 
   try {
     const history = await fetchJson(UPDATE_HISTORY_URL);
@@ -1400,13 +1457,26 @@ sidoFilterElement.addEventListener("change", (event) => {
   renderEquipmentSearch();
 });
 sigunguFilterElement.addEventListener("change", renderEquipmentSearch);
-window.addEventListener("popstate", () => {
+window.addEventListener("popstate", async () => {
+  const restoredYear = getYearFromUrl();
+  if (restoredYear !== currentYear) {
+    await loadYear(restoredYear);
+    return;
+  }
   isRestoringUrlState = true;
   showAllResults = false;
   restoreFilterStateFromUrl();
   setActiveView(new URLSearchParams(window.location.search).get("view"), { updateUrl: false });
   renderEquipmentSearch();
   isRestoringUrlState = false;
+});
+dataYearSelectorElement.addEventListener("change", async (event) => {
+  const year = normalizeYear(event.target.value);
+  if (year === currentYear) {
+    return;
+  }
+  setYearUrl(year);
+  await loadYear(year);
 });
 for (const tab of viewTabElements) {
   tab.addEventListener("click", () => setActiveView(tab.dataset.view, { focusTab: true }));
@@ -1542,8 +1612,6 @@ function renderCurrentDataInfo(latestRelease) {
     return;
   }
 
-  infoReferenceDateElement.textContent = latestRelease.data_reference_date || "-";
-
   const status = latestRelease.status || "";
   const label = getStatusLabel(status);
 
@@ -1562,13 +1630,6 @@ function renderCurrentDataInfo(latestRelease) {
 
   infoSourceElement.textContent = latestRelease.source_name || "-";
 
-  if (status === "planned" && latestRelease.total_equipment === null) {
-    infoTotalEquipmentElement.textContent = "-";
-  } else {
-    infoTotalEquipmentElement.textContent = latestRelease.total_equipment !== null && latestRelease.total_equipment !== undefined
-      ? `${formatNumber(latestRelease.total_equipment)}대`
-      : "-";
-  }
 }
 
 function renderUpdateHistory(history) {
@@ -1631,11 +1692,9 @@ function renderUpdateHistoryError(message) {
   errorMsg.textContent = message;
   historyListElement.append(errorMsg);
 
-  infoReferenceDateElement.textContent = "오류";
   infoStatusElement.textContent = "오류";
   infoPublishedDateElement.textContent = "오류";
   infoSourceElement.textContent = "오류";
-  infoTotalEquipmentElement.textContent = "오류";
 }
 
 loadDashboard();

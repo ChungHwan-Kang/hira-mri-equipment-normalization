@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-08-12T07:14:11.658221Z",
+  "updated_at": "2026-08-12T07:14:11.658221Z",
+  "data_reference_date": "2021-12-31",
+  "source_name": "건강보험심사평가원",
+  "source_reference": "건강보험심사평가원 의료장비 상세현황 공공데이터",
+  "record_count": 1725,
+  "total_equipment": 1838,
+  "manufacturer_counts": {
+    "Canon(Toshiba)": 99,
+    "Esaote": 1,
+    "GE": 507,
+    "Hitachi": 45,
+    "Neusoft": 60,
+    "Philips": 406,
+    "Samsung": 4,
+    "Siemens": 713,
+    "United Imaging": 3
+  },
+  "tesla_counts": {
+    "0.5–1.5T": 3,
+    "1.5T": 1224,
+    "3.0T+": 567,
+    "<0.5T": 42,
+    "PET/MR": 2
+  }
+}
