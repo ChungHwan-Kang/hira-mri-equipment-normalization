@@ -133,7 +133,7 @@ python -c "import secrets; print(secrets.token_hex(4))"
 
 If Python or randomness is unavailable, use another reasonable UUID/random mechanism or a sufficiently unique task-derived suffix. Suffix generation is a collision-reduction aid, not a reason to block the task.
 
-Names coordinate ownership; immutable identity still comes from commit SHAs and payload checksums. Keep unrelated tasks out of shared scratch branches, artifact names, and mutable transport files.
+Names coordinate ownership; immutable identity still comes from commit SHAs and payload checksums. Keep unrelated tasks out of shared scratch branches, artifact names, workflow payloads, and mutable transport files.
 
 ## Durable lifecycle and cleanup
 
