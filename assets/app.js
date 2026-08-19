@@ -1,7 +1,7 @@
-const SUPPORTED_YEARS = ["2021", "2022", "2023", "2024", "2025"];
+const SUPPORTED_YEARS = ["2019", "2020", "2021", "2022", "2023", "2024", "2025"];
 const DEFAULT_YEAR = "2025";
 const UPDATE_HISTORY_URL = "./data/update_history.json";
-const TREND_URL = "./data/trend_2021_2025.json";
+const TREND_URL = "./data/trend_2019_2025.json";
 const INITIAL_RECORD_LIMIT = 50;
 const PUBLIC_UPDATE_HIGHLIGHTS = [
   {
@@ -206,7 +206,7 @@ function renderTrend(payload) {
     const yoy = annual[year].yoy?.total_equipment;
     return [year, `${formatNumber(annual[year].total_equipment)}대`, yoy ? `${formatSigned(yoy.absolute_change)}대` : "-", yoy ? `${formatSigned(yoy.percent_change, 1)}%` : "-"];
   });
-  document.querySelector("#trend-equipment-table").replaceChildren(createTrendTable("2021–2025 전체 MRI 장비 추세", ["연도", "장비 수", "전년 대비", "전년 대비율"], rows));
+  document.querySelector("#trend-equipment-table").replaceChildren(createTrendTable(`${years[0]}–${years.at(-1)} 전체 MRI 장비 추세`, ["연도", "장비 수", "전년 대비", "전년 대비율"], rows));
   renderTrendMatrix("trend-tesla-table", "Tesla 구성 변화", years, annual, "tesla");
   renderTrendMatrix("trend-manufacturer-table", "제조사 점유율 변화", years, annual, "manufacturer");
   renderTrendMatrix("trend-region-table", "시도별 장비 변화", years, annual, "region", true);
@@ -218,7 +218,7 @@ function renderTrend(payload) {
 async function loadTrend() {
   if (!trendLoadPromise) {
     trendStatusElement.hidden = false;
-    trendStatusElement.textContent = "2021–2025 연도별 통계를 불러오는 중입니다.";
+    trendStatusElement.textContent = "연도별 통계를 불러오는 중입니다.";
     trendLoadPromise = fetchJson(TREND_URL).then((payload) => {
       renderTrend(payload);
       return payload;

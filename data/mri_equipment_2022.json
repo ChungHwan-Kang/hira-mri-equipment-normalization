@@ -4256,7 +4256,7 @@
     "모델명":"Signa Excite HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"재단법인 동암의학연구소 서울헬스케어허브의원",
+    "hospital_name_display":"동암의학연구소 서울헬스케어허브의원",
     "facility_key":"재단법인 동암의학연구소 서울헬스케어허브의원||경기도||용인시 기흥구"
   },
   {
@@ -4268,7 +4268,7 @@
     "모델명":"Vantage Galan",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"재단법인 동암의학연구소 서울헬스케어허브의원",
+    "hospital_name_display":"동암의학연구소 서울헬스케어허브의원",
     "facility_key":"재단법인 동암의학연구소 서울헬스케어허브의원||경기도||용인시 기흥구"
   },
   {
@@ -4460,7 +4460,7 @@
     "모델명":"MRT-2003",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"아가페의료재단 시티병원",
+    "hospital_name_display":"시티병원",
     "facility_key":"아가페의료재단 시티병원||경기도||의왕시"
   },
   {
@@ -4916,7 +4916,7 @@
     "모델명":"MAGNETOM C!",
     "테슬라":"<0.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인백성의료재단 안중백병원",
+    "hospital_name_display":"안중백병원",
     "facility_key":"의료법인백성의료재단 안중백병원||경기도||평택시"
   },
   {
@@ -6692,7 +6692,7 @@
     "모델명":"MAGNETOM Avanto fit",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"재단법인대구포교성베네딕도수녀회창원파티마병원",
+    "hospital_name_display":"창원파티마병원",
     "facility_key":"재단법인대구포교성베네딕도수녀회창원파티마병원||경상남도||창원시 의창구"
   },
   {
@@ -6704,7 +6704,7 @@
     "모델명":"MAGNETOM Skyra",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"재단법인대구포교성베네딕도수녀회창원파티마병원",
+    "hospital_name_display":"창원파티마병원",
     "facility_key":"재단법인대구포교성베네딕도수녀회창원파티마병원||경상남도||창원시 의창구"
   },
   {
@@ -7136,7 +7136,7 @@
     "모델명":"Signa",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인 갑을의료재단 갑을구미병원",
+    "hospital_name_display":"갑을구미병원",
     "facility_key":"의료법인 갑을의료재단 갑을구미병원||경상북도||구미시"
   },
   {
@@ -8900,7 +8900,7 @@
     "모델명":"Echelon Smart",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인명문의료재단 대구기독병원",
+    "hospital_name_display":"대구기독병원",
     "facility_key":"의료법인명문의료재단 대구기독병원||대구광역시||달서구"
   },
   {
@@ -12104,7 +12104,7 @@
     "모델명":"Achieva",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인 센텀의료재단 부산센텀병원",
+    "hospital_name_display":"부산센텀병원",
     "facility_key":"의료법인 센텀의료재단 부산센텀병원||부산광역시||수영구"
   },
   {
@@ -13676,7 +13676,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인 나누리병원",
+    "hospital_name_display":"나누리병원",
     "facility_key":"의료법인 나누리병원||서울특별시||강서구"
   },
   {
@@ -13688,7 +13688,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"의료법인 나누리병원",
+    "hospital_name_display":"나누리병원",
     "facility_key":"의료법인 나누리병원||서울특별시||강서구"
   },
   {
@@ -15044,7 +15044,7 @@
     "모델명":"Signa Excite HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인제민의료재단동서병원",
+    "hospital_name_display":"동서병원",
     "facility_key":"의료법인제민의료재단동서병원||서울특별시||서대문구"
   },
   {
@@ -20096,7 +20096,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 전북",
     "facility_key":"(사)한국건강관리협회건강증진의원||전라북도||전주시 덕진구"
   },
   {
@@ -20108,7 +20108,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 전북",
     "facility_key":"(사)한국건강관리협회건강증진의원||전라북도||전주시 덕진구"
   },
   {
@@ -21764,7 +21764,7 @@
     "모델명":"Signa Infinity",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인 중원의료재단 충주중앙병원",
+    "hospital_name_display":"충주중앙병원",
     "facility_key":"의료법인 중원의료재단 충주중앙병원||충청북도||충주시"
   },
   {

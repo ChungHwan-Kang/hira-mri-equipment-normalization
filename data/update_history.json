@@ -2,6 +2,21 @@
   "schema_version": "1.0",
   "releases": [
     {
+      "version": "1.1.0",
+      "status": "published",
+      "data_reference_date": "2025-12-31",
+      "published_at": "2026-08-19T00:00:00Z",
+      "source_name": "건강보험심사평가원",
+      "source_reference": "건강보험심사평가원 의료장비 상세현황 공공데이터",
+      "total_equipment": 2097,
+      "change_summary": "2019–2025 MRI 장비현황 연도별 데이터 및 추세 공개 범위 확장",
+      "corrections": [
+        "2019년과 2020년 연도별 MRI 장비 데이터 및 요약 통계를 추가하고, Year-over-Year Trend 연구 기간을 2019–2025로 확장.",
+        "2021–2024 의료기관 표시명을 최종 확정된 canonical display vocabulary에 맞게 정렬. 표시명 교정으로 장비수와 기관수 집계는 변경되지 않음."
+      ],
+      "data_quality_notes": []
+    },
+    {
       "version": "1.0.0",
       "status": "published",
       "data_reference_date": "2025-12-31",

@@ -1,0 +1,2594 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-19T00:00:00Z",
+  "study_period": {
+    "start_year": 2019,
+    "end_year": 2025,
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "metric_definitions": {
+    "equipment_count": "sum_equipment",
+    "facility_count": "annual_distinct_facility_key",
+    "share_denominator": "annual_total_equipment",
+    "share_change_unit": "percentage_point"
+  },
+  "years": {
+    "2019": {
+      "total_equipment": 1656,
+      "facility_count": 1166,
+      "equipment_per_facility": 1.4202401372212694,
+      "high_tesla_equipment": 409,
+      "high_tesla_share": 24.69806763285024,
+      "tesla": {
+        "0.5–1.5T": {
+          "count": 12,
+          "share": 0.7246376811594203
+        },
+        "1.5T": {
+          "count": 1162,
+          "share": 70.16908212560386
+        },
+        "3.0T+": {
+          "count": 409,
+          "share": 24.69806763285024
+        },
+        "<0.5T": {
+          "count": 73,
+          "share": 4.408212560386474
+        }
+      },
+      "manufacturer": {
+        "AILAB": {
+          "count": 2,
+          "share": 0.12077294685990338
+        },
+        "Canon(Toshiba)": {
+          "count": 100,
+          "share": 6.038647342995169
+        },
+        "Esaote": {
+          "count": 1,
+          "share": 0.06038647342995169
+        },
+        "GE": {
+          "count": 455,
+          "share": 27.47584541062802
+        },
+        "Hitachi": {
+          "count": 55,
+          "share": 3.321256038647343
+        },
+        "Medinus": {
+          "count": 3,
+          "share": 0.18115942028985507
+        },
+        "Neusoft": {
+          "count": 67,
+          "share": 4.045893719806763
+        },
+        "Philips": {
+          "count": 350,
+          "share": 21.135265700483092
+        },
+        "Samsung": {
+          "count": 6,
+          "share": 0.36231884057971014
+        },
+        "Siemens": {
+          "count": 617,
+          "share": 37.25845410628019
+        }
+      },
+      "region": {
+        "강원도": {
+          "count": 39,
+          "share": 2.355072463768116
+        },
+        "경기도": {
+          "count": 339,
+          "share": 20.47101449275362
+        },
+        "경상남도": {
+          "count": 114,
+          "share": 6.884057971014493
+        },
+        "경상북도": {
+          "count": 55,
+          "share": 3.321256038647343
+        },
+        "광주광역시": {
+          "count": 74,
+          "share": 4.4685990338164245
+        },
+        "대구광역시": {
+          "count": 99,
+          "share": 5.978260869565218
+        },
+        "대전광역시": {
+          "count": 61,
+          "share": 3.683574879227053
+        },
+        "부산광역시": {
+          "count": 123,
+          "share": 7.427536231884058
+        },
+        "서울특별시": {
+          "count": 411,
+          "share": 24.818840579710145
+        },
+        "세종특별자치시": {
+          "count": 1,
+          "share": 0.06038647342995169
+        },
+        "울산광역시": {
+          "count": 33,
+          "share": 1.9927536231884055
+        },
+        "인천광역시": {
+          "count": 77,
+          "share": 4.64975845410628
+        },
+        "전라남도": {
+          "count": 67,
+          "share": 4.045893719806763
+        },
+        "전라북도": {
+          "count": 62,
+          "share": 3.7439613526570046
+        },
+        "제주특별자치도": {
+          "count": 10,
+          "share": 0.6038647342995169
+        },
+        "충청남도": {
+          "count": 48,
+          "share": 2.898550724637681
+        },
+        "충청북도": {
+          "count": 43,
+          "share": 2.5966183574879227
+        }
+      },
+      "institution_type": {
+        "병원": {
+          "count": 722,
+          "share": 43.59903381642512
+        },
+        "상급종합병원": {
+          "count": 173,
+          "share": 10.446859903381643
+        },
+        "요양병원": {
+          "count": 1,
+          "share": 0.06038647342995169
+        },
+        "의원": {
+          "count": 260,
+          "share": 15.70048309178744
+        },
+        "종합병원": {
+          "count": 473,
+          "share": 28.562801932367147
+        },
+        "치과병원": {
+          "count": 1,
+          "share": 0.06038647342995169
+        },
+        "한방병원": {
+          "count": 26,
+          "share": 1.570048309178744
+        }
+      },
+      "yoy": null
+    },
+    "2020": {
+      "total_equipment": 1775,
+      "facility_count": 1208,
+      "equipment_per_facility": 1.4693708609271523,
+      "high_tesla_equipment": 508,
+      "high_tesla_share": 28.619718309859156,
+      "tesla": {
+        "0.5–1.5T": {
+          "count": 5,
+          "share": 0.28169014084507044
+        },
+        "1.5T": {
+          "count": 1208,
+          "share": 68.05633802816902
+        },
+        "3.0T+": {
+          "count": 508,
+          "share": 28.619718309859156
+        },
+        "<0.5T": {
+          "count": 54,
+          "share": 3.0422535211267605
+        }
+      },
+      "manufacturer": {
+        "AILAB": {
+          "count": 1,
+          "share": 0.056338028169014086
+        },
+        "Canon(Toshiba)": {
+          "count": 103,
+          "share": 5.802816901408451
+        },
+        "Esaote": {
+          "count": 1,
+          "share": 0.056338028169014086
+        },
+        "GE": {
+          "count": 489,
+          "share": 27.549295774647888
+        },
+        "Hitachi": {
+          "count": 48,
+          "share": 2.704225352112676
+        },
+        "ISOL": {
+          "count": 1,
+          "share": 0.056338028169014086
+        },
+        "Medinus": {
+          "count": 1,
+          "share": 0.056338028169014086
+        },
+        "Neusoft": {
+          "count": 60,
+          "share": 3.3802816901408446
+        },
+        "Philips": {
+          "count": 385,
+          "share": 21.69014084507042
+        },
+        "Samsung": {
+          "count": 4,
+          "share": 0.22535211267605634
+        },
+        "Siemens": {
+          "count": 682,
+          "share": 38.42253521126761
+        }
+      },
+      "region": {
+        "강원도": {
+          "count": 43,
+          "share": 2.422535211267606
+        },
+        "경기도": {
+          "count": 381,
+          "share": 21.464788732394364
+        },
+        "경상남도": {
+          "count": 119,
+          "share": 6.704225352112676
+        },
+        "경상북도": {
+          "count": 57,
+          "share": 3.211267605633803
+        },
+        "광주광역시": {
+          "count": 78,
+          "share": 4.394366197183099
+        },
+        "대구광역시": {
+          "count": 111,
+          "share": 6.253521126760564
+        },
+        "대전광역시": {
+          "count": 63,
+          "share": 3.549295774647887
+        },
+        "부산광역시": {
+          "count": 137,
+          "share": 7.71830985915493
+        },
+        "서울특별시": {
+          "count": 428,
+          "share": 24.112676056338028
+        },
+        "세종특별자치시": {
+          "count": 3,
+          "share": 0.16901408450704225
+        },
+        "울산광역시": {
+          "count": 34,
+          "share": 1.915492957746479
+        },
+        "인천광역시": {
+          "count": 80,
+          "share": 4.507042253521127
+        },
+        "전라남도": {
+          "count": 70,
+          "share": 3.943661971830986
+        },
+        "전라북도": {
+          "count": 66,
+          "share": 3.7183098591549295
+        },
+        "제주특별자치도": {
+          "count": 11,
+          "share": 0.6197183098591549
+        },
+        "충청남도": {
+          "count": 50,
+          "share": 2.8169014084507045
+        },
+        "충청북도": {
+          "count": 44,
+          "share": 2.4788732394366195
+        }
+      },
+      "institution_type": {
+        "병원": {
+          "count": 759,
+          "share": 42.76056338028169
+        },
+        "상급종합병원": {
+          "count": 195,
+          "share": 10.985915492957748
+        },
+        "요양병원": {
+          "count": 1,
+          "share": 0.056338028169014086
+        },
+        "의원": {
+          "count": 284,
+          "share": 16.0
+        },
+        "종합병원": {
+          "count": 505,
+          "share": 28.450704225352112
+        },
+        "치과병원": {
+          "count": 1,
+          "share": 0.056338028169014086
+        },
+        "한방병원": {
+          "count": 30,
+          "share": 1.6901408450704223
+        }
+      },
+      "yoy": {
+        "total_equipment": {
+          "absolute_change": 119,
+          "percent_change": 7.185990338164252
+        },
+        "facility_count": {
+          "absolute_change": 42,
+          "percent_change": 3.6020583190394513
+        },
+        "equipment_per_facility": {
+          "absolute_change": 0.049130723705882895,
+          "percent_change": 3.4593251111750876
+        },
+        "high_tesla_equipment": {
+          "absolute_change": 99,
+          "percent_change": 24.205378973105134
+        },
+        "high_tesla_share": {
+          "absolute_change": 3.921650677008916,
+          "percent_change": 15.878370467302606
+        },
+        "tesla": {
+          "0.5–1.5T": {
+            "count_absolute_change": -7,
+            "count_percent_change": -58.333333333333336,
+            "share_percentage_point_change": -0.44294754031434985
+          },
+          "1.5T": {
+            "count_absolute_change": 46,
+            "count_percent_change": 3.9586919104991396,
+            "share_percentage_point_change": -2.1127440974348417
+          },
+          "3.0T+": {
+            "count_absolute_change": 99,
+            "count_percent_change": 24.205378973105134,
+            "share_percentage_point_change": 3.921650677008916
+          },
+          "<0.5T": {
+            "count_absolute_change": -19,
+            "count_percent_change": -26.027397260273972,
+            "share_percentage_point_change": -1.3659590392597134
+          }
+        },
+        "manufacturer": {
+          "AILAB": {
+            "count_absolute_change": -1,
+            "count_percent_change": -50.0,
+            "share_percentage_point_change": -0.0644349186908893
+          },
+          "Canon(Toshiba)": {
+            "count_absolute_change": 3,
+            "count_percent_change": 3.0,
+            "share_percentage_point_change": -0.2358304415867183
+          },
+          "Esaote": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.004048445260937603
+          },
+          "GE": {
+            "count_absolute_change": 34,
+            "count_percent_change": 7.472527472527473,
+            "share_percentage_point_change": 0.0734503640198696
+          },
+          "Hitachi": {
+            "count_absolute_change": -7,
+            "count_percent_change": -12.727272727272727,
+            "share_percentage_point_change": -0.6170306865346671
+          },
+          "ISOL": {
+            "count_absolute_change": 1,
+            "count_percent_change": null,
+            "share_percentage_point_change": 0.056338028169014086
+          },
+          "Medinus": {
+            "count_absolute_change": -2,
+            "count_percent_change": -66.66666666666666,
+            "share_percentage_point_change": -0.12482139212084098
+          },
+          "Neusoft": {
+            "count_absolute_change": -7,
+            "count_percent_change": -10.44776119402985,
+            "share_percentage_point_change": -0.6656120296659185
+          },
+          "Philips": {
+            "count_absolute_change": 35,
+            "count_percent_change": 10.0,
+            "share_percentage_point_change": 0.5548751445873279
+          },
+          "Samsung": {
+            "count_absolute_change": -2,
+            "count_percent_change": -33.33333333333333,
+            "share_percentage_point_change": -0.1369667279036538
+          },
+          "Siemens": {
+            "count_absolute_change": 65,
+            "count_percent_change": 10.53484602917342,
+            "share_percentage_point_change": 1.1640811049874173
+          }
+        },
+        "region": {
+          "강원도": {
+            "count_absolute_change": 4,
+            "count_percent_change": 10.256410256410255,
+            "share_percentage_point_change": 0.06746274749948977
+          },
+          "경기도": {
+            "count_absolute_change": 42,
+            "count_percent_change": 12.389380530973451,
+            "share_percentage_point_change": 0.993774239640743
+          },
+          "경상남도": {
+            "count_absolute_change": 5,
+            "count_percent_change": 4.385964912280701,
+            "share_percentage_point_change": -0.17983261890181712
+          },
+          "경상북도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 3.6363636363636362,
+            "share_percentage_point_change": -0.10998843301354011
+          },
+          "광주광역시": {
+            "count_absolute_change": 4,
+            "count_percent_change": 5.405405405405405,
+            "share_percentage_point_change": -0.07423283663332558
+          },
+          "대구광역시": {
+            "count_absolute_change": 12,
+            "count_percent_change": 12.121212121212121,
+            "share_percentage_point_change": 0.2752602571953462
+          },
+          "대전광역시": {
+            "count_absolute_change": 2,
+            "count_percent_change": 3.278688524590164,
+            "share_percentage_point_change": -0.13427910457916603
+          },
+          "부산광역시": {
+            "count_absolute_change": 14,
+            "count_percent_change": 11.38211382113821,
+            "share_percentage_point_change": 0.2907736272708723
+          },
+          "서울특별시": {
+            "count_absolute_change": 17,
+            "count_percent_change": 4.13625304136253,
+            "share_percentage_point_change": -0.7061645233721165
+          },
+          "세종특별자치시": {
+            "count_absolute_change": 2,
+            "count_percent_change": 200.0,
+            "share_percentage_point_change": 0.10862761107709057
+          },
+          "울산광역시": {
+            "count_absolute_change": 1,
+            "count_percent_change": 3.0303030303030303,
+            "share_percentage_point_change": -0.07726066544192656
+          },
+          "인천광역시": {
+            "count_absolute_change": 3,
+            "count_percent_change": 3.896103896103896,
+            "share_percentage_point_change": -0.142716200585153
+          },
+          "전라남도": {
+            "count_absolute_change": 3,
+            "count_percent_change": 4.477611940298507,
+            "share_percentage_point_change": -0.10223174797577705
+          },
+          "전라북도": {
+            "count_absolute_change": 4,
+            "count_percent_change": 6.451612903225806,
+            "share_percentage_point_change": -0.025651493502075073
+          },
+          "제주특별자치도": {
+            "count_absolute_change": 1,
+            "count_percent_change": 10.0,
+            "share_percentage_point_change": 0.015853575559637956
+          },
+          "충청남도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 4.166666666666666,
+            "share_percentage_point_change": -0.08164931618697668
+          },
+          "충청북도": {
+            "count_absolute_change": 1,
+            "count_percent_change": 2.3255813953488373,
+            "share_percentage_point_change": -0.11774511805130317
+          }
+        },
+        "institution_type": {
+          "병원": {
+            "count_absolute_change": 37,
+            "count_percent_change": 5.124653739612189,
+            "share_percentage_point_change": -0.8384704361434316
+          },
+          "상급종합병원": {
+            "count_absolute_change": 22,
+            "count_percent_change": 12.716763005780345,
+            "share_percentage_point_change": 0.5390555895761047
+          },
+          "요양병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.004048445260937603
+          },
+          "의원": {
+            "count_absolute_change": 24,
+            "count_percent_change": 9.230769230769232,
+            "share_percentage_point_change": 0.29951690821255994
+          },
+          "종합병원": {
+            "count_absolute_change": 32,
+            "count_percent_change": 6.765327695560254,
+            "share_percentage_point_change": -0.1120977070150353
+          },
+          "치과병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.004048445260937603
+          },
+          "한방병원": {
+            "count_absolute_change": 4,
+            "count_percent_change": 15.384615384615385,
+            "share_percentage_point_change": 0.12009253589167823
+          }
+        }
+      }
+    },
+    "2021": {
+      "total_equipment": 1838,
+      "facility_count": 1242,
+      "equipment_per_facility": 1.4798711755233493,
+      "high_tesla_equipment": 567,
+      "high_tesla_share": 30.848748639825896,
+      "tesla": {
+        "0.5–1.5T": {
+          "count": 3,
+          "share": 0.1632208922742111
+        },
+        "1.5T": {
+          "count": 1224,
+          "share": 66.59412404787814
+        },
+        "3.0T+": {
+          "count": 567,
+          "share": 30.848748639825896
+        },
+        "<0.5T": {
+          "count": 42,
+          "share": 2.2850924918389555
+        },
+        "PET/MR": {
+          "count": 2,
+          "share": 0.1088139281828074
+        }
+      },
+      "manufacturer": {
+        "Canon(Toshiba)": {
+          "count": 99,
+          "share": 5.386289445048966
+        },
+        "Esaote": {
+          "count": 1,
+          "share": 0.0544069640914037
+        },
+        "GE": {
+          "count": 507,
+          "share": 27.58433079434168
+        },
+        "Hitachi": {
+          "count": 45,
+          "share": 2.4483133841131663
+        },
+        "Neusoft": {
+          "count": 60,
+          "share": 3.264417845484222
+        },
+        "Philips": {
+          "count": 406,
+          "share": 22.089227421109904
+        },
+        "Samsung": {
+          "count": 4,
+          "share": 0.2176278563656148
+        },
+        "Siemens": {
+          "count": 713,
+          "share": 38.792165397170834
+        },
+        "United Imaging": {
+          "count": 3,
+          "share": 0.1632208922742111
+        }
+      },
+      "region": {
+        "강원도": {
+          "count": 45,
+          "share": 2.4483133841131663
+        },
+        "경기도": {
+          "count": 400,
+          "share": 21.76278563656148
+        },
+        "경상남도": {
+          "count": 124,
+          "share": 6.746463547334058
+        },
+        "경상북도": {
+          "count": 62,
+          "share": 3.373231773667029
+        },
+        "광주광역시": {
+          "count": 77,
+          "share": 4.189336235038085
+        },
+        "대구광역시": {
+          "count": 113,
+          "share": 6.147986942328618
+        },
+        "대전광역시": {
+          "count": 68,
+          "share": 3.6996735582154514
+        },
+        "부산광역시": {
+          "count": 138,
+          "share": 7.50816104461371
+        },
+        "서울특별시": {
+          "count": 442,
+          "share": 24.047878128400434
+        },
+        "세종특별자치시": {
+          "count": 3,
+          "share": 0.1632208922742111
+        },
+        "울산광역시": {
+          "count": 36,
+          "share": 1.958650707290533
+        },
+        "인천광역시": {
+          "count": 81,
+          "share": 4.4069640914037
+        },
+        "전라남도": {
+          "count": 72,
+          "share": 3.917301414581066
+        },
+        "전라북도": {
+          "count": 66,
+          "share": 3.5908596300326447
+        },
+        "제주특별자치도": {
+          "count": 11,
+          "share": 0.5984766050054406
+        },
+        "충청남도": {
+          "count": 52,
+          "share": 2.8291621327529923
+        },
+        "충청북도": {
+          "count": 48,
+          "share": 2.6115342763873777
+        }
+      },
+      "institution_type": {
+        "병원": {
+          "count": 773,
+          "share": 42.05658324265506
+        },
+        "상급종합병원": {
+          "count": 212,
+          "share": 11.534276387377584
+        },
+        "요양병원": {
+          "count": 1,
+          "share": 0.0544069640914037
+        },
+        "의원": {
+          "count": 304,
+          "share": 16.539717083786726
+        },
+        "정신병원": {
+          "count": 1,
+          "share": 0.0544069640914037
+        },
+        "종합병원": {
+          "count": 515,
+          "share": 28.01958650707291
+        },
+        "치과병원": {
+          "count": 1,
+          "share": 0.0544069640914037
+        },
+        "한방병원": {
+          "count": 31,
+          "share": 1.6866158868335146
+        }
+      },
+      "yoy": {
+        "total_equipment": {
+          "absolute_change": 63,
+          "percent_change": 3.549295774647887
+        },
+        "facility_count": {
+          "absolute_change": 34,
+          "percent_change": 2.814569536423841
+        },
+        "equipment_per_facility": {
+          "absolute_change": 0.010500314596197047,
+          "percent_change": 0.7146129595609033
+        },
+        "high_tesla_equipment": {
+          "absolute_change": 59,
+          "percent_change": 11.614173228346457
+        },
+        "high_tesla_share": {
+          "absolute_change": 2.22903032996674,
+          "percent_change": 7.788442589942841
+        },
+        "tesla": {
+          "0.5–1.5T": {
+            "count_absolute_change": -2,
+            "count_percent_change": -40.0,
+            "share_percentage_point_change": -0.11846924857085933
+          },
+          "1.5T": {
+            "count_absolute_change": 16,
+            "count_percent_change": 1.3245033112582782,
+            "share_percentage_point_change": -1.4622139802908833
+          },
+          "3.0T+": {
+            "count_absolute_change": 59,
+            "count_percent_change": 11.614173228346457,
+            "share_percentage_point_change": 2.22903032996674
+          },
+          "<0.5T": {
+            "count_absolute_change": -12,
+            "count_percent_change": -22.22222222222222,
+            "share_percentage_point_change": -0.757161029287805
+          },
+          "PET/MR": {
+            "count_absolute_change": 2,
+            "count_percent_change": null,
+            "share_percentage_point_change": 0.1088139281828074
+          }
+        },
+        "manufacturer": {
+          "AILAB": {
+            "count_absolute_change": -1,
+            "count_percent_change": -100.0,
+            "share_percentage_point_change": -0.056338028169014086
+          },
+          "Canon(Toshiba)": {
+            "count_absolute_change": -4,
+            "count_percent_change": -3.8834951456310676,
+            "share_percentage_point_change": -0.41652745635948474
+          },
+          "Esaote": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.0019310640776103866
+          },
+          "GE": {
+            "count_absolute_change": 18,
+            "count_percent_change": 3.6809815950920246,
+            "share_percentage_point_change": 0.035035019693790304
+          },
+          "Hitachi": {
+            "count_absolute_change": -3,
+            "count_percent_change": -6.25,
+            "share_percentage_point_change": -0.25591196799950966
+          },
+          "ISOL": {
+            "count_absolute_change": -1,
+            "count_percent_change": -100.0,
+            "share_percentage_point_change": -0.056338028169014086
+          },
+          "Medinus": {
+            "count_absolute_change": -1,
+            "count_percent_change": -100.0,
+            "share_percentage_point_change": -0.056338028169014086
+          },
+          "Neusoft": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.11586384465662247
+          },
+          "Philips": {
+            "count_absolute_change": 21,
+            "count_percent_change": 5.454545454545454,
+            "share_percentage_point_change": 0.3990865760394833
+          },
+          "Samsung": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.007724256310441546
+          },
+          "Siemens": {
+            "count_absolute_change": 31,
+            "count_percent_change": 4.545454545454546,
+            "share_percentage_point_change": 0.36963018590322605
+          },
+          "United Imaging": {
+            "count_absolute_change": 3,
+            "count_percent_change": null,
+            "share_percentage_point_change": 0.1632208922742111
+          }
+        },
+        "region": {
+          "강원도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 4.651162790697675,
+            "share_percentage_point_change": 0.025778172845560388
+          },
+          "경기도": {
+            "count_absolute_change": 19,
+            "count_percent_change": 4.986876640419948,
+            "share_percentage_point_change": 0.297996904167114
+          },
+          "경상남도": {
+            "count_absolute_change": 5,
+            "count_percent_change": 4.201680672268908,
+            "share_percentage_point_change": 0.04223819522138239
+          },
+          "경상북도": {
+            "count_absolute_change": 5,
+            "count_percent_change": 8.771929824561402,
+            "share_percentage_point_change": 0.16196416803322622
+          },
+          "광주광역시": {
+            "count_absolute_change": -1,
+            "count_percent_change": -1.282051282051282,
+            "share_percentage_point_change": -0.205029962145014
+          },
+          "대구광역시": {
+            "count_absolute_change": 2,
+            "count_percent_change": 1.8018018018018018,
+            "share_percentage_point_change": -0.10553418443194573
+          },
+          "대전광역시": {
+            "count_absolute_change": 5,
+            "count_percent_change": 7.936507936507936,
+            "share_percentage_point_change": 0.15037778356756437
+          },
+          "부산광역시": {
+            "count_absolute_change": 1,
+            "count_percent_change": 0.7299270072992701,
+            "share_percentage_point_change": -0.2101488145412196
+          },
+          "서울특별시": {
+            "count_absolute_change": 14,
+            "count_percent_change": 3.2710280373831773,
+            "share_percentage_point_change": -0.06479792793759387
+          },
+          "세종특별자치시": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.005793192232831146
+          },
+          "울산광역시": {
+            "count_absolute_change": 2,
+            "count_percent_change": 5.88235294117647,
+            "share_percentage_point_change": 0.04315774954405405
+          },
+          "인천광역시": {
+            "count_absolute_change": 1,
+            "count_percent_change": 1.25,
+            "share_percentage_point_change": -0.10007816211742693
+          },
+          "전라남도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 2.857142857142857,
+            "share_percentage_point_change": -0.026360557249919925
+          },
+          "전라북도": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.12745022912228476
+          },
+          "제주특별자치도": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.02124170485371424
+          },
+          "충청남도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 4.0,
+            "share_percentage_point_change": 0.012260724302287862
+          },
+          "충청북도": {
+            "count_absolute_change": 4,
+            "count_percent_change": 9.090909090909092,
+            "share_percentage_point_change": 0.13266103695075815
+          }
+        },
+        "institution_type": {
+          "병원": {
+            "count_absolute_change": 14,
+            "count_percent_change": 1.844532279314888,
+            "share_percentage_point_change": -0.7039801376266297
+          },
+          "상급종합병원": {
+            "count_absolute_change": 17,
+            "count_percent_change": 8.717948717948717,
+            "share_percentage_point_change": 0.5483608944198366
+          },
+          "요양병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.0019310640776103866
+          },
+          "의원": {
+            "count_absolute_change": 20,
+            "count_percent_change": 7.042253521126761,
+            "share_percentage_point_change": 0.5397170837867264
+          },
+          "정신병원": {
+            "count_absolute_change": 1,
+            "count_percent_change": null,
+            "share_percentage_point_change": 0.0544069640914037
+          },
+          "종합병원": {
+            "count_absolute_change": 10,
+            "count_percent_change": 1.9801980198019802,
+            "share_percentage_point_change": -0.43111771827920364
+          },
+          "치과병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.0019310640776103866
+          },
+          "한방병원": {
+            "count_absolute_change": 1,
+            "count_percent_change": 3.3333333333333335,
+            "share_percentage_point_change": -0.0035249582369076826
+          }
+        }
+      }
+    },
+    "2022": {
+      "total_equipment": 1936,
+      "facility_count": 1286,
+      "equipment_per_facility": 1.505443234836703,
+      "high_tesla_equipment": 657,
+      "high_tesla_share": 33.93595041322314,
+      "tesla": {
+        "0.5–1.5T": {
+          "count": 2,
+          "share": 0.10330578512396695
+        },
+        "1.5T": {
+          "count": 1240,
+          "share": 64.0495867768595
+        },
+        "3.0T+": {
+          "count": 657,
+          "share": 33.93595041322314
+        },
+        "<0.5T": {
+          "count": 35,
+          "share": 1.8078512396694213
+        },
+        "PET/MR": {
+          "count": 2,
+          "share": 0.10330578512396695
+        }
+      },
+      "manufacturer": {
+        "Canon(Toshiba)": {
+          "count": 93,
+          "share": 4.803719008264463
+        },
+        "Esaote": {
+          "count": 1,
+          "share": 0.05165289256198347
+        },
+        "GE": {
+          "count": 539,
+          "share": 27.84090909090909
+        },
+        "Hitachi": {
+          "count": 44,
+          "share": 2.272727272727273
+        },
+        "Neusoft": {
+          "count": 58,
+          "share": 2.9958677685950414
+        },
+        "Philips": {
+          "count": 431,
+          "share": 22.262396694214875
+        },
+        "Samsung": {
+          "count": 2,
+          "share": 0.10330578512396695
+        },
+        "Siemens": {
+          "count": 764,
+          "share": 39.46280991735537
+        },
+        "United Imaging": {
+          "count": 4,
+          "share": 0.2066115702479339
+        }
+      },
+      "region": {
+        "강원도": {
+          "count": 45,
+          "share": 2.324380165289256
+        },
+        "경기도": {
+          "count": 433,
+          "share": 22.365702479338843
+        },
+        "경상남도": {
+          "count": 127,
+          "share": 6.559917355371901
+        },
+        "경상북도": {
+          "count": 65,
+          "share": 3.3574380165289255
+        },
+        "광주광역시": {
+          "count": 82,
+          "share": 4.235537190082645
+        },
+        "대구광역시": {
+          "count": 121,
+          "share": 6.25
+        },
+        "대전광역시": {
+          "count": 68,
+          "share": 3.512396694214876
+        },
+        "부산광역시": {
+          "count": 144,
+          "share": 7.43801652892562
+        },
+        "서울특별시": {
+          "count": 463,
+          "share": 23.915289256198346
+        },
+        "세종특별자치시": {
+          "count": 3,
+          "share": 0.15495867768595042
+        },
+        "울산광역시": {
+          "count": 39,
+          "share": 2.0144628099173554
+        },
+        "인천광역시": {
+          "count": 91,
+          "share": 4.7004132231404965
+        },
+        "전라남도": {
+          "count": 75,
+          "share": 3.8739669421487606
+        },
+        "전라북도": {
+          "count": 67,
+          "share": 3.460743801652893
+        },
+        "제주특별자치도": {
+          "count": 11,
+          "share": 0.5681818181818182
+        },
+        "충청남도": {
+          "count": 52,
+          "share": 2.6859504132231407
+        },
+        "충청북도": {
+          "count": 50,
+          "share": 2.5826446280991737
+        }
+      },
+      "institution_type": {
+        "병원": {
+          "count": 801,
+          "share": 41.37396694214876
+        },
+        "상급종합병원": {
+          "count": 222,
+          "share": 11.466942148760332
+        },
+        "요양병원": {
+          "count": 1,
+          "share": 0.05165289256198347
+        },
+        "의원": {
+          "count": 329,
+          "share": 16.99380165289256
+        },
+        "정신병원": {
+          "count": 2,
+          "share": 0.10330578512396695
+        },
+        "종합병원": {
+          "count": 548,
+          "share": 28.305785123966942
+        },
+        "치과병원": {
+          "count": 2,
+          "share": 0.10330578512396695
+        },
+        "한방병원": {
+          "count": 31,
+          "share": 1.6012396694214874
+        }
+      },
+      "yoy": {
+        "total_equipment": {
+          "absolute_change": 98,
+          "percent_change": 5.331882480957562
+        },
+        "facility_count": {
+          "absolute_change": 44,
+          "percent_change": 3.542673107890499
+        },
+        "equipment_per_facility": {
+          "absolute_change": 0.025572059313353712,
+          "percent_change": 1.7279922561036622
+        },
+        "high_tesla_equipment": {
+          "absolute_change": 90,
+          "percent_change": 15.873015873015872
+        },
+        "high_tesla_share": {
+          "absolute_change": 3.0872017733972434,
+          "percent_change": 10.00754296208842
+        },
+        "tesla": {
+          "0.5–1.5T": {
+            "count_absolute_change": -1,
+            "count_percent_change": -33.33333333333333,
+            "share_percentage_point_change": -0.05991510715024416
+          },
+          "1.5T": {
+            "count_absolute_change": 16,
+            "count_percent_change": 1.3071895424836601,
+            "share_percentage_point_change": -2.5445372710186405
+          },
+          "3.0T+": {
+            "count_absolute_change": 90,
+            "count_percent_change": 15.873015873015872,
+            "share_percentage_point_change": 3.0872017733972434
+          },
+          "<0.5T": {
+            "count_absolute_change": -7,
+            "count_percent_change": -16.666666666666664,
+            "share_percentage_point_change": -0.47724125216953417
+          },
+          "PET/MR": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.005508143058840453
+          }
+        },
+        "manufacturer": {
+          "Canon(Toshiba)": {
+            "count_absolute_change": -6,
+            "count_percent_change": -6.0606060606060606,
+            "share_percentage_point_change": -0.5825704367845033
+          },
+          "Esaote": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.0027540715294202267
+          },
+          "GE": {
+            "count_absolute_change": 32,
+            "count_percent_change": 6.31163708086785,
+            "share_percentage_point_change": 0.2565782965674117
+          },
+          "Hitachi": {
+            "count_absolute_change": -1,
+            "count_percent_change": -2.2222222222222223,
+            "share_percentage_point_change": -0.17558611138589342
+          },
+          "Neusoft": {
+            "count_absolute_change": -2,
+            "count_percent_change": -3.3333333333333335,
+            "share_percentage_point_change": -0.26855007688918064
+          },
+          "Philips": {
+            "count_absolute_change": 25,
+            "count_percent_change": 6.157635467980295,
+            "share_percentage_point_change": 0.1731692731049712
+          },
+          "Samsung": {
+            "count_absolute_change": -2,
+            "count_percent_change": -50.0,
+            "share_percentage_point_change": -0.11432207124164785
+          },
+          "Siemens": {
+            "count_absolute_change": 51,
+            "count_percent_change": 7.152875175315568,
+            "share_percentage_point_change": 0.6706445201845384
+          },
+          "United Imaging": {
+            "count_absolute_change": 1,
+            "count_percent_change": 33.33333333333333,
+            "share_percentage_point_change": 0.043390677973722785
+          }
+        },
+        "region": {
+          "강원도": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.12393321882391017
+          },
+          "경기도": {
+            "count_absolute_change": 33,
+            "count_percent_change": 8.25,
+            "share_percentage_point_change": 0.6029168427773648
+          },
+          "경상남도": {
+            "count_absolute_change": 3,
+            "count_percent_change": 2.4193548387096775,
+            "share_percentage_point_change": -0.18654619196215716
+          },
+          "경상북도": {
+            "count_absolute_change": 3,
+            "count_percent_change": 4.838709677419355,
+            "share_percentage_point_change": -0.015793757138103715
+          },
+          "광주광역시": {
+            "count_absolute_change": 5,
+            "count_percent_change": 6.493506493506493,
+            "share_percentage_point_change": 0.04620095504455968
+          },
+          "대구광역시": {
+            "count_absolute_change": 8,
+            "count_percent_change": 7.079646017699115,
+            "share_percentage_point_change": 0.1020130576713818
+          },
+          "대전광역시": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.1872768640005753
+          },
+          "부산광역시": {
+            "count_absolute_change": 6,
+            "count_percent_change": 4.3478260869565215,
+            "share_percentage_point_change": -0.07014451568809044
+          },
+          "서울특별시": {
+            "count_absolute_change": 21,
+            "count_percent_change": 4.751131221719457,
+            "share_percentage_point_change": -0.13258887220208848
+          },
+          "세종특별자치시": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.00826221458826068
+          },
+          "울산광역시": {
+            "count_absolute_change": 3,
+            "count_percent_change": 8.333333333333332,
+            "share_percentage_point_change": 0.055812102626822346
+          },
+          "인천광역시": {
+            "count_absolute_change": 10,
+            "count_percent_change": 12.345679012345679,
+            "share_percentage_point_change": 0.29344913173679643
+          },
+          "전라남도": {
+            "count_absolute_change": 3,
+            "count_percent_change": 4.166666666666666,
+            "share_percentage_point_change": -0.04333447243230548
+          },
+          "전라북도": {
+            "count_absolute_change": 1,
+            "count_percent_change": 1.5151515151515151,
+            "share_percentage_point_change": -0.13011582837975189
+          },
+          "제주특별자치도": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.03029478682362241
+          },
+          "충청남도": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.14321171952985168
+          },
+          "충청북도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 4.166666666666666,
+            "share_percentage_point_change": -0.02888964828820395
+          }
+        },
+        "institution_type": {
+          "병원": {
+            "count_absolute_change": 28,
+            "count_percent_change": 3.6222509702457955,
+            "share_percentage_point_change": -0.6826163005062966
+          },
+          "상급종합병원": {
+            "count_absolute_change": 10,
+            "count_percent_change": 4.716981132075472,
+            "share_percentage_point_change": -0.06733423861725285
+          },
+          "요양병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.0027540715294202267
+          },
+          "의원": {
+            "count_absolute_change": 25,
+            "count_percent_change": 8.223684210526317,
+            "share_percentage_point_change": 0.4540845691058344
+          },
+          "정신병원": {
+            "count_absolute_change": 1,
+            "count_percent_change": 100.0,
+            "share_percentage_point_change": 0.048898821032563246
+          },
+          "종합병원": {
+            "count_absolute_change": 33,
+            "count_percent_change": 6.407766990291262,
+            "share_percentage_point_change": 0.28619861689403336
+          },
+          "치과병원": {
+            "count_absolute_change": 1,
+            "count_percent_change": 100.0,
+            "share_percentage_point_change": 0.048898821032563246
+          },
+          "한방병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.08537621741202717
+          }
+        }
+      }
+    },
+    "2023": {
+      "total_equipment": 2001,
+      "facility_count": 1317,
+      "equipment_per_facility": 1.5193621867881548,
+      "high_tesla_equipment": 729,
+      "high_tesla_share": 36.43178410794602,
+      "tesla": {
+        "0.5–1.5T": {
+          "count": 3,
+          "share": 0.14992503748125938
+        },
+        "1.5T": {
+          "count": 1238,
+          "share": 61.869065467266374
+        },
+        "3.0T+": {
+          "count": 729,
+          "share": 36.43178410794602
+        },
+        "<0.5T": {
+          "count": 29,
+          "share": 1.4492753623188406
+        },
+        "PET/MR": {
+          "count": 2,
+          "share": 0.09995002498750624
+        }
+      },
+      "manufacturer": {
+        "Canon(Toshiba)": {
+          "count": 89,
+          "share": 4.447776111944028
+        },
+        "Esaote": {
+          "count": 1,
+          "share": 0.04997501249375312
+        },
+        "GE": {
+          "count": 561,
+          "share": 28.035982008995504
+        },
+        "Hitachi": {
+          "count": 40,
+          "share": 1.999000499750125
+        },
+        "Neusoft": {
+          "count": 54,
+          "share": 2.6986506746626686
+        },
+        "Philips": {
+          "count": 445,
+          "share": 22.23888055972014
+        },
+        "Samsung": {
+          "count": 2,
+          "share": 0.09995002498750624
+        },
+        "Siemens": {
+          "count": 801,
+          "share": 40.02998500749625
+        },
+        "United Imaging": {
+          "count": 8,
+          "share": 0.39980009995002497
+        }
+      },
+      "region": {
+        "강원특별자치도": {
+          "count": 46,
+          "share": 2.2988505747126435
+        },
+        "경기도": {
+          "count": 446,
+          "share": 22.28885557221389
+        },
+        "경상남도": {
+          "count": 131,
+          "share": 6.546726636681659
+        },
+        "경상북도": {
+          "count": 62,
+          "share": 3.0984507746126937
+        },
+        "광주광역시": {
+          "count": 82,
+          "share": 4.097951024487756
+        },
+        "대구광역시": {
+          "count": 125,
+          "share": 6.246876561719141
+        },
+        "대전광역시": {
+          "count": 71,
+          "share": 3.5482258870564722
+        },
+        "부산광역시": {
+          "count": 148,
+          "share": 7.396301849075463
+        },
+        "서울특별시": {
+          "count": 479,
+          "share": 23.938030984507748
+        },
+        "세종특별자치시": {
+          "count": 6,
+          "share": 0.29985007496251875
+        },
+        "울산광역시": {
+          "count": 40,
+          "share": 1.999000499750125
+        },
+        "인천광역시": {
+          "count": 100,
+          "share": 4.997501249375312
+        },
+        "전라남도": {
+          "count": 76,
+          "share": 3.798100949525238
+        },
+        "전라북도": {
+          "count": 69,
+          "share": 3.4482758620689653
+        },
+        "제주특별자치도": {
+          "count": 11,
+          "share": 0.5497251374312844
+        },
+        "충청남도": {
+          "count": 54,
+          "share": 2.6986506746626686
+        },
+        "충청북도": {
+          "count": 55,
+          "share": 2.7486256871564216
+        }
+      },
+      "institution_type": {
+        "병원": {
+          "count": 819,
+          "share": 40.929535232383806
+        },
+        "상급종합병원": {
+          "count": 228,
+          "share": 11.394302848575713
+        },
+        "요양병원": {
+          "count": 1,
+          "share": 0.04997501249375312
+        },
+        "의원": {
+          "count": 357,
+          "share": 17.841079460269864
+        },
+        "정신병원": {
+          "count": 2,
+          "share": 0.09995002498750624
+        },
+        "종합병원": {
+          "count": 563,
+          "share": 28.135932033983007
+        },
+        "치과병원": {
+          "count": 2,
+          "share": 0.09995002498750624
+        },
+        "한방병원": {
+          "count": 29,
+          "share": 1.4492753623188406
+        }
+      },
+      "yoy": {
+        "total_equipment": {
+          "absolute_change": 65,
+          "percent_change": 3.3574380165289255
+        },
+        "facility_count": {
+          "absolute_change": 31,
+          "percent_change": 2.410575427682737
+        },
+        "equipment_per_facility": {
+          "absolute_change": 0.013918951951451763,
+          "percent_change": 0.9245750108247399
+        },
+        "high_tesla_equipment": {
+          "absolute_change": 72,
+          "percent_change": 10.95890410958904
+        },
+        "high_tesla_share": {
+          "absolute_change": 2.495833694722883,
+          "percent_change": 7.354541907128617
+        },
+        "tesla": {
+          "0.5–1.5T": {
+            "count_absolute_change": 1,
+            "count_percent_change": 50.0,
+            "share_percentage_point_change": 0.04661925235729243
+          },
+          "1.5T": {
+            "count_absolute_change": -2,
+            "count_percent_change": -0.16129032258064516,
+            "share_percentage_point_change": -2.180521309593125
+          },
+          "3.0T+": {
+            "count_absolute_change": 72,
+            "count_percent_change": 10.95890410958904,
+            "share_percentage_point_change": 2.495833694722883
+          },
+          "<0.5T": {
+            "count_absolute_change": -6,
+            "count_percent_change": -17.142857142857142,
+            "share_percentage_point_change": -0.3585758773505807
+          },
+          "PET/MR": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.003355760136460703
+          }
+        },
+        "manufacturer": {
+          "Canon(Toshiba)": {
+            "count_absolute_change": -4,
+            "count_percent_change": -4.301075268817205,
+            "share_percentage_point_change": -0.3559428963204345
+          },
+          "Esaote": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.0016778800682303516
+          },
+          "GE": {
+            "count_absolute_change": 22,
+            "count_percent_change": 4.081632653061225,
+            "share_percentage_point_change": 0.1950729180864137
+          },
+          "Hitachi": {
+            "count_absolute_change": -4,
+            "count_percent_change": -9.090909090909092,
+            "share_percentage_point_change": -0.273726772977148
+          },
+          "Neusoft": {
+            "count_absolute_change": -4,
+            "count_percent_change": -6.896551724137931,
+            "share_percentage_point_change": -0.29721709393237283
+          },
+          "Philips": {
+            "count_absolute_change": 14,
+            "count_percent_change": 3.248259860788863,
+            "share_percentage_point_change": -0.02351613449473433
+          },
+          "Samsung": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.003355760136460703
+          },
+          "Siemens": {
+            "count_absolute_change": 37,
+            "count_percent_change": 4.842931937172775,
+            "share_percentage_point_change": 0.5671750901408785
+          },
+          "United Imaging": {
+            "count_absolute_change": 4,
+            "count_percent_change": 100.0,
+            "share_percentage_point_change": 0.19318852970209108
+          }
+        },
+        "region": {
+          "강원도": {
+            "count_absolute_change": -45,
+            "count_percent_change": -100.0,
+            "share_percentage_point_change": -2.324380165289256
+          },
+          "강원특별자치도": {
+            "count_absolute_change": 46,
+            "count_percent_change": null,
+            "share_percentage_point_change": 2.2988505747126435
+          },
+          "경기도": {
+            "count_absolute_change": 13,
+            "count_percent_change": 3.0023094688221708,
+            "share_percentage_point_change": -0.07684690712495268
+          },
+          "경상남도": {
+            "count_absolute_change": 4,
+            "count_percent_change": 3.149606299212598,
+            "share_percentage_point_change": -0.013190718690242242
+          },
+          "경상북도": {
+            "count_absolute_change": -3,
+            "count_percent_change": -4.615384615384616,
+            "share_percentage_point_change": -0.2589872419162318
+          },
+          "광주광역시": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.13758616559488868
+          },
+          "대구광역시": {
+            "count_absolute_change": 4,
+            "count_percent_change": 3.3057851239669422,
+            "share_percentage_point_change": -0.0031234382808591477
+          },
+          "대전광역시": {
+            "count_absolute_change": 3,
+            "count_percent_change": 4.411764705882353,
+            "share_percentage_point_change": 0.035829192841596136
+          },
+          "부산광역시": {
+            "count_absolute_change": 4,
+            "count_percent_change": 2.7777777777777777,
+            "share_percentage_point_change": -0.04171467985015731
+          },
+          "서울특별시": {
+            "count_absolute_change": 16,
+            "count_percent_change": 3.455723542116631,
+            "share_percentage_point_change": 0.02274172830940202
+          },
+          "세종특별자치시": {
+            "count_absolute_change": 3,
+            "count_percent_change": 100.0,
+            "share_percentage_point_change": 0.14489139727656833
+          },
+          "울산광역시": {
+            "count_absolute_change": 1,
+            "count_percent_change": 2.564102564102564,
+            "share_percentage_point_change": -0.01546231016723043
+          },
+          "인천광역시": {
+            "count_absolute_change": 9,
+            "count_percent_change": 9.89010989010989,
+            "share_percentage_point_change": 0.29708802623481567
+          },
+          "전라남도": {
+            "count_absolute_change": 1,
+            "count_percent_change": 1.3333333333333335,
+            "share_percentage_point_change": -0.07586599262352278
+          },
+          "전라북도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 2.9850746268656714,
+            "share_percentage_point_change": -0.012467939583927556
+          },
+          "제주특별자치도": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.01845668075053386
+          },
+          "충청남도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 3.8461538461538463,
+            "share_percentage_point_change": 0.01270026143952796
+          },
+          "충청북도": {
+            "count_absolute_change": 5,
+            "count_percent_change": 10.0,
+            "share_percentage_point_change": 0.16598105905724791
+          }
+        },
+        "institution_type": {
+          "병원": {
+            "count_absolute_change": 18,
+            "count_percent_change": 2.247191011235955,
+            "share_percentage_point_change": -0.44443170976495594
+          },
+          "상급종합병원": {
+            "count_absolute_change": 6,
+            "count_percent_change": 2.7027027027027026,
+            "share_percentage_point_change": -0.07263930018461906
+          },
+          "요양병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.0016778800682303516
+          },
+          "의원": {
+            "count_absolute_change": 28,
+            "count_percent_change": 8.51063829787234,
+            "share_percentage_point_change": 0.8472778073773028
+          },
+          "정신병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.003355760136460703
+          },
+          "종합병원": {
+            "count_absolute_change": 15,
+            "count_percent_change": 2.737226277372263,
+            "share_percentage_point_change": -0.16985308998393478
+          },
+          "치과병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.003355760136460703
+          },
+          "한방병원": {
+            "count_absolute_change": -2,
+            "count_percent_change": -6.451612903225806,
+            "share_percentage_point_change": -0.15196430710264686
+          }
+        }
+      }
+    },
+    "2024": {
+      "total_equipment": 2038,
+      "facility_count": 1330,
+      "equipment_per_facility": 1.5323308270676692,
+      "high_tesla_equipment": 787,
+      "high_tesla_share": 38.61629048086359,
+      "tesla": {
+        "0.5–1.5T": {
+          "count": 2,
+          "share": 0.09813542688910697
+        },
+        "1.5T": {
+          "count": 1224,
+          "share": 60.05888125613347
+        },
+        "3.0T+": {
+          "count": 787,
+          "share": 38.61629048086359
+        },
+        "<0.5T": {
+          "count": 22,
+          "share": 1.0794896957801767
+        },
+        "PET/MR": {
+          "count": 3,
+          "share": 0.14720314033366044
+        }
+      },
+      "manufacturer": {
+        "Canon(Toshiba)": {
+          "count": 88,
+          "share": 4.317958783120707
+        },
+        "Esaote": {
+          "count": 1,
+          "share": 0.04906771344455348
+        },
+        "GE": {
+          "count": 570,
+          "share": 27.968596663395484
+        },
+        "Hitachi": {
+          "count": 34,
+          "share": 1.6683022571148183
+        },
+        "Neusoft": {
+          "count": 50,
+          "share": 2.4533856722276743
+        },
+        "Philips": {
+          "count": 456,
+          "share": 22.374877330716387
+        },
+        "Samsung": {
+          "count": 1,
+          "share": 0.04906771344455348
+        },
+        "Siemens": {
+          "count": 829,
+          "share": 40.67713444553484
+        },
+        "United Imaging": {
+          "count": 9,
+          "share": 0.4416094210009814
+        }
+      },
+      "region": {
+        "강원특별자치도": {
+          "count": 48,
+          "share": 2.355250245338567
+        },
+        "경기도": {
+          "count": 448,
+          "share": 21.98233562315996
+        },
+        "경상남도": {
+          "count": 129,
+          "share": 6.329735034347399
+        },
+        "경상북도": {
+          "count": 61,
+          "share": 2.9931305201177625
+        },
+        "광주광역시": {
+          "count": 83,
+          "share": 4.072620215897939
+        },
+        "대구광역시": {
+          "count": 130,
+          "share": 6.378802747791953
+        },
+        "대전광역시": {
+          "count": 75,
+          "share": 3.680078508341511
+        },
+        "부산광역시": {
+          "count": 150,
+          "share": 7.360157016683022
+        },
+        "서울특별시": {
+          "count": 496,
+          "share": 24.33758586849853
+        },
+        "세종특별자치시": {
+          "count": 6,
+          "share": 0.2944062806673209
+        },
+        "울산광역시": {
+          "count": 39,
+          "share": 1.9136408243375858
+        },
+        "인천광역시": {
+          "count": 101,
+          "share": 4.955839057899902
+        },
+        "전라남도": {
+          "count": 77,
+          "share": 3.7782139352306183
+        },
+        "전북특별자치도": {
+          "count": 70,
+          "share": 3.434739941118744
+        },
+        "제주특별자치도": {
+          "count": 12,
+          "share": 0.5888125613346418
+        },
+        "충청남도": {
+          "count": 55,
+          "share": 2.6987242394504416
+        },
+        "충청북도": {
+          "count": 58,
+          "share": 2.845927379784102
+        }
+      },
+      "institution_type": {
+        "병원": {
+          "count": 825,
+          "share": 40.48086359175662
+        },
+        "상급종합병원": {
+          "count": 246,
+          "share": 12.070657507360156
+        },
+        "요양병원": {
+          "count": 1,
+          "share": 0.04906771344455348
+        },
+        "의원": {
+          "count": 368,
+          "share": 18.056918547595682
+        },
+        "정신병원": {
+          "count": 1,
+          "share": 0.04906771344455348
+        },
+        "종합병원": {
+          "count": 566,
+          "share": 27.77232580961727
+        },
+        "치과병원": {
+          "count": 2,
+          "share": 0.09813542688910697
+        },
+        "한방병원": {
+          "count": 29,
+          "share": 1.422963689892051
+        }
+      },
+      "yoy": {
+        "total_equipment": {
+          "absolute_change": 37,
+          "percent_change": 1.8490754622688657
+        },
+        "facility_count": {
+          "absolute_change": 13,
+          "percent_change": 0.9870918754745633
+        },
+        "equipment_per_facility": {
+          "absolute_change": 0.012968640279514387,
+          "percent_change": 0.8535581833143654
+        },
+        "high_tesla_equipment": {
+          "absolute_change": 58,
+          "percent_change": 7.956104252400549
+        },
+        "high_tesla_share": {
+          "absolute_change": 2.1845063729175678,
+          "percent_change": 5.996155352823119
+        },
+        "tesla": {
+          "0.5–1.5T": {
+            "count_absolute_change": -1,
+            "count_percent_change": -33.33333333333333,
+            "share_percentage_point_change": -0.05178961059215241
+          },
+          "1.5T": {
+            "count_absolute_change": -14,
+            "count_percent_change": -1.1308562197092082,
+            "share_percentage_point_change": -1.8101842111329063
+          },
+          "3.0T+": {
+            "count_absolute_change": 58,
+            "count_percent_change": 7.956104252400549,
+            "share_percentage_point_change": 2.1845063729175678
+          },
+          "<0.5T": {
+            "count_absolute_change": -7,
+            "count_percent_change": -24.137931034482758,
+            "share_percentage_point_change": -0.36978566653866385
+          },
+          "PET/MR": {
+            "count_absolute_change": 1,
+            "count_percent_change": 50.0,
+            "share_percentage_point_change": 0.0472531153461542
+          }
+        },
+        "manufacturer": {
+          "Canon(Toshiba)": {
+            "count_absolute_change": -1,
+            "count_percent_change": -1.1235955056179776,
+            "share_percentage_point_change": -0.12981732882332153
+          },
+          "Esaote": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.0009072990491996377
+          },
+          "GE": {
+            "count_absolute_change": 9,
+            "count_percent_change": 1.6042780748663104,
+            "share_percentage_point_change": -0.06738534560001952
+          },
+          "Hitachi": {
+            "count_absolute_change": -6,
+            "count_percent_change": -15.0,
+            "share_percentage_point_change": -0.33069824263530667
+          },
+          "Neusoft": {
+            "count_absolute_change": -4,
+            "count_percent_change": -7.4074074074074066,
+            "share_percentage_point_change": -0.24526500243499427
+          },
+          "Philips": {
+            "count_absolute_change": 11,
+            "count_percent_change": 2.4719101123595504,
+            "share_percentage_point_change": 0.13599677099624685
+          },
+          "Samsung": {
+            "count_absolute_change": -1,
+            "count_percent_change": -50.0,
+            "share_percentage_point_change": -0.05088231154295276
+          },
+          "Siemens": {
+            "count_absolute_change": 28,
+            "count_percent_change": 3.495630461922597,
+            "share_percentage_point_change": 0.6471494380385892
+          },
+          "United Imaging": {
+            "count_absolute_change": 1,
+            "count_percent_change": 12.5,
+            "share_percentage_point_change": 0.041809321050956416
+          }
+        },
+        "region": {
+          "강원특별자치도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 4.3478260869565215,
+            "share_percentage_point_change": 0.05639967062592355
+          },
+          "경기도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 0.4484304932735426,
+            "share_percentage_point_change": -0.3065199490539321
+          },
+          "경상남도": {
+            "count_absolute_change": -2,
+            "count_percent_change": -1.5267175572519083,
+            "share_percentage_point_change": -0.21699160233425996
+          },
+          "경상북도": {
+            "count_absolute_change": -1,
+            "count_percent_change": -1.6129032258064515,
+            "share_percentage_point_change": -0.10532025449493121
+          },
+          "광주광역시": {
+            "count_absolute_change": 1,
+            "count_percent_change": 1.2195121951219512,
+            "share_percentage_point_change": -0.025330808589816733
+          },
+          "대구광역시": {
+            "count_absolute_change": 5,
+            "count_percent_change": 4.0,
+            "share_percentage_point_change": 0.13192618607281226
+          },
+          "대전광역시": {
+            "count_absolute_change": 4,
+            "count_percent_change": 5.633802816901409,
+            "share_percentage_point_change": 0.13185262128503883
+          },
+          "부산광역시": {
+            "count_absolute_change": 2,
+            "count_percent_change": 1.3513513513513513,
+            "share_percentage_point_change": -0.036144832392440485
+          },
+          "서울특별시": {
+            "count_absolute_change": 17,
+            "count_percent_change": 3.549060542797495,
+            "share_percentage_point_change": 0.3995548839907812
+          },
+          "세종특별자치시": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.005443794295197868
+          },
+          "울산광역시": {
+            "count_absolute_change": -1,
+            "count_percent_change": -2.5,
+            "share_percentage_point_change": -0.0853596754125392
+          },
+          "인천광역시": {
+            "count_absolute_change": 1,
+            "count_percent_change": 1.0,
+            "share_percentage_point_change": -0.04166219147541028
+          },
+          "전라남도": {
+            "count_absolute_change": 1,
+            "count_percent_change": 1.3157894736842104,
+            "share_percentage_point_change": -0.019887014294619476
+          },
+          "전라북도": {
+            "count_absolute_change": -69,
+            "count_percent_change": -100.0,
+            "share_percentage_point_change": -3.4482758620689653
+          },
+          "전북특별자치도": {
+            "count_absolute_change": 70,
+            "count_percent_change": null,
+            "share_percentage_point_change": 3.434739941118744
+          },
+          "제주특별자치도": {
+            "count_absolute_change": 1,
+            "count_percent_change": 9.090909090909092,
+            "share_percentage_point_change": 0.0390874239033574
+          },
+          "충청남도": {
+            "count_absolute_change": 1,
+            "count_percent_change": 1.8518518518518516,
+            "share_percentage_point_change": 7.356478777298392e-05
+          },
+          "충청북도": {
+            "count_absolute_change": 3,
+            "count_percent_change": 5.454545454545454,
+            "share_percentage_point_change": 0.0973016926276804
+          }
+        },
+        "institution_type": {
+          "병원": {
+            "count_absolute_change": 6,
+            "count_percent_change": 0.7326007326007326,
+            "share_percentage_point_change": -0.44867164062718246
+          },
+          "상급종합병원": {
+            "count_absolute_change": 18,
+            "count_percent_change": 7.894736842105263,
+            "share_percentage_point_change": 0.6763546587844438
+          },
+          "요양병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.0009072990491996377
+          },
+          "의원": {
+            "count_absolute_change": 11,
+            "count_percent_change": 3.081232492997199,
+            "share_percentage_point_change": 0.21583908732581847
+          },
+          "정신병원": {
+            "count_absolute_change": -1,
+            "count_percent_change": -50.0,
+            "share_percentage_point_change": -0.05088231154295276
+          },
+          "종합병원": {
+            "count_absolute_change": 3,
+            "count_percent_change": 0.5328596802841918,
+            "share_percentage_point_change": -0.36360622436573564
+          },
+          "치과병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.0018145980983992754
+          },
+          "한방병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.026311672426789556
+          }
+        }
+      }
+    },
+    "2025": {
+      "total_equipment": 2097,
+      "facility_count": 1359,
+      "equipment_per_facility": 1.5430463576158941,
+      "high_tesla_equipment": 858,
+      "high_tesla_share": 40.915593705293276,
+      "tesla": {
+        "0.5–1.5T": {
+          "count": 4,
+          "share": 0.19074868860276584
+        },
+        "1.5T": {
+          "count": 1215,
+          "share": 57.93991416309014
+        },
+        "3.0T+": {
+          "count": 858,
+          "share": 40.915593705293276
+        },
+        "<0.5T": {
+          "count": 17,
+          "share": 0.8106819265617549
+        },
+        "PET/MR": {
+          "count": 3,
+          "share": 0.14306151645207438
+        }
+      },
+      "manufacturer": {
+        "Canon(Toshiba)": {
+          "count": 84,
+          "share": 4.005722460658083
+        },
+        "Esaote": {
+          "count": 1,
+          "share": 0.04768717215069146
+        },
+        "GE": {
+          "count": 594,
+          "share": 28.32618025751073
+        },
+        "Hitachi": {
+          "count": 32,
+          "share": 1.5259895088221267
+        },
+        "Neusoft": {
+          "count": 48,
+          "share": 2.28898426323319
+        },
+        "Philips": {
+          "count": 465,
+          "share": 22.17453505007153
+        },
+        "Samsung": {
+          "count": 1,
+          "share": 0.04768717215069146
+        },
+        "Siemens": {
+          "count": 863,
+          "share": 41.15402956604674
+        },
+        "United Imaging": {
+          "count": 9,
+          "share": 0.4291845493562232
+        }
+      },
+      "region": {
+        "강원특별자치도": {
+          "count": 48,
+          "share": 2.28898426323319
+        },
+        "경기도": {
+          "count": 464,
+          "share": 22.126847877920838
+        },
+        "경상남도": {
+          "count": 130,
+          "share": 6.19933237958989
+        },
+        "경상북도": {
+          "count": 63,
+          "share": 3.004291845493562
+        },
+        "광주광역시": {
+          "count": 78,
+          "share": 3.719599427753934
+        },
+        "대구광역시": {
+          "count": 135,
+          "share": 6.437768240343347
+        },
+        "대전광역시": {
+          "count": 75,
+          "share": 3.5765379113018603
+        },
+        "부산광역시": {
+          "count": 152,
+          "share": 7.248450166905103
+        },
+        "서울특별시": {
+          "count": 523,
+          "share": 24.940391034811636
+        },
+        "세종특별자치시": {
+          "count": 7,
+          "share": 0.33381020505484027
+        },
+        "울산광역시": {
+          "count": 40,
+          "share": 1.9074868860276584
+        },
+        "인천광역시": {
+          "count": 103,
+          "share": 4.9117787315212205
+        },
+        "전라남도": {
+          "count": 79,
+          "share": 3.7672865999046254
+        },
+        "전북특별자치도": {
+          "count": 70,
+          "share": 3.338102050548403
+        },
+        "제주특별자치도": {
+          "count": 13,
+          "share": 0.619933237958989
+        },
+        "충청남도": {
+          "count": 58,
+          "share": 2.7658559847401047
+        },
+        "충청북도": {
+          "count": 59,
+          "share": 2.8135431568907965
+        }
+      },
+      "institution_type": {
+        "병원": {
+          "count": 837,
+          "share": 39.91416309012876
+        },
+        "상급종합병원": {
+          "count": 249,
+          "share": 11.874105865522175
+        },
+        "요양병원": {
+          "count": 1,
+          "share": 0.04768717215069146
+        },
+        "의원": {
+          "count": 388,
+          "share": 18.502622794468287
+        },
+        "정신병원": {
+          "count": 1,
+          "share": 0.04768717215069146
+        },
+        "종합병원": {
+          "count": 589,
+          "share": 28.087744396757273
+        },
+        "치과병원": {
+          "count": 2,
+          "share": 0.09537434430138292
+        },
+        "한방병원": {
+          "count": 30,
+          "share": 1.4306151645207439
+        }
+      },
+      "yoy": {
+        "total_equipment": {
+          "absolute_change": 59,
+          "percent_change": 2.8949950932286557
+        },
+        "facility_count": {
+          "absolute_change": 29,
+          "percent_change": 2.180451127819549
+        },
+        "equipment_per_facility": {
+          "absolute_change": 0.010715530548224939,
+          "percent_change": 0.6992961545210583
+        },
+        "high_tesla_equipment": {
+          "absolute_change": 71,
+          "percent_change": 9.021601016518424
+        },
+        "high_tesla_share": {
+          "absolute_change": 2.2993032244296856,
+          "percent_change": 5.9542312215853865
+        },
+        "tesla": {
+          "0.5–1.5T": {
+            "count_absolute_change": 2,
+            "count_percent_change": 100.0,
+            "share_percentage_point_change": 0.09261326171365887
+          },
+          "1.5T": {
+            "count_absolute_change": -9,
+            "count_percent_change": -0.7352941176470588,
+            "share_percentage_point_change": -2.118967093043331
+          },
+          "3.0T+": {
+            "count_absolute_change": 71,
+            "count_percent_change": 9.021601016518424,
+            "share_percentage_point_change": 2.2993032244296856
+          },
+          "<0.5T": {
+            "count_absolute_change": -5,
+            "count_percent_change": -22.727272727272727,
+            "share_percentage_point_change": -0.26880776921842187
+          },
+          "PET/MR": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.004141623881586065
+          }
+        },
+        "manufacturer": {
+          "Canon(Toshiba)": {
+            "count_absolute_change": -4,
+            "count_percent_change": -4.545454545454546,
+            "share_percentage_point_change": -0.3122363224626241
+          },
+          "Esaote": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.001380541293862024
+          },
+          "GE": {
+            "count_absolute_change": 24,
+            "count_percent_change": 4.2105263157894735,
+            "share_percentage_point_change": 0.35758359411524765
+          },
+          "Hitachi": {
+            "count_absolute_change": -2,
+            "count_percent_change": -5.88235294117647,
+            "share_percentage_point_change": -0.14231274829269158
+          },
+          "Neusoft": {
+            "count_absolute_change": -2,
+            "count_percent_change": -4.0,
+            "share_percentage_point_change": -0.1644014089944843
+          },
+          "Philips": {
+            "count_absolute_change": 9,
+            "count_percent_change": 1.9736842105263157,
+            "share_percentage_point_change": -0.2003422806448576
+          },
+          "Samsung": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.001380541293862024
+          },
+          "Siemens": {
+            "count_absolute_change": 34,
+            "count_percent_change": 4.101326899879373,
+            "share_percentage_point_change": 0.4768951205118981
+          },
+          "United Imaging": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.012424871644758195
+          }
+        },
+        "region": {
+          "강원특별자치도": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.06626598210537704
+          },
+          "경기도": {
+            "count_absolute_change": 16,
+            "count_percent_change": 3.571428571428571,
+            "share_percentage_point_change": 0.1445122547608797
+          },
+          "경상남도": {
+            "count_absolute_change": 1,
+            "count_percent_change": 0.7751937984496124,
+            "share_percentage_point_change": -0.13040265475750878
+          },
+          "경상북도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 3.278688524590164,
+            "share_percentage_point_change": 0.011161325375799613
+          },
+          "광주광역시": {
+            "count_absolute_change": -5,
+            "count_percent_change": -6.024096385542169,
+            "share_percentage_point_change": -0.35302078814400506
+          },
+          "대구광역시": {
+            "count_absolute_change": 5,
+            "count_percent_change": 3.8461538461538463,
+            "share_percentage_point_change": 0.05896549255139405
+          },
+          "대전광역시": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.1035405970396508
+          },
+          "부산광역시": {
+            "count_absolute_change": 2,
+            "count_percent_change": 1.3333333333333335,
+            "share_percentage_point_change": -0.111706849777919
+          },
+          "서울특별시": {
+            "count_absolute_change": 27,
+            "count_percent_change": 5.443548387096774,
+            "share_percentage_point_change": 0.6028051663131073
+          },
+          "세종특별자치시": {
+            "count_absolute_change": 1,
+            "count_percent_change": 16.666666666666664,
+            "share_percentage_point_change": 0.039403924387519385
+          },
+          "울산광역시": {
+            "count_absolute_change": 1,
+            "count_percent_change": 2.564102564102564,
+            "share_percentage_point_change": -0.006153938309927387
+          },
+          "인천광역시": {
+            "count_absolute_change": 2,
+            "count_percent_change": 1.9801980198019802,
+            "share_percentage_point_change": -0.0440603263786814
+          },
+          "전라남도": {
+            "count_absolute_change": 2,
+            "count_percent_change": 2.5974025974025974,
+            "share_percentage_point_change": -0.010927335325992882
+          },
+          "전북특별자치도": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.09663789057034089
+          },
+          "제주특별자치도": {
+            "count_absolute_change": 1,
+            "count_percent_change": 8.333333333333332,
+            "share_percentage_point_change": 0.031120676624347254
+          },
+          "충청남도": {
+            "count_absolute_change": 3,
+            "count_percent_change": 5.454545454545454,
+            "share_percentage_point_change": 0.06713174528966315
+          },
+          "충청북도": {
+            "count_absolute_change": 1,
+            "count_percent_change": 1.7241379310344827,
+            "share_percentage_point_change": -0.03238422289330556
+          }
+        },
+        "institution_type": {
+          "병원": {
+            "count_absolute_change": 12,
+            "count_percent_change": 1.4545454545454546,
+            "share_percentage_point_change": -0.5667005016278637
+          },
+          "상급종합병원": {
+            "count_absolute_change": 3,
+            "count_percent_change": 1.2195121951219512,
+            "share_percentage_point_change": -0.19655164183798135
+          },
+          "요양병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.001380541293862024
+          },
+          "의원": {
+            "count_absolute_change": 20,
+            "count_percent_change": 5.434782608695652,
+            "share_percentage_point_change": 0.4457042468726051
+          },
+          "정신병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.001380541293862024
+          },
+          "종합병원": {
+            "count_absolute_change": 23,
+            "count_percent_change": 4.063604240282685,
+            "share_percentage_point_change": 0.3154185871400017
+          },
+          "치과병원": {
+            "count_absolute_change": 0,
+            "count_percent_change": 0.0,
+            "share_percentage_point_change": -0.002761082587724048
+          },
+          "한방병원": {
+            "count_absolute_change": 1,
+            "count_percent_change": 3.4482758620689653,
+            "share_percentage_point_change": 0.007651474628692867
+          }
+        }
+      }
+    }
+  }
+}

@@ -4964,7 +4964,7 @@
     "모델명":"MAGNETOM C!",
     "테슬라":"<0.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인백성의료재단 안중백병원",
+    "hospital_name_display":"안중백병원",
     "facility_key":"의료법인백성의료재단 안중백병원||경기도||평택시"
   },
   {
@@ -8996,7 +8996,7 @@
     "모델명":"Echelon Smart",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인명문의료재단 대구기독병원",
+    "hospital_name_display":"대구기독병원",
     "facility_key":"의료법인명문의료재단 대구기독병원||대구광역시||달서구"
   },
   {
@@ -13928,7 +13928,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인 나누리병원",
+    "hospital_name_display":"나누리병원",
     "facility_key":"의료법인 나누리병원||서울특별시||강서구"
   },
   {
@@ -13940,7 +13940,7 @@
     "모델명":"Ingenia CX",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"의료법인 나누리병원",
+    "hospital_name_display":"나누리병원",
     "facility_key":"의료법인 나누리병원||서울특별시||강서구"
   },
   {
@@ -20612,7 +20612,7 @@
     "모델명":"Signa HDxt",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"(사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 전북",
     "facility_key":"(사)한국건강관리협회건강증진의원||전라북도||전주시 덕진구"
   },
   {
@@ -20624,7 +20624,7 @@
     "모델명":"Signa Pioneer",
     "테슬라":"3.0T+",
     "장비수":1,
-    "hospital_name_display":"(사)한국건강관리협회건강증진의원",
+    "hospital_name_display":"한국건강관리협회 전북",
     "facility_key":"(사)한국건강관리협회건강증진의원||전라북도||전주시 덕진구"
   },
   {
@@ -22364,7 +22364,7 @@
     "모델명":"Signa Infinity",
     "테슬라":"1.5T",
     "장비수":1,
-    "hospital_name_display":"의료법인 중원의료재단 충주중앙병원",
+    "hospital_name_display":"충주중앙병원",
     "facility_key":"의료법인 중원의료재단 충주중앙병원||충청북도||충주시"
   },
   {
