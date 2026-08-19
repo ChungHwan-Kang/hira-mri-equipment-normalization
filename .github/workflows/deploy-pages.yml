@@ -140,7 +140,7 @@ jobs:
               ["unique sido count == 17", () => new Set(equipment.map((r) => r["시도명"])).size === 17, () => "count mismatch"],
               ["unique sido/sigungu pair count == 207", () => new Set(equipment.map((r) => `${r["시도명"]}|${r["시군구명"]}`)).size === 207, () => "count mismatch"],
               ["first release status == published", () => firstRelease.status === "published", () => `status=${firstRelease.status}`],
-              ["first release published_at == 2026-07-25T14:28:29Z", () => firstRelease.published_at === "2026-07-25T14:28:29Z", () => `value=${firstRelease.published_at}`],
+              ["first release published_at == 2026-08-19T00:00:00Z", () => firstRelease.published_at === "2026-08-19T00:00:00Z", () => `value=${firstRelease.published_at}`],
               ["first release total_equipment == 2097", () => firstRelease.total_equipment === 2097, () => `value=${firstRelease.total_equipment}`],
               ["first release status is not planned", () => firstRelease.status !== "planned", () => "still planned"],
               ["first release change_summary is not empty", () => Boolean(String(firstRelease.change_summary || "").trim()), () => "empty"],
