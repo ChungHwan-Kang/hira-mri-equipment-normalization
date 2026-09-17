@@ -1,0 +1,6 @@
+raw_model,exact_output,fuzzy_output,fuzzy_changed,governance_disposition,governance_output,governance_reason
+Atlas Nova,Atlas Nova,Atlas Nova,false,exact_or_deterministic,Atlas Nova,
+Atlas N0va,Atlas N0va,Atlas Nova,true,manual_review,,cross_approved_canonical_conflict
+Orion One,Orion One,Orion One,false,exact_or_deterministic,Orion One,
+Comet   Prime,Comet Prime,Comet Prime,false,exact_or_deterministic,Comet Prime,
+Nebula,Nebula,Nebula,false,ambiguous_or_underspecified,,underspecified_model_family

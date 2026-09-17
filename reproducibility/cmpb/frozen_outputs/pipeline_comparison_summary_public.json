@@ -1,0 +1,112 @@
+{
+  "analysis_freeze": {
+    "commit": "349a047f9bdb3b6780edbc274f1742ad6d5d8f27",
+    "pipeline_comparison_commit": "373ca965b62c744ba43e88bb709731e0c71d0aca",
+    "tag": "paper-cmpb-analysis-v1.0"
+  },
+  "denominator_note": "The governance-aware pairwise difference applies governed disposition to all observations of a governed raw model; therefore its year/raw-model, record, and equipment denominators differ from the frozen fuzzy-impact endpoint.",
+  "fuzzy_endpoint": {
+    "affected_equipment_observations": 2327,
+    "affected_records": 2248,
+    "annual_fuzzy_raw_model_counts": {
+      "2019": 38,
+      "2020": 41,
+      "2021": 42,
+      "2022": 42,
+      "2023": 39,
+      "2024": 39,
+      "2025": 35
+    },
+    "cross_approved_canonical_conflict_clusters": 23,
+    "cross_manufacturer_conflict_clusters": 0,
+    "fuzzy_dependent_raw_models": 47,
+    "year_raw_model_combinations": 276
+  },
+  "governance_gates": {
+    "cluster_level": {
+      "cross_approved_canonical": 23,
+      "cross_manufacturer": 0,
+      "field_strength_incompatibility": 9
+    },
+    "overlap": {
+      "cross_approved_only": 20,
+      "cross_approved_plus_field_strength": 25,
+      "cross_approved_plus_field_strength_plus_authorization_plus_underspecified": 2
+    },
+    "raw_model_level_47": {
+      "authorization_provenance": 2,
+      "cross_approved_canonical": 47,
+      "cross_manufacturer": 0,
+      "field_strength_incompatibility": 27,
+      "multiple_gate_models": 27,
+      "underspecified_family": 2
+    },
+    "incremental_routing_note": "All 47 fuzzy-dependent raw models triggered cross-approved-canonical; incremental routing contribution of the remaining gates cannot be estimated in this cohort."
+  },
+  "interpretation_constraints": [
+    "Fuzzy-dependent does not mean semantically wrong.",
+    "A cross-canonical conflict is not a confirmed mapping error.",
+    "Threshold 88 is the frozen reference operating point, not an optimal threshold.",
+    "Reproducibility does not establish semantic validity.",
+    "The governance-aware arm is a retrospective simulation informed by completed semantic review.",
+    "The governance-aware arm is not prespecified external validation.",
+    "Governance-aware results must be interpreted with both risk capture and manual-review burden."
+  ],
+  "pairwise_output_differences": {
+    "exact_only_vs_fuzzy_inclusive": {
+      "equipment_observations": 2327,
+      "raw_models": 47,
+      "records": 2248,
+      "year_raw_model_combinations": 276
+    },
+    "governance_aware_vs_exact_only": {
+      "equipment_observations": 2452,
+      "raw_models": 47,
+      "records": 2373,
+      "year_raw_model_combinations": 298
+    },
+    "governance_aware_vs_fuzzy_inclusive": {
+      "equipment_observations": 2452,
+      "raw_models": 47,
+      "records": 2373,
+      "year_raw_model_combinations": 298
+    }
+  },
+  "pipelines": {
+    "exact_only": {
+      "ambiguous_or_underspecified": 2,
+      "semantic_concordant": 43,
+      "semantic_discordant": 2,
+      "semantic_evaluable": 45,
+      "unique_resolved_canonical_models": 115
+    },
+    "fuzzy_inclusive": {
+      "ambiguous_or_underspecified": 2,
+      "semantic_concordant": 10,
+      "semantic_discordant": 35,
+      "semantic_evaluable": 45,
+      "unique_resolved_canonical_models": 94
+    },
+    "governance_aware": {
+      "all_observed_raw_models": 190,
+      "ambiguous_or_underspecified": 2,
+      "auto_accepted_fuzzy_candidates": 0,
+      "exact_or_deterministic": 143,
+      "fuzzy_candidate_population": 47,
+      "fuzzy_candidates_ambiguous": 2,
+      "fuzzy_candidates_manual_review": 45,
+      "manual_review": 45,
+      "semantic_concordant_cases_routed_to_review": "10/10",
+      "semantic_discordant_cases_captured": "35/35",
+      "unique_resolved_canonical_models": 88
+    }
+  },
+  "schema_version": 1,
+  "semantic_reference": {
+    "ambiguous_or_underspecified": 2,
+    "evaluable": 45,
+    "first_pass_identity_agreement": 45,
+    "second_pass_consensus": 2,
+    "total_reviewed": 47
+  }
+}

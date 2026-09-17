@@ -1,0 +1,70 @@
+{
+  "analysis_freeze": {
+    "commit": "349a047f9bdb3b6780edbc274f1742ad6d5d8f27",
+    "reference_threshold": 88,
+    "reference_threshold_is_optimal": false,
+    "tag": "paper-cmpb-analysis-v1.0"
+  },
+  "interpretation": {
+    "non_monotonic_85_to_88_expected": true,
+    "note": "Threshold 88 is the frozen reference operating point, not an optimized threshold.",
+    "reason": "greedy_order_dependent_clustering"
+  },
+  "schema_version": 1,
+  "threshold_sensitivity": [
+    {
+      "affected_equipment_observations": 4730,
+      "affected_records": 4379,
+      "cross_approved_canonical_conflict_clusters": 32,
+      "cross_manufacturer_conflict_clusters": 0,
+      "fuzzy_dependent_raw_models": 64,
+      "threshold": 80,
+      "year_raw_model_combinations": 373
+    },
+    {
+      "affected_equipment_observations": 2294,
+      "affected_records": 2204,
+      "cross_approved_canonical_conflict_clusters": 26,
+      "cross_manufacturer_conflict_clusters": 0,
+      "fuzzy_dependent_raw_models": 50,
+      "threshold": 85,
+      "year_raw_model_combinations": 272
+    },
+    {
+      "affected_equipment_observations": 2327,
+      "affected_records": 2248,
+      "cross_approved_canonical_conflict_clusters": 23,
+      "cross_manufacturer_conflict_clusters": 0,
+      "fuzzy_dependent_raw_models": 47,
+      "threshold": 88,
+      "year_raw_model_combinations": 276
+    },
+    {
+      "affected_equipment_observations": 731,
+      "affected_records": 716,
+      "cross_approved_canonical_conflict_clusters": 17,
+      "cross_manufacturer_conflict_clusters": 0,
+      "fuzzy_dependent_raw_models": 29,
+      "threshold": 90,
+      "year_raw_model_combinations": 171
+    },
+    {
+      "affected_equipment_observations": 712,
+      "affected_records": 697,
+      "cross_approved_canonical_conflict_clusters": 16,
+      "cross_manufacturer_conflict_clusters": 0,
+      "fuzzy_dependent_raw_models": 28,
+      "threshold": 92,
+      "year_raw_model_combinations": 164
+    },
+    {
+      "affected_equipment_observations": 602,
+      "affected_records": 589,
+      "cross_approved_canonical_conflict_clusters": 14,
+      "cross_manufacturer_conflict_clusters": 0,
+      "fuzzy_dependent_raw_models": 25,
+      "threshold": 95,
+      "year_raw_model_combinations": 130
+    }
+  ]
+}
