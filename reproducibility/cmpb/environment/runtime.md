@@ -1,6 +1,8 @@
-# Level A validation status
+# CMPB reproducibility validation status
 
-Final validation date: 17 September 2026
+Initial clean-environment validation date: 17 September 2026
+
+Public fresh-clone acceptance date: 18 September 2026
 
 Validated package branch:
 
@@ -61,10 +63,31 @@ LEVEL_A_LOGIC_CHECK = COMPLETED
 ACTUAL_THEFUZZ_0.22.1_CLEAN_ENV_TEST = PASS
 NETWORK_DEPENDENCY_INSTALL_TEST = PASS
 LEVEL_A_FINAL_VALIDATION = PASS
-PUBLIC_CLONE_ACCEPTANCE = NOT_COMPLETED
+PUBLIC_CLONE_ACCEPTANCE = PASS
 ```
 
-`PUBLIC_CLONE_ACCEPTANCE` remains separate because the reproducibility package has not yet been published to the public repository. After publication, a fresh clone of the public release must repeat the documented install, example, and pytest commands before the manuscript cites that release URL or DOI.
+`PUBLIC_CLONE_ACCEPTANCE` passed against the public repository branch `paper/reproducibility-release` at commit `effd69a040b57449c095eb59c5f2740f4be247d1`.
+
+
+## Public fresh-clone acceptance
+
+On 18 September 2026, the public repository was cloned into a newly created Windows temporary directory using only the public branch `paper/reproducibility-release`. The cloned HEAD was verified as:
+
+```text
+effd69a040b57449c095eb59c5f2740f4be247d1
+```
+
+A new Python 3.13 virtual environment was created inside the fresh clone and the locked dependencies installed successfully. The following public-clone checks all passed:
+
+```text
+PASS: synthetic output matches expected_output.csv
+PASS: frozen CMPB Level B aggregate summaries verified
+PASS: CMPB release-content audit
+............... [100%]
+15 passed in 1.63s
+```
+
+This acceptance test validates the public transport, installation path, synthetic mechanics demonstration, frozen aggregate verifier, release-content audit, and package test suite. It does not convert the package into a full 2019-2025 source-data replay environment.
 
 ## Reproducibility boundary
 

@@ -63,7 +63,7 @@ Validated dependency versions were:
 
 The synthetic example passed and all five Level A tests passed. Details are recorded in `environment/runtime.md`.
 
-This completes Level A package validation. A separate fresh-clone acceptance test must still be performed after the package is actually published to the public repository; that future test validates the public release transport and installation path, not the Level A implementation itself.
+Level A package validation is complete. Public fresh-clone acceptance was completed on 18 September 2026 from public commit `effd69a040b57449c095eb59c5f2740f4be247d1`. Locked dependency installation, the synthetic example, the Level B verifier, the release-content audit, and the full package test suite all passed; the fresh-clone test suite completed with `15 passed in 1.63s`. Details are recorded in `environment/runtime.md`.
 
 ## Level B frozen aggregate outputs
 
