@@ -1,6 +1,6 @@
 # MRI 장비 현황 대시보드
 
-이 저장소는 대한자기공명기술학회에서 연결하는 **MRI 장비 현황 정적 웹 대시보드**를 GitHub Pages로 공개하기 위한 저장소입니다.
+이 저장소는 대한자기공명기술학회에서 연결하는 **MRI 장비 현황 정적 웹 대시보드**와 관련 연구의 **검증된 재현성 자료**를 공개하기 위한 저장소입니다.
 
 ## 이 사이트가 하는 일
 
@@ -9,11 +9,17 @@
 - 출처: **건강보험심사평가원(HIRA) 의료장비 상세현황 공개자료**를 정제한 참고용 정보입니다.
 - 레코드(요양기관·모델 조합) 수와 실제 등록 장비 대수는 다를 수 있습니다. 한 병원이 같은 모델을 여러 대 보유할 수 있기 때문입니다.
 
+## 연구 재현성 패키지
+
+CMPB 방법론 원고를 위한 공개 재현성 패키지는 [`reproducibility/cmpb/`](reproducibility/cmpb/)에 별도로 제공됩니다. 이 패키지는 합성 fixture를 이용한 계산 절차 재현, 동결된 aggregate 분석 요약, 검증 스크립트와 자동 테스트를 포함하며 대시보드 운영 파일과 분리되어 있습니다.
+
+이 패키지는 HIRA 원자료, reviewer workbook, row-level semantic-review evidence, production `model_canonical_mapping.csv`를 포함하지 않습니다. 따라서 공개 저장소만으로 2019–2025 전체 원자료 분석을 완전 재실행하는 환경과는 구분됩니다.
+
 ## 이 사이트가 하지 않는 일
 
 - 병원의 전체 도로명 주소 등 상세 주소는 공개하지 않습니다.
 - 원자료(raw data) 또는 가공 데이터 파일의 다운로드는 제공하지 않습니다. 조회·필터링 용도로만 제공됩니다.
-- 이 저장소에는 정규화 엔진, 모델명 매핑 자산, 원본/가공 데이터가 포함되어 있지 않습니다. 이 사이트의 산출물은 별도의 비공개 저장소에서 생성되어 이 저장소에는 공개 웹 파일만 배포됩니다.
+- production 정규화 엔진, production 모델명 매핑 자산, 원본/가공 중간 데이터는 포함하지 않습니다. 대시보드 산출물은 별도의 비공개 저장소에서 생성됩니다.
 
 ## 데이터 정확성에 대해
 
@@ -25,4 +31,4 @@
 
 ## 라이선스
 
-이 저장소에 포함된 소프트웨어 코드(`index.html`, `assets/`의 JavaScript·CSS, GitHub Actions workflow, 원본 문서)는 [MIT License](LICENSE)를 따릅니다. `data/` 아래의 JSON 데이터 파일은 MIT License 대상이 아니며, 건강보험심사평가원 공공데이터의 이용조건을 따릅니다. 자세한 구분은 [NOTICE.md](NOTICE.md)를 참고하세요.
+이 저장소에 포함된 직접 작성 소프트웨어 코드(`index.html`, `assets/`의 JavaScript·CSS, GitHub Actions workflow, `reproducibility/cmpb/`의 코드·테스트·문서)는 [MIT License](LICENSE)를 따릅니다. `data/` 아래의 JSON 데이터 파일은 MIT License 대상이 아니며, 건강보험심사평가원 공공데이터의 이용조건을 따릅니다. 자세한 구분은 [NOTICE.md](NOTICE.md)를 참고하세요.

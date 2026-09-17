@@ -10,6 +10,7 @@
 - `assets/` 아래의 JavaScript(`app.js`), CSS(`style.css`)
 - `.github/workflows/deploy-pages.yml` (GitHub Actions workflow)
 - 이 저장소의 원본 문서(`README.md`, `DATA_SOURCE.md`, 이 `NOTICE.md` 자체)
+- `reproducibility/cmpb/` 아래의 직접 작성 코드, 테스트, 환경 문서 및 합성 예제
 
 ## 2. 데이터 파일 (MIT License 대상 아님)
 
@@ -23,3 +24,9 @@
 ## 정정 문의
 
 데이터 오류 또는 정정이 필요한 사항은 이 저장소의 **GitHub Issues**를 통해 제보해 주시기 바랍니다. Issue 등록 시 환자정보, 개인정보, 비공개 기관 자료는 절대 포함하지 마시기 바랍니다.
+
+## 3. 논문 재현성 패키지
+
+`reproducibility/cmpb/`는 CMPB 방법론 원고를 위한 공개 재현성 패키지입니다. 이 패키지의 합성 fixture는 계산 절차를 설명하기 위해 새로 작성된 가상 예제이며 실제 병원·장비 레코드가 아닙니다. `frozen_outputs/`에는 원고 분석에서 동결한 aggregate 수준의 요약과 비배포 evidence의 SHA-256 manifest만 포함됩니다.
+
+이 패키지에는 HIRA raw data, reviewer workbook, row-level semantic-review evidence, production `model_canonical_mapping.csv`가 포함되어 있지 않습니다. 전체 2019–2025 원자료 분석의 재실행에는 공개 저장소 외의 권위 있는 HIRA source snapshot과 동결된 curated mapping/evidence state가 추가로 필요합니다.
